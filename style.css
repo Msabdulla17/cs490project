@@ -14,7 +14,7 @@ body {
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
 }
-form, .content {
+form, .content{
 	width: 40%;
 	margin: 0px auto;
 	padding: 20px;
@@ -22,7 +22,7 @@ form, .content {
 	background: white;
 	border-radius: 0px 0px 10px 10px;
 }
-.input-group {
+.input-group{
 	margin: 10px 0px 10px 0px;
 }
 .input-group label {
