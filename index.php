@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
 	<canvas id="canvas1"></canvas>
