@@ -40,7 +40,7 @@ include('functions.php')
 	<div class="input-group">
 		<label for="cars">Choose a security question:</label>
 		<select name="security_questions" id="security_questions">
-  			<option value="elementary_school">What school did you attend for third_grade?</option>
+  			<option value="elementary_school">What school did you attend for third grade?</option>
   			<option value="high_school">What school did you attend for ninth grade?</option>
   			<option value="middle_name">What is your oldest sibling's middle name?</option>
   			<option value="street">What street did you live on in third grade?</option>
@@ -57,5 +57,6 @@ include('functions.php')
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
+<br><br><br><br><br>
 </body>
 </html>
