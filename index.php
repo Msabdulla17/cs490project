@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
-	<canvas id="canvas1"></canvas>
+	<div id="canvas1"></div>
 	<script src="script.js"></script>
 	<div class="header">
 		<h2>Home Page</h2>
