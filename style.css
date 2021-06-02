@@ -1,7 +1,6 @@
 * { 
 	margin: 0px; 
 	padding: 0px;
-	background: wheat;
 }
 body {
 	font-size: 120%;
@@ -12,7 +11,7 @@ body {
 	height:120px;
 	text-align: center;
 	color: white;
-	background: #b1424d;
+	background: #ece5e5;
 	padding: 10px;
 }
 
@@ -74,7 +73,7 @@ form, .content{
 	padding: 10px; 
 	border: 1px solid #a94442; 
 	color: #a94442; 
-	background: #f2dede; 
+	background: #ece5e5;
 	border-radius: 5px; 
 	text-align: left;
 }
@@ -100,4 +99,3 @@ form, .content{
 	display: block;
 	clear: both;
 }
-
