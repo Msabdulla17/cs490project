@@ -15,12 +15,12 @@ include('functions.php')
 </div>
 <form method="post" action="register.php">
 	<div class="input-group">
-		<label>Username</label>
-		<input type="text" name="username" value="">
-	</div>
-	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="">
+	</div>
+	<div class="input-group">
+		<label>Username</label>
+		<input type="text" name="username" value="">
 	</div>
 	<div class="input-group">
 		<label>Password</label>
