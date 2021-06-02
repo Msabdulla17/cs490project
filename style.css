@@ -1,7 +1,7 @@
 * { margin: 0px; padding: 0px; }
 body {
 	font-size: 120%;
-	background: #f1ebeb;
+	background: #ece5e5;
 }
 
 #logo {
@@ -17,7 +17,7 @@ body {
 	margin: 50px auto 0px;
 	color: white;
 	background: #b1424d;
-	float: left;
+	text-align: center;
 	border: 1px solid #000000;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
