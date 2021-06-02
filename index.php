@@ -1,7 +1,4 @@
 <?php 
-	session_start();
-	define('DS',directory_seporator);
-	echo DS;
 	include('functions.php');
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
