@@ -51,7 +51,7 @@ include('functions.php')
 		<input type="password" name="security_answer">
 	</div>
 	<div class="input-group">
-		<button type="submit" class="btn" name="register_btn">Register</button>
+		<button type="submit" class="btn" name="register_btn">Sign Up</button>
 	</div>
 	<p>
 		Already a member? <a href="login.php">Sign in</a>
