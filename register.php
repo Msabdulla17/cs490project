@@ -10,8 +10,6 @@ include('functions.php')
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="canvas1"></canvas>
-<script src="script.js"></script>
 <div class="header">
 	<h2>Register</h2>
 </div>
