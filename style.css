@@ -15,7 +15,7 @@ body{
 	height:120px;
 	text-align: center;
 	color: white;
-	background: radical-gradient(#fc2629, #fc7984);
+	background-color: radical-gradient(#fc2629, #fc7984);
 	padding: 10px;
 }
 
