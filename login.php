@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<cancas id="canvas1"></canvas>
+	<canvas id="canvas1"></canvas>
 	<script src="script.js"></script>
 	<div id="logo">
 		<br>
