@@ -6,9 +6,10 @@ body {
 
 #logo {
 	height:120px;
+	text-align: center;
 	color: white;
 	background: #b1424d;
-	padding: 4px;
+	padding: 10px;
 }
 
 .header {
@@ -16,7 +17,7 @@ body {
 	margin: 50px auto 0px;
 	color: white;
 	background: #b1424d;
-	text-align: center;
+	float: left;
 	border: 1px solid #000000;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
@@ -95,4 +96,3 @@ form, .content{
 	display: block;
 	clear: both;
 }
-
