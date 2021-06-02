@@ -4,7 +4,6 @@
 <head>
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript">
 </head>
 <body>
 	<div id="logo">
@@ -27,7 +26,7 @@
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="pass" name="password">	
+			<input type="password" name="password">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn">Login</button>
