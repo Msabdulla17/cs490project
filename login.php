@@ -5,15 +5,16 @@
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body style="font-family: tahoma">
 	<div id="logo">
 		<br>
-		<div style ="font-size: 35px;">Title and Logo</div>
+		<div style ="font-size: 35px;">Title for website</div>
+		<div style ="font-size: 20px;">Subtitle</div>
 		<br>
 	</div>
-	<br><br><br>
+	<br><br>
 	<div class="header">
-		<h2>Login</h2>
+		<h2>Log In</h2>
 	</div>
 	<form method="post" action="login.php">
 
