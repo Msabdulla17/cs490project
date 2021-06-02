@@ -22,11 +22,11 @@
 		<form action="validation.php" method="post">
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="user" class="form-control" required>
+			<input type="text" name="user">
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password" class="form-control" required>	
+			<input type="password" name="password">	
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn">Login</button>
