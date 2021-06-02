@@ -3,11 +3,9 @@
 <html>
 <head>
 	<title>Log In</title>
-	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="canvas1"></div>
-	<script src="script.js"></script>
 	<div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Title for website</div>
