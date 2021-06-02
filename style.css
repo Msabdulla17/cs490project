@@ -1,15 +1,23 @@
 * { margin: 0px; padding: 0px; }
 body {
 	font-size: 120%;
-	background: #ff0000;
+	background: #f1ebeb;
 }
+
+#logo {
+	height:120px;
+	color: white;
+	background: #b1424d;
+	padding: 4px;
+}
+
 .header {
 	width: 40%;
 	margin: 50px auto 0px;
 	color: white;
-	background: #bd0013;
+	background: #b1424d;
 	text-align: center;
-	border: 1px solid #f23044;
+	border: 1px solid #000000;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
@@ -87,3 +95,4 @@ form, .content{
 	display: block;
 	clear: both;
 }
+
