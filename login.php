@@ -19,7 +19,7 @@
 	<form method="post" action="login.php">
 
 		<?php echo display_error(); ?>
-		<form action="validation.php" method="post">
+		
 		<div class="input-group">
 			<label>Username</label>
 			<input type="text" name="user">
