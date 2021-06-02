@@ -26,9 +26,11 @@ class Particle{
   draw(){
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size,0, Math.PI*2, false);
-    ctx.fillStyle= '#850b0d';
+    ctx.fillStyle= '#0c0880';
     ctx.fill();
   }
   update(){
-    
+    if (this.x>canvas.width||this.x<0){
+      
+    }
 }
