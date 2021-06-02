@@ -10,13 +10,13 @@ body{
 	height: 100%;
 	background: radical-gradient(#fc2629, #fc7984);
 }
-#canvas1{
+/*#canvas1{
 	position: absolute;
 	top: 0px; left: 0px;
 	width: 100%;
 	height: 100%;
 	background: radical-gradient(#fc2629, #fc7984);
-}
+}*/
 #logo{
 	height:120px;
 	text-align: center;
