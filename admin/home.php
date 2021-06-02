@@ -24,6 +24,8 @@ if (isset($_GET['logout']))
 	</style>
 </head>
 <body>
+	<canvas id="canvas1"></canvas>
+	<script src="script.js"></script>
 	<div class="header">
 		<h2>Admin - Home Page</h2>
 	</div>
