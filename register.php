@@ -10,6 +10,13 @@ include('functions.php')
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="logo">
+		<br>
+		<div style ="font-size: 35px;">Title for website</div>
+		<div style ="font-size: 20px;">Subtitle</div>
+		<br>
+</div>
+<br><br>
 <div class="header">
 	<h2>Register</h2>
 </div>
