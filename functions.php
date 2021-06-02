@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', '', 'multi_login');
+$db = mysqli_connect("localhost", "root", "root", "multi_login");
 
 // variable declaration
 $username = "";
