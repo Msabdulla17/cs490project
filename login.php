@@ -23,7 +23,7 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="user" >
+			<input type="text" name="username" >
 		</div>
 		<div class="input-group">
 			<label>Password</label>
