@@ -5,7 +5,7 @@
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="font-family: tahoma">
+<body>
 	<div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Title for website</div>
