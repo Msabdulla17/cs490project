@@ -1,4 +1,8 @@
-* { margin: 0px; padding: 0px; }
+* { 
+	margin: 0px; 
+	padding: 0px;
+	background: wheat;
+}
 body {
 	font-size: 120%;
 	background: #ece5e5;
@@ -96,3 +100,4 @@ form, .content{
 	display: block;
 	clear: both;
 }
+
