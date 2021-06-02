@@ -31,6 +31,11 @@ class Particle{
   }
   update(){
     if (this.x>canvas.width||this.x<0){
-      
+      this.directx = -this.directx;
     }
+    if (this.y>canvas.height||this.y<0){
+      this.directy = -this.directy;
+    }
+    
+  }
 }
