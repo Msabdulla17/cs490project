@@ -6,6 +6,12 @@ include('functions.php')
 <head>
 <title>
 	Registration system PHP and MySQL
+	<script type="text/javascript">
+        function validate()
+        {
+	    var email = document.getElementById("mail");
+            var uname = document.getElementById("uname");
+            var password = document.getElementById("pass");
 </title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -23,11 +29,11 @@ include('functions.php')
 <form method="post" action="register.php">
 	<div class="input-group">
 		<label>Email</label>
-		<input type="email" name="email" value="">
+		<input id="mail" placeholder="Email" value="">
 	</div>
 	<div class="input-group">
 		<label>Username</label>
-		<input type="text" name="username" value="">
+		<input type="text" placeholder="Username" value="">
 	</div>
 	<div class="input-group">
 		<label>Password</label>
