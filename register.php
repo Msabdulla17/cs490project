@@ -12,6 +12,8 @@ include('functions.php')
 	    var email = document.getElementById("mail");
             var uname = document.getElementById("uname");
             var password = document.getElementById("pass");
+	}
+	</script>
 </title>
 	<link rel="stylesheet" href="style.css">
 </head>
