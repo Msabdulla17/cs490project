@@ -1,4 +1,5 @@
 <?php 
+require('../vendor/autoload.php');
 session_start();
 
 //Get Heroku ClearDB connection information
@@ -70,13 +71,13 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: /admin/home.php');
+				header('location: home.php');
 				exit();		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: /index.php');
+				header('location: index.php');
 				exit();
 			}
 		}else {
@@ -89,7 +90,7 @@ function login(){
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: /login.php");
+	header("location: login.php");
 	exit();
 }
 
@@ -134,7 +135,7 @@ function register(){
 					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: /admin/home.php');
+			header('location: home.php');
 			exit();
 		}
 		else
@@ -150,7 +151,7 @@ function register(){
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
 			$_SESSION['success']  = "You are now logged in";
-			header('location: /index.php');
+			header('location: index.php');
 			exit();				
 		}
 	}
@@ -200,3 +201,5 @@ function isLoggedIn()
 		return false;
 	}
 }
+
+    
