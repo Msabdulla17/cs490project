@@ -1,4 +1,4 @@
-<?php 
+/*<?php 
 session_start();
 
 //Get Heroku ClearDB connection information
@@ -50,7 +50,7 @@ function login(){
 
 	// make sure form is filled properly
 	if (empty($username)) {
-		array_push($errors, "Username is required");
+		echo "Username is required" ;
 	}
 	if (empty($password)) {
 		array_push($errors, "Password is required");
@@ -202,3 +202,4 @@ function isLoggedIn()
 }
 
     
+*/
