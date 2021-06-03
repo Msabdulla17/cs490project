@@ -14,25 +14,25 @@ if (mysqli_connect_errno()) // Check connection
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 session_start();
-if (isset($_POST['email'])){
+if (isset($_POST['user'])){
   
-$email = stripslashes($_REQUEST['email']);// removes backslashes
-$email= mysqli_real_escape_string($database,$email); //escapes special characters in a string
+$user = stripslashes($_REQUEST['user']);// removes backslashes
+$user= mysqli_real_escape_string($database,$user); //escapes special characters in a string
 $password = stripslashes($_REQUEST['password']);
 $password = mysqli_real_escape_string($database,$password);
 //Checking is user existing in the database or not
-$query = "SELECT * FROM `user` WHERE email='$email'and password='".md5($password)."'";
+$query = "SELECT * FROM `user` WHERE email='$user'and password='".md5($password)."'";
 $result = mysqli_query($database,$query) or die(mysqli_error());
 $rows = mysqli_num_rows($result);
 if($rows==1){
-$_SESSION['email'] = $email;
+$_SESSION['user'] = $email;
 
 header("Location: index.php"); // Redirect user to index.php
 }
 else
 {
 echo "<div>
-<h3>email/password is incorrect.</h3>
+<h3>username/password is incorrect.</h3>
 <br/>Click here to <a href='login.php'>Login</a></div>";
 }
 }
@@ -55,11 +55,11 @@ else
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" >
+			<input type="text" name="username" placeholder="User" required />
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="password">
+			<input type="password" name="password" placeholder="Password" required />
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn">Login</button>
