@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php include('../functions.php') ?>
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
