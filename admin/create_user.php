@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL - Create user</title>
+	<title>Create User</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<style>
 		.header {
@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div class="header">
-		<h2>Admin - create user</h2>
+		<h2>Create User</h2>
 	</div>
 	
 	<form method="post" action="create_user.php">
