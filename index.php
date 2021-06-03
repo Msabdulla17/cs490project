@@ -4,7 +4,7 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="manifest" href="/composer.json"/>
+	//<link rel="manifest" href="/composer.json"/>
 </head>
 <body>
 	<?php 
