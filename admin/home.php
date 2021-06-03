@@ -1,5 +1,5 @@
 <?php 
-include('../functions.php');
+include('cs490project/functions.php');
 
 
 if (isset($_GET['logout'])) 

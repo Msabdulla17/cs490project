@@ -1,5 +1,5 @@
 <?php 
-require('../vendor/autoload.php');
+require('cs490project/vendor/autoload.php');
 session_start();
 
 //Get Heroku ClearDB connection information
