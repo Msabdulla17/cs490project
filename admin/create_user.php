@@ -1,3 +1,4 @@
+<?php include('../functions.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +14,6 @@
 	</style>
 </head>
 <body>
-	<?php include('functions.php') ?>
-	<canvas id="canvas1"></canvas>
-	<script src="script.js"></script>
 	<div class="header">
 		<h2>Admin - create user</h2>
 	</div>
