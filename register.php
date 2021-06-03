@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <?php 
 include('functions.php'); 
-if(isset($_POST['submit']) &&! empty($_POST['submit']))
-{
-    
-	$sql = "insert into public.user_list(username,email,password,mobno)values('".$_POST['name']."','".$_POST['email']."','".md5($_POST['pwd'])."','".$_POST['mobno']."')";
-}
 ?>
 <html>
 <head>
