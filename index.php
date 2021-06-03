@@ -1,10 +1,10 @@
 <?php 
 	include('functions.php');
-	/*if (!isLoggedIn()) {
+	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: /login.php');
 		exit();
-	}*/
+	}
 ?>
 <!DOCTYPE html>
 <html>
