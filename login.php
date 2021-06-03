@@ -2,12 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL</title>
+	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<div id="logo">
+		<br>
+		<div style ="font-size: 35px;">Title for website</div>
+		<div style ="font-size: 20px;">Subtitle</div>
+		<br>
+	</div>
+	<br><br>
 	<div class="header">
-		<h2>Login</h2>
+		<h2>Log In</h2>
 	</div>
 	<form method="post" action="login.php">
 

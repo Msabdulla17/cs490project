@@ -1,15 +1,28 @@
-* { margin: 0px; padding: 0px; }
+* { 
+	margin: 0px; 
+	padding: 0px;
+	font-family: Georgia;
+}
 body {
 	font-size: 120%;
-	background: #ff0000;
+	background-color: #ece5e5
 }
+
+#logo {
+	height:120px;
+	text-align: center;
+	color: white;
+	background-color: #b1424d;
+	padding: 10px;
+}
+
 .header {
 	width: 40%;
 	margin: 50px auto 0px;
 	color: white;
-	background: #bd0013;
+	background-color: #b1424d;
 	text-align: center;
-	border: 1px solid #f23044;
+	border: 1px solid #000000;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
@@ -19,7 +32,7 @@ form, .content{
 	margin: 0px auto;
 	padding: 20px;
 	border: 1px solid #B0C4DE;
-	background: white;
+	background-color: white;
 	border-radius: 0px 0px 10px 10px;
 }
 .input-group{
@@ -42,7 +55,7 @@ form, .content{
 	height: 40px;
 	width: 98%;
 	padding: 5px 10px;
-	background: white;
+	background-color: white;
 	font-size: 16px;
 	border-radius: 5px;
 	border: 1px solid gray;
@@ -51,7 +64,7 @@ form, .content{
 	padding: 10px;
 	font-size: 15px;
 	color: white;
-	background: #5F9EA0;
+	background-color: #5F9EA0;
 	border: none;
 	border-radius: 5px;
 }
@@ -61,13 +74,13 @@ form, .content{
 	padding: 10px; 
 	border: 1px solid #a94442; 
 	color: #a94442; 
-	background: #f2dede; 
+	background-color: #ece5e5;
 	border-radius: 5px; 
 	text-align: left;
 }
 .success {
 	color: #3c763d; 
-	background: #dff0d8; 
+	background-color: #dff0d8; 
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
 }

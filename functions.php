@@ -1,17 +1,24 @@
 <?php 
 session_start();
 
-// connect to database
-$db = mysqli_connect('localhost', 'root', '', 'multi_login');
+// connect to postgres database
+ 
+$db_connection = pg_connect("host=ec2-54-243-92-68.compute-1.amazonaws.com port=5432 dbname=d8i329a03j0ph0 user=tbwbofuazviofs password=c999a7124ec04e6a568e95ca2fac9c2fe6fc9fdb3f6215530f7783be42fa7a6f");
 
 // variable declaration
 $username = "";
 $email    = "";
+$security_answer = "";
 $errors   = array(); 
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) {
 	register();
+}
+
+// call the login() function if register_btn is clicked
+if (isset($_POST['login_btn'])) {
+	login();
 }
 
 //check for admin status
@@ -22,11 +29,6 @@ function isAdmin()
 	}else{
 		return false;
 	}
-}
-
-// call the login() function if register_btn is clicked
-if (isset($_POST['login_btn'])) {
-	login();
 }
 
 // LOGIN USER
@@ -50,21 +52,23 @@ function login(){
 		$password = md5($password);
 
 		$query = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
-		$results = mysqli_query($db, $query);
+		$results = pg_query($db, $query);
 
-		if (mysqli_num_rows($results) == 1) { // user found
+		if (pg_num_rows($results) == 1) { // user found
 			// check if user is admin or user
-			$logged_in_user = mysqli_fetch_assoc($results);
+			$logged_in_user = pg_fetch_assoc($results);
 			if ($logged_in_user['user_type'] == 'admin') {
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: admin/home.php');		  
+				header('location: https://cs490summerproject.herokuapp.com/admin/home.php');
+				exit();		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: index.php');
+				header('location: https://cs490summerproject.herokuapp.com/index.php');
+				exit();
 			}
 		}else {
 			array_push($errors, "Wrong username/password combination");
@@ -76,13 +80,14 @@ function login(){
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: login.php");
+	header("location: https://cs490summerproject.herokuapp.com/login.php");
+	exit();
 }
 
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $username, $email;
+	global $db, $errors, $username, $email, $security_answer;
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
@@ -90,6 +95,7 @@ function register(){
 	$email       =  e($_POST['email']);
 	$password_1  =  e($_POST['password_1']);
 	$password_2  =  e($_POST['password_2']);
+	$security_answer = e($_POST['security_answer']);
 
 	// form validation: ensure that the form is correctly filled
 	if (empty($username)) { 
@@ -100,6 +106,9 @@ function register(){
 	}
 	if (empty($password_1)) { 
 		array_push($errors, "Password is required"); 
+	}
+	if (empty($security_answer)) { 
+		array_push($errors, "Please provide a security answer"); 
 	}
 	if ($password_1 != $password_2) {
 		array_push($errors, "The two passwords do not match");
@@ -112,26 +121,28 @@ function register(){
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', '$user_type', '$password')";
-			mysqli_query($db, $query);
+			$query = "INSERT INTO public.user_list (username, email, user_type, password, security_answer) 
+					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer')";
+			pg_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: home.php');
+			header('location: https://cs490summerproject.herokuapp.com/admin/home.php');
+			exit();
 		}
 		else
 		{
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', 'user', '$password')";
-			mysqli_query($db, $query);
+			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer) 
+					  VALUES('$username', '$email', 'user', '$password', '$security_answer')";
+			pg_query($db, $query);
 
 			// get id of the created user
-			$logged_in_user_id = mysqli_insert_id($db);
+			$logged_in_user_id = pg_query($db, "INSERT INTO user_list (id) RETURNING id");
 			
 			// put logged in user in session
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
 			$_SESSION['success']  = "You are now logged in";
-			header('location: index.php');				
+			header('location: https://cs490summerproject.herokuapp.com/index.php');
+			exit();				
 		}
 	}
 }
@@ -141,9 +152,9 @@ function getUserById($id)
 {
 	global $db;
 	$query = "SELECT * FROM users WHERE id=" . $id;
-	$result = mysqli_query($db, $query);
+	$result = pg_query($db, $query);
 
-	$user = mysqli_fetch_assoc($result);
+	$user = pg_fetch_assoc($result);
 	return $user;
 }
 
@@ -151,7 +162,7 @@ function getUserById($id)
 function e($val)
 {
 	global $db;
-	return mysqli_real_escape_string($db, trim($val));
+	return pg_escape_string($db, trim($val));
 }
 
 function display_error() 
@@ -180,3 +191,5 @@ function isLoggedIn()
 		return false;
 	}
 }
+
+    
