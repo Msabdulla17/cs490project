@@ -8,7 +8,7 @@
 <body>
 	<div id="logo">
 		<br>
-		<div style ="font-size: 35px;">Title for website</div>
+		<div style ="font-size: 35px;">Artstagram</div>
 		<div style ="font-size: 20px;">Subtitle</div>
 		<br>
 	</div>
