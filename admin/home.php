@@ -1,14 +1,3 @@
-<?php 
-include('functions.php');
-
-
-if (isset($_GET['logout'])) 
-{
-	session_destroy();
-	unset($_SESSION['user']);
-	header("location: /login.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +13,15 @@ if (isset($_GET['logout']))
 	</style>
 </head>
 <body>
+	<?php 
+	include('functions.php');
+	if (isset($_GET['logout'])) 
+	{
+		session_destroy();
+		unset($_SESSION['user']);
+		header("location: /login.php");
+	}
+	?>
 	<div class="header">
 		<h2>Admin - Home Page</h2>
 	</div>
