@@ -50,7 +50,7 @@ function login(){
 
 	// make sure form is filled properly
 	if (empty($username)) {
-		echo "Username is required" ;
+		array_push($errors, "Username is required");
 	}
 	if (empty($password)) {
 		array_push($errors, "Password is required");
