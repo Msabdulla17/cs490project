@@ -8,34 +8,6 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php
-$database = mysqli_connect("localhost","root","","users");//Connect to database
-
-if (mysqli_connect_errno()) // Check connection
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-if (isset($_REQUEST['submit']))// If form submitted, insert values into the database.
-{
-  
-$name = stripslashes($_REQUEST['name']);// removes backslashes
-$name = mysqli_real_escape_string($database,$name); //escapes special characters in a string
-$email = stripslashes($_REQUEST['email']);
-$email = mysqli_real_escape_string($database,$email);
-$password1 = stripslashes($_REQUEST['password1']);
-$password1 = mysqli_real_escape_string($database,$password1);
-$password2 = stripslashes($_REQUEST['password2']);
-$password2 = mysqli_real_escape_string($database,$password2);
-
-$query = "INSERT into `user` (name, email, password1, password2) VALUES ('$name','$email', '".md5($password1)."', '".md5($password2)."')";
-$result = mysqli_query($database,$query);
-if($result){
-echo "<h3>You are registered successfully.</h3>
-<br/>Click here to <a href='login.php'>Login</a>";
-}
-}else{
-?>
 <div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Title for website</div>
