@@ -71,7 +71,7 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: admin/home.php');
+				header('location: home.php');
 				exit();		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
@@ -135,7 +135,7 @@ function register(){
 					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: admin/home.php');
+			header('location: home.php');
 			exit();
 		}
 		else
