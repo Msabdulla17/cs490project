@@ -20,7 +20,7 @@ include('functions.php');
 <div class="header">
 	<h2>Sign Up</h2>
 </div>
-<form action="/register.php" method="post">
+<form method="post" action="/register.php" >
 	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="">
@@ -57,5 +57,6 @@ include('functions.php');
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
+<br><br><br><br><br>
 </body>
 </html>
