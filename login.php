@@ -16,7 +16,7 @@
 	<div class="header">
 		<h2>Log In</h2>
 	</div>
-	<form method="post" action="/login.php">
+	<form action="login.php" method="post">
 
 		<?php echo display_error(); ?>
 
