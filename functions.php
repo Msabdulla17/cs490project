@@ -121,7 +121,7 @@ function register(){
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer) 
+			$query = "INSERT INTO public.user_list (username, email, user_type, password, security_answer) 
 					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer')";
 			pg_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
@@ -192,4 +192,5 @@ function isLoggedIn()
 	}
 }
 
+    
     
