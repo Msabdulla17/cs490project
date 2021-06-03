@@ -1,11 +1,4 @@
-<?php 
-	include('functions.php');
-	if (!isLoggedIn()) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: /login.php');
-		exit();
-	}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +7,14 @@
 	<link rel="manifest" href="/composer.json"/>
 </head>
 <body>
+	<?php 
+	include('functions.php');
+	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: /login.php');
+		exit();
+	}
+?>
 	<div class="header">
 		<h2>Home Page</h2>
 	</div>
