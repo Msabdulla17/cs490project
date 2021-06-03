@@ -118,15 +118,15 @@ function register(){
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (username, email, user_type, password, security_answer) 
+			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer) 
 					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer')";
 			pg_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
-			header('location: home.php');
+			header('location: https://cs490summerproject.herokuapp.com/admin/home.php');
 		}
 		else
 		{
-			$query = "INSERT INTO users (username, email, user_type, password, security_answer) 
+			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer) 
 					  VALUES('$username', '$email', 'user', '$password', '$security_answer')";
 			pg_query($db, $query);
 
@@ -137,7 +137,7 @@ function register(){
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
 			$_SESSION['success']  = "You are now logged in";
-			header('location: index.php');				
+			header('location: https://cs490summerproject.herokuapp.com/index.php');				
 		}
 	}
 }
