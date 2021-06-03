@@ -16,6 +16,11 @@ if (isset($_POST['register_btn'])) {
 	register();
 }
 
+// call the login() function if register_btn is clicked
+if (isset($_POST['login_btn'])) {
+	login();
+}
+
 //check for admin status
 function isAdmin()
 {
@@ -24,11 +29,6 @@ function isAdmin()
 	}else{
 		return false;
 	}
-}
-
-// call the login() function if register_btn is clicked
-if (isset($_POST['login_btn'])) {
-	login();
 }
 
 // LOGIN USER
@@ -61,12 +61,14 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: admin/home.php');		  
+				header('location: https://cs490summerproject.herokuapp.com/admin/home.php');
+				exit();		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 
-				header('location: index.php');
+				header('location: https://cs490summerproject.herokuapp.com/index.php');
+				exit();
 			}
 		}else {
 			array_push($errors, "Wrong username/password combination");
@@ -78,7 +80,8 @@ function login(){
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: login.php");
+	header("location: https://cs490summerproject.herokuapp.com/login.php");
+	exit();
 }
 
 // REGISTER USER
@@ -123,6 +126,7 @@ function register(){
 			pg_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: https://cs490summerproject.herokuapp.com/admin/home.php');
+			exit();
 		}
 		else
 		{
@@ -137,7 +141,8 @@ function register(){
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
 			$_SESSION['success']  = "You are now logged in";
-			header('location: https://cs490summerproject.herokuapp.com/index.php');				
+			header('location: https://cs490summerproject.herokuapp.com/index.php');
+			exit();				
 		}
 	}
 }
@@ -186,3 +191,5 @@ function isLoggedIn()
 		return false;
 	}
 }
+
+    
