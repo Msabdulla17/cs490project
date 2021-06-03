@@ -3,7 +3,7 @@ session_start();
 
 // connect to postgres database
  
-$db_connection = pg_connect("host=ec2-54-243-92-68.compute-1.amazonaws.com port=5432 dbname=d8i329a03j0ph0 user=tbwbofuazviofs password=c999a7124ec04e6a568e95ca2fac9c2fe6fc9fdb3f6215530f7783be42fa7a6f");
+$db = pg_connect("host=ec2-54-243-92-68.compute-1.amazonaws.com port=5432 dbname=d8i329a03j0ph0 user=tbwbofuazviofs password=c999a7124ec04e6a568e95ca2fac9c2fe6fc9fdb3f6215530f7783be42fa7a6f");
 
 // variable declaration
 $username = "";
@@ -192,5 +192,3 @@ function isLoggedIn()
 	}
 }
 
-    
-    
