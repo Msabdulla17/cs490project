@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<?php include('functions.php') ?>
 <div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Title for website</div>
