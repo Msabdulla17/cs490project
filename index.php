@@ -1,11 +1,4 @@
-!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<?php 
+<?php 
 	include('functions.php');
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
@@ -13,15 +6,19 @@
 		exit();
 	}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 	<div class="header">
 		<h2>Home Page</h2>
 	</div>
 	<div class="content">
 		<!-- notification message -->
-		<p>Welcome <?php echo $_SESSION['email']; ?>!</p>
-		<p>This is the redirected page</p>
-		<a href="logout.php">Logout</a>
-		/*<?php if (isset($_SESSION['success'])) : ?>
+		<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>
 					<?php 
@@ -47,7 +44,7 @@
 
 				<?php endif ?>
 			</div>
-		</div>*/
+		</div>
 	</div>
 </body>
 </html>
