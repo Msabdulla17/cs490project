@@ -7,6 +7,7 @@ include('functions.php');
 <title>
 	Sign Up
 </title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
