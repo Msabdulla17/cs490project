@@ -1,4 +1,4 @@
-<?php include('cs490project/functions.php') ?>
+<?php include('functions.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
