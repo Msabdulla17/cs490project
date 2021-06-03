@@ -20,7 +20,7 @@ include('functions.php');
 <div class="header">
 	<h2>Sign Up</h2>
 </div>
-<form method="post" action="/register.php" >
+<form method="post" action="register.php" >
 	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="">
