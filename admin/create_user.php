@@ -1,4 +1,3 @@
-<?php include('functions.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +13,7 @@
 	</style>
 </head>
 <body>
+	<?php include('functions.php') ?>
 	<canvas id="canvas1"></canvas>
 	<script src="script.js"></script>
 	<div class="header">
