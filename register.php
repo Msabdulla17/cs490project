@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<?php 
+include('functions.php'); 
+?>
 <html>
 <head>
 <title>
 	Sign Up
 </title>
-	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<?php include('functions.php') ?>
 <div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Title for website</div>
