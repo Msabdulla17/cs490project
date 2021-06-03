@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php 
-include('functions.php') 
+include('functions.php'); 
+if(isset($_POST['submit']) &&! empty($_POST['submit']))
+{
+    
+	$sql = "insert into public.user_list(username,email,password,mobno)values('".$_POST['name']."','".$_POST['email']."','".md5($_POST['pwd'])."','".$_POST['mobno']."')";
+}
 ?>
 <html>
 <head>
@@ -38,9 +43,9 @@ include('functions.php')
 		<input type="password" name="password_2">
 	</div>
 	<div class="input-group">
-		<label for="cars">Choose a security question:</label>
+		<label>Choose a security question:</label>
 		<select name="security_questions" id="security_questions">
-  			<option value="elementary_school">What school did you attend for third grade?</option>
+  			<option value="elementary_school">What school did you attend for third_grade?</option>
   			<option value="high_school">What school did you attend for ninth grade?</option>
   			<option value="middle_name">What is your oldest sibling's middle name?</option>
   			<option value="street">What street did you live on in third grade?</option>
@@ -51,12 +56,11 @@ include('functions.php')
 		<input type="password" name="security_answer">
 	</div>
 	<div class="input-group">
-		<button type="submit" class="btn" name="register_btn">Sign Up</button>
+		<button type="submit" class="btn" name="register_btn">Register</button>
 	</div>
 	<p>
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
-<br><br><br><br><br>
 </body>
 </html>
