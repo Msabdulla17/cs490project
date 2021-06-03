@@ -1,10 +1,10 @@
 <?php 
 	include('functions.php');
-	if (!isLoggedIn()) {
+	/*if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: /login.php');
 		exit();
-	}
+	}*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,10 @@
 	</div>
 	<div class="content">
 		<!-- notification message -->
-		<?php if (isset($_SESSION['success'])) : ?>
+		<p>Welcome <?php echo $_SESSION['email']; ?>!</p>
+		<p>This is the redirected page</p>
+		<a href="logout.php">Logout</a>
+		/*<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>
 					<?php 
@@ -44,7 +47,7 @@
 
 				<?php endif ?>
 			</div>
-		</div>
+		</div>*/
 	</div>
 </body>
 </html>
