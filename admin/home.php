@@ -1,12 +1,12 @@
 <?php 
-include('../functions.php');
+include('functions.php');
 
 
 if (isset($_GET['logout'])) 
 {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: https://cs490summerproject.herokuapp.com/login.php");
+	header("location: /login.php");
 }
 ?>
 <!DOCTYPE html>
