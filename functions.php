@@ -150,7 +150,7 @@ function register(){
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
 			$_SESSION['success']  = "You are now logged in";
-			header('location: /index.php');
+			header('location: /index.html');
 			exit();				
 		}
 	}
