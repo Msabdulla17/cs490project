@@ -1,10 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION["user"])){
-header("Location: login.php");
-exit(); }
-?>
-/*<?php 
+<?php 
 session_start();
 
 //Get Heroku ClearDB connection information
@@ -206,6 +200,3 @@ function isLoggedIn()
 		return false;
 	}
 }
-
-    
-*/
