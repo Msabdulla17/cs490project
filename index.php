@@ -98,7 +98,7 @@
 
 				<!--feed area w/ recent posts-->
 				<div id="post_bar">
-					<div style= "font-weight: bold; color: #b1424d; float:left;">Posts</div>
+					<div style= "color: #b1424d; float:left;">Posts</div>
 					<br>
 					<!--first post-->
 					<div id="post">
