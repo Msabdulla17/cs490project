@@ -58,7 +58,7 @@
 		<div style="display: flex;">
 				
 			<!--friends--> 
-			<div style= "min-height: 400px; flex:1">
+			<div style= "background-color: white; min-height: 400px; flex:1.5">
 				<div id="friends_bar">
 					Friends
 					<br>
