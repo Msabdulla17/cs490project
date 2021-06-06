@@ -76,11 +76,11 @@ textarea{
 	min-height: 400px;
 	margin-top: 20px;
 	color: #b1424d;
-	text-align: center;
 	padding: 8px;
 }
 
 #menu_buttons{
+	color: #b1424d;
 	width: 100px;
 	display: inline-block;
 	margin: 2px;

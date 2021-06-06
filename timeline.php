@@ -26,7 +26,7 @@
 		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
-			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
+			<div style= "color:#b1424d; min-height: 400px; flex: 1;">
 				<div id="timeline_bar">
                     <img src="images/user_profile.png" id="profile_picture_timeline">
                     <br>
