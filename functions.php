@@ -116,20 +116,29 @@ function register(){
 	$security_answer = e($_POST['security_answer']);
 
 	// form validation: ensure that the form is correctly filled
-	if (empty($username)) { 
+	if (empty($username)) 
+	{ 
 		array_push($errors, "Username is required"); 
 	}
-	if (empty($email)) { 
+	if (empty($email)) 
+	{ 
 		array_push($errors, "Email is required"); 
 	}
-	if (empty($password_1)) { 
+	if (empty($password_1)) 
+	{ 
 		array_push($errors, "Password is required"); 
 	}
-	if (empty($security_answer)) { 
+	if (empty($security_answer)) 
+	{ 
 		array_push($errors, "Please provide a security answer"); 
 	}
-	if ($password_1 != $password_2) {
+	if ($password_1 != $password_2) 
+	{
 		array_push($errors, "The two passwords do not match");
+	}
+	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email))
+	{
+		array_push($errors, "Invalid Email");
 	}
 
 	// register user if there are no errors in the form
