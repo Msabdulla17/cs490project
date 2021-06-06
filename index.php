@@ -58,8 +58,8 @@
 		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
-			<div style= "text-align: center;background-color: white; min-height: 400px; flex: 1;">
-				<div id="friends_bar>
+			<div style= "background-color: white; min-height: 400px; flex: 1;">
+				<div id="friends_bar">
 					Friends
 					<br>
 					<div id="friends">
