@@ -47,7 +47,18 @@
 				</small>
 				<?php endif ?>
 			<br>
-			Feed About Friends Photos Settings
+			<div>
+				About
+			</div>
+			<div>
+				Friends
+			</div>
+			<div>
+				Photos	
+			</div>
+			<div>
+				Settings
+			</div> 
 		</div>
 	</div>
 		
