@@ -59,9 +59,8 @@
 
 		<!-- feed below cover photo and profile picture -->
 		<div style="display: flex; flex-direction:row; flex-basis:auto;">
-			
 			<!--friends--> 
-			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1">
+			<div style= "text-align: center;background-color: white; min-height: 400px; flex: 1;">
 				<div id="friends_bar>
 					Friends
 					<br>
@@ -92,19 +91,17 @@
 			</div>
 			
 			<!--make a post--> 
-			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2">
+			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2;">
 				<div style= "width: 100%; border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
 					<br>
 				</div>
 			</div>
-		</div>
-		
-		<!-- Feed with recent posts in it -->
+			<!-- Feed with recent posts in it -->
 			<!--feed area-->
-			<div id="post_bar" style="font-weight: bold; color: #b1424d;">
-				Posts
+			<div id="post_bar">
+				<div style= "font-weight: bold; color: #b1424d; float:left;">Posts</div>
 				<!--first post-->
 				<div id="posts">
 					<div>
@@ -139,14 +136,14 @@
 					</div>
 				</div>
 			</div>
-	</div>
-		
-		<div style="text-align: center;">
-			<?php  if (isset($_SESSION['user'])) : ?>
-				<small>
-					<a href="index.php?logout='1'" style="color: red;">Log Out</a>
-				</small>
-			<?php endif ?>
 		</div>
+	</div>
+	<div style="text-align: center;">
+		<?php  if (isset($_SESSION['user'])) : ?>
+			<small>
+				<a href="index.php?logout='1'" style="color: red;">Log Out</a>
+			</small>
+		<?php endif ?>
+	</div>
 </body>
 </html>
