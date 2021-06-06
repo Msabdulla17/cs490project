@@ -87,7 +87,7 @@
 				</div>
 			</div>
 			<!--posts--> 
-			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px;">
+			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px; flex:2.5">
 				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
