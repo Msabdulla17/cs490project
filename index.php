@@ -58,7 +58,7 @@
 		</div>
 
 		<!-- feed below cover photo and profile picture -->
-		<div style="display: flex;">
+		<div style="display: flex; flex-direction:row; flex-basis:auto;">
 			
 			<!--friends--> 
 			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1">
@@ -95,26 +95,23 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2">
 				<div style= "width: 100%; border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
-					<br>
 					<input id="post_button" type="submit" name="post_button" value="Post">
+					<br>
 				</div>
 			</div>
 		</div>
 		
 		<!-- Feed with recent posts in it -->
-		<div style="display: flex;">
-			
 			<!--feed area-->
-			<div id="post_bar">
+			<div id="post_bar" style="font-weight: bold; color: #b1424d;">
 				Posts
-				
 				<!--first post-->
 				<div id="posts">
 					<div>
 						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px; float:left;">
 					</div>
 					<div>
-						<div style="font-weight: bold; color: #b1424d">User One</div>
+						<div style="font-weight: bold; color: #b1424d; float:left;">User One</div>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
 						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
 						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
@@ -128,10 +125,10 @@
 				<!--second post-->
 				<div id="posts">
 					<div>
-						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px; float: left;">
 					</div>
 					<div>
-						<div style="font-weight: bold; color: #b1424d">User Two</div>
+						<div style="font-weight: bold; color: #b1424d; float: left;">User Two</div>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
 						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
 						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
@@ -142,10 +139,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 		
-		<div>
+		<div style="text-align: center;">
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<small>
 					<a href="index.php?logout='1'" style="color: red;">Log Out</a>
