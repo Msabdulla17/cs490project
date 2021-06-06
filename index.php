@@ -39,9 +39,9 @@
 			<img class="profile_picture" src="images/user_profile.png">
 			<br>
 			<?php  if (isset($_SESSION['user'])) : ?>
-				<strong>
+				<div style="font-size: 20px;">
 					<?php echo $_SESSION['user']['username']; ?>
-				</strong>
+				</div>
 				<small>
 					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
 				</small>
@@ -52,6 +52,11 @@
 			<div id="menu_buttons">Photos</div>
 			<div id="menu_buttons">Settings</div> 
 		</div>
+		
+		<div style="display: flex;">
+			<div style= "min-height: 400px; flex:1"></div>
+			<div style= "min-height: 400px; flex:2.5;"></div>
+			</div>
 	</div>
 		
 			<div>
