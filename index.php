@@ -13,12 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="header">
-		<h2>Home Page</h2>
-	</div>
-	<div class="content">
-		<!-- notification message -->
-		<?php if (isset($_SESSION['success'])) : ?>
+<!-- notification message -->
+	<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>
 					<?php 
@@ -27,24 +23,40 @@
 					?>
 				</h3>
 			</div>
-		<?php endif ?>
-		<!-- logged in user information -->
-		<div class="profile_info">
-			<img src="images/user_profile.png"  >
-
-			<div>
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
-						<br>
-						<a href="index.php?logout='1'" style="color: red;">logout</a>
-					</small>
-
+	<?php endif ?>	
+	
+	<div id="top_bar">
+		<div style="width: 800px;margin:auto;font-size: 30px;">
+			Artstagram &nbsp &nbsp
+			<input type="text" id="search_box" placeholder="Search">
+			<img src="images/user_profile.png" style="width: 40px; float: right;">
+ 		</div>
+	</div>
+	
+	<div style="width: 800px; margin: auto; background-color: black; min-height: 400px;">
+		<div style="background-color: white; text-align: center; color: #b1424d">
+			<img src="images/cover_photo.png" style="width:100%;">
+			<img id="profile_picture" src="images/user_profile.png">
+			<br>
+			<?php  if (isset($_SESSION['user'])) : ?>
+				<strong>
+					<?php echo $_SESSION['user']['username']; ?>
+				</strong>
+				<small>
+					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+				</small>
 				<?php endif ?>
-			</div>
+			<br>
+			Feed About Friends Photos Settings
 		</div>
 	</div>
+		
+			<div>
+				<?php  if (isset($_SESSION['user'])) : ?>
+					<small>
+						<a href="index.php?logout='1'" style="color: red;">Log Out</a>
+					</small>
+				<?php endif ?>
+			</div>
 </body>
 </html>

@@ -16,6 +16,31 @@ body {
 	background: radical-gradient(#fc2629, #fc7984);
 }*/
 
+#profile_picture{
+	width:150px;
+	margin-top: -200px;
+	border-radius: 50%;
+	border: solid;
+}
+
+#search_box{
+	width: 400px;
+	height: 20px;
+	border-radius: 5px;
+	border: none;
+	padding:4px;
+	font-size: 14px;
+	background-image: url(images/search.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+#top_bar{
+	height: 50px;
+	background-color: #b1424d;
+	color: white;
+}
+
 #logo {
 	height:120px;
 	text-align: center;

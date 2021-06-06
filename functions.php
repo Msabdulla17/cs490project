@@ -1,5 +1,5 @@
 <?php 
-require('../vendor/autoload.php');
+require('vendor/autoload.php');
 session_start();
 
 //Get Heroku ClearDB connection information
@@ -61,7 +61,7 @@ function login(){
 	if (count($errors) == 0) {
 		$password = md5($password);
 
-		$query = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
+		$query = "SELECT * FROM user_list WHERE username='$username' AND password='$password' LIMIT 1";
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
@@ -161,7 +161,7 @@ function register(){
 function getUserById($id)
 {
 	global $db;
-	$query = "SELECT * FROM users WHERE id=" . $id;
+	$query = "SELECT * FROM user_list WHERE id=" . $id;
 	$result = mysqli_query($db, $query);
 
 	$user = mysqli_fetch_assoc($result);

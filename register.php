@@ -40,10 +40,11 @@ include('functions.php');
 	<div class="input-group">
 		<label>Choose a security question:</label>
 		<select name="security_questions" id="security_questions">
-  			<option value="elementary_school">What school did you attend for third grade?</option>
+			<option value="maiden_name">What is your mother's maiden name?</option>
+			<option value="elementary_school">What school did you attend for third grade?</option>
   			<option value="high_school">What school did you attend for ninth grade?</option>
   			<option value="middle_name">What is your oldest sibling's middle name?</option>
-  			<option value="street">What street did you live on in third grade?</option>
+  			<option value="street">What street did you live on in 2019?</option>
 		</select>
 	</div>
 	<div class="input-group">
