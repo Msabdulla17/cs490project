@@ -33,8 +33,10 @@
 			<img src="images/user_profile.png" style="width: 40px; float: right;">
  		</div>
 	</div>
-	<!-- Cover photo and profile picture -->
+	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
+		
+		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d">
 			<img src="images/cover_photo.png" style="width:100%;">
 			<img id="profile_picture" src="images/user_profile.png">
@@ -54,10 +56,12 @@
 			<div id="menu_buttons">Photos</div>
 			<div id="menu_buttons">Settings</div> 
 		</div>
-	<!-- feed below cover photo and profile picture -->
+
+		<!-- feed below cover photo and profile picture -->
 		<div style="display: flex;">
+			
 			<!--friends--> 
-			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1.5">
+			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1">
 				<div id="friends_bar>
 					Friends
 					<br>
@@ -86,20 +90,28 @@
 					</div>
 				</div>
 			</div>
-			<!--posts--> 
-			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px; flex:2.5">
-				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
+			
+			<!--make a post--> 
+			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2">
+				<div style= "width: 100%; border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
-					<input id="post_button" type="submit" name="post_button" value="Post">
 					<br>
+					<input id="post_button" type="submit" name="post_button" value="Post">
 				</div>
 			</div>
+		</div>
+		
+		<!-- Feed with recent posts in it -->
+		<div style="display: flex;">
+			
 			<!--feed area-->
 			<div id="post_bar">
+				Posts
+				
 				<!--first post-->
 				<div id="posts">
 					<div>
-						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px; float:left;">
 					</div>
 					<div>
 						<div style="font-weight: bold; color: #b1424d">User One</div>
@@ -112,6 +124,7 @@
 						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
 					</div>
 				</div>
+				
 				<!--second post-->
 				<div id="posts">
 					<div>

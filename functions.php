@@ -31,6 +31,14 @@ if (isset($_POST['login_btn'])) {
 	login();
 }
 
+function displayUser()
+{
+	if (isset($_SESSION['user'])) :
+
+		return $_SESSION['user']['username'] && $_SESSION['user']['user_type'];
+	endif;
+}
+
 //check for admin status
 function isAdmin()
 {
