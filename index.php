@@ -36,7 +36,7 @@
 	<div style="width: 800px; margin: auto; background-color: black; min-height: 400px;">
 		<div style="background-color: white; text-align: center; color: #b1424d">
 			<img src="images/cover_photo.png" style="width:100%;">
-			<img id="profile_picture" src="images/user_profile.png">
+			<img class="profile_picture" src="images/user_profile.png">
 			<br>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<strong>
@@ -46,19 +46,11 @@
 					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
 				</small>
 				<?php endif ?>
-			<br>
-			<div>
-				About
-			</div>
-			<div>
-				Friends
-			</div>
-			<div>
-				Photos	
-			</div>
-			<div>
-				Settings
-			</div> 
+			<br><br>
+			<div class="menu_buttons">About</div>
+			<div class="menu_buttons">Friends</div>
+			<div class="menu_buttons">Photos</div>
+			<div class="menu_buttons">Settings</div> 
 		</div>
 	</div>
 		
