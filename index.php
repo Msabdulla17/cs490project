@@ -55,11 +55,11 @@
 			<div id="menu_buttons"><a href="">Photos</a></div>
 			<div id="menu_buttons"><a href="">Settings</a></div> 
 		</div>
-		<br><br>
+		<br>
 		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
-			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
+			<div style= "color:#b1424d; min-height: 400px; flex: 1;">
 				<div id="friends_bar">
 					Friends
 					<br>
