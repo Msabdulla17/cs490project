@@ -35,7 +35,6 @@
 	</div>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
-		
 		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d">
 			<img src="images/cover_photo.png" style="width:100%;">
@@ -56,7 +55,7 @@
 			<div id="menu_buttons">Photos</div>
 			<div id="menu_buttons">Settings</div> 
 		</div>
-
+		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
 			<div style= "text-align: center;background-color: white; min-height: 400px; flex: 1;">
@@ -88,54 +87,56 @@
 					</div>
 				</div>
 			</div>
-			
-			<!--make a post--> 
+			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2;">
+				
+				<!--make a post--> 
 				<div style= "width: 100%; border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
 					<br>
 				</div>
-			</div>
-			<!-- Feed with recent posts in it -->
-			<!--feed area-->
-			<div id="post_bar">
-				<div style= "font-weight: bold; color: #b1424d; float:left;">Posts</div>
-				<br><br>
-				<!--first post-->
-				<div id="posts">
-					<div style="float:left; margin-right: 4px;">
-						<img src="images/user_profile.png" style="width: 75px;">
-						<div style="font-weight: bold; color: #b1424d;">User One</div>
+
+				<!--feed area-->
+				<div id="post_bar">
+					<div style= "font-weight: bold; color: #b1424d; float:left;">Posts</div>
+					<br>
+					<!--first post-->
+					<div id="post">
+						<div>
+							<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+						</div>
+						<div>
+							<div style="font-weight: bold; color: #b1424d;">User One</div>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
+							pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
+							nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
+							Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
+							leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
+							<br>
+							<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+						</div>
 					</div>
-					<div>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
-						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
-						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
-						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
-						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
-						<br>
-						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+					<br><br>
+					<!--second post-->
+					<div id="post">
+						<div>
+							<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+						</div>
+						<div>
+							<div style="font-weight: bold; color: #b1424d;">User Two</div>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
+							pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
+							nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
+							Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
+							leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
+							<br>
+							<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+						</div>
 					</div>
 				</div>
-				<br><br>
-				<!--second post-->
-				<div id="posts">
-					<div style="float:left; margin-right: 4px;">
-						<img src="images/user_profile.png" style="width: 75px;">
-						<div style="font-weight: bold; color: #b1424d;">User Two</div>
-					</div>
-					<div>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
-						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
-						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
-						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
-						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
-						<br>
-						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
-					</div>
-				</div>
 			</div>
+		</div>
 	</div>
 	<div style="text-align: center;">
 		<?php  if (isset($_SESSION['user'])) : ?>
