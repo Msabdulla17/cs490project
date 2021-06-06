@@ -102,36 +102,37 @@
 			<!--feed area-->
 			<div id="post_bar">
 				<div style= "font-weight: bold; color: #b1424d; float:left;">Posts</div>
+				<br><br>
 				<!--first post-->
 				<div id="posts">
-					<div>
-						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px; float:left;">
+					<div style="float:left; margin-right: 4px;">
+						<img src="images/user_profile.png" style="width: 75px;">
+						<div style="font-weight: bold; color: #b1424d;">User One</div>
 					</div>
 					<div>
-						<div style="font-weight: bold; color: #b1424d; float:left;">User One</div>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
 						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
 						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
 						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
 						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
-						<br/><br/>
+						<br>
 						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
 					</div>
 				</div>
-				
+				<br><br>
 				<!--second post-->
 				<div id="posts">
-					<div>
-						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px; float: left;">
+					<div style="float:left; margin-right: 4px;">
+						<img src="images/user_profile.png" style="width: 75px;">
+						<div style="font-weight: bold; color: #b1424d;">User Two</div>
 					</div>
 					<div>
-						<div style="font-weight: bold; color: #b1424d; float: left;">User Two</div>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
 						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
 						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
 						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
 						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
-						<br/><br/>
+						<br>
 						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
 					</div>
 				</div>
