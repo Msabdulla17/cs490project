@@ -55,6 +55,7 @@ textarea{
 	margin-top: 20px;
 	color: #aaa;
 	padding: 8px;
+	float: left;
 }
 
 #menu_buttons{
@@ -64,7 +65,7 @@ textarea{
 }
 
 #profile_picture{
-	width: 50px;
+	width: 150px;
 	margin-top: -200px;
 	border-radius: 50%;
 	border: solid;

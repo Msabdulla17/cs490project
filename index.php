@@ -34,7 +34,7 @@
  		</div>
 	</div>
 	<!-- Cover photo and profile picture -->
-	<div style="width: 800px; margin: auto; background-color: black; min-height: 400px;">
+	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<div style="background-color: white; text-align: center; color: #b1424d">
 			<img src="images/cover_photo.png" style="width:100%;">
 			<img id="profile_picture" src="images/user_profile.png">
@@ -47,7 +47,7 @@
 					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
 				</small>
 				<?php endif ?>
-			<br><br>
+			<br>
 			<div id="menu_buttons">Feed</div>
 			<div id="menu_buttons">About</div>
 			<div id="menu_buttons">Friends</div>
