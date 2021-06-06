@@ -56,10 +56,9 @@
 		</div>
 	<!-- feed below cover photo and profile picture -->
 		<div style="display: flex;">
-				
 			<!--friends--> 
 			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1.5">
-				<div id="friends_bar; flex:1.5">
+				<div id="friends_bar>
 					Friends
 					<br>
 					<div id="friends">
@@ -88,7 +87,7 @@
 				</div>
 			</div>
 			<!--posts--> 
-			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px; background-color: white;">
+			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px;">
 				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
