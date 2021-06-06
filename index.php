@@ -58,7 +58,7 @@
 		<div style="display: flex;">
 				
 			<!--friends--> 
-			<div style= "min-height: 400px; flex:1"></div>
+			<div style= "min-height: 400px; flex:1">
 				<div id="friends_bar">
 					Friends
 					<br>
@@ -86,7 +86,7 @@
 						Fourth User
 					</div>
 				</div>
-
+			</div>
 			<!--posts--> 
 			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px;">
 				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
