@@ -58,8 +58,8 @@
 		<div style="display: flex;">
 				
 			<!--friends--> 
-			<div style= "background-color: white; min-height: 400px; flex:1.5">
-				<div id="friends_bar">
+			<div style= "text-align: center;background-color: white; min-height: 400px; flex:1.5">
+				<div id="friends_bar; flex:1.5">
 					Friends
 					<br>
 					<div id="friends">
@@ -88,11 +88,46 @@
 				</div>
 			</div>
 			<!--posts--> 
-			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px;">
+			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px; background-color: white;">
 				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
 					<br>
+				</div>
+			</div>
+			<!--feed area-->
+			<div id="post_bar">
+				<!--first post-->
+				<div id="posts">
+					<div>
+						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+					</div>
+					<div>
+						<div style="font-weight: bold; color: #b1424d">User One</div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
+						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
+						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
+						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
+						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
+						<br/><br/>
+						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+					</div>
+				</div>
+				<!--second post-->
+				<div id="posts">
+					<div>
+						<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+					</div>
+					<div>
+						<div style="font-weight: bold; color: #b1424d">User Two</div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet leo sollicitudin, 
+						pretium libero eget, tincidunt tellus. Nam nec elit ipsum. Suspendisse malesuada cursus 
+						nulla non rhoncus. Aliquam eget porttitor nunc, a facilisis odio. Nullam in libero tellus.
+						Sed justo diam, vestibulum non lacinia sed, eleifend in diam. In finibus, diam eu congue dapibus, 
+						leo dui lacinia purus, non feugiat augue massa at purus. Vestibulum non ornare diam.
+						<br/><br/>
+						<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+					</div>
 				</div>
 			</div>
 		</div>
