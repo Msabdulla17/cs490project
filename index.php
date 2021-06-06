@@ -63,11 +63,38 @@
 					Friends
 					<br>
 					<div id="friends">
+						<img id="friends_img" src="images/user_profile.png">
+						<br>
+						First User
+					</div>
 
+					<div id="friends">
+						<img id="friends_img" src="images/user_profile.png">
+						<br>
+						Second User
+					</div>
+
+					<div id="friends">
+						<img id="friends_img" src="images/user_profile.png">
+						<br>
+						Third User
+					</div>
+
+					<div id="friends">
+						<img id="friends_img" src="images/user_profile.png">
+						<br>
+						Fourth User
 					</div>
 				</div>
+
 			<!--posts--> 
-			<div style= "min-height: 400px; flex:2.5;"></div>
+			<div style= "min-height: 400px; flex:2.5; padding: 20px; padding-right: 0px;">
+				<div style= "border:solid thin #aaa; padding: 10px; background-color: white;">
+					<textarea placeholder="Make a post here."></textarea>
+					<input id="post_button" type="submit" name="post_button" value="Post">
+					<br>
+				</div>
+			</div>
 		</div>
 	</div>
 		

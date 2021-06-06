@@ -16,6 +16,47 @@ body {
 	background: radical-gradient(#fc2629, #fc7984);
 }*/
 
+#post_button{
+	float:right;
+	background-color: #b1424d;
+	border:none;
+	color: white;
+	padding: 4px;
+	font-size: 14px;
+	border-radius: 2px;
+	width: 50px;
+}
+
+textarea{
+	width: 100%;
+	border:none;
+	font-family: tahoma;
+	font-size: 14px;
+	height: 60px;
+}
+
+#friends{
+	clear:both;
+	font-size: 12px;
+	font-weight: bold;
+	color: #b1424d;
+}
+
+#friends_img{
+	width: 75px;
+	float: left;
+	margin: 8px;
+}
+
+#friends_bar
+{
+	background-color: white;
+	min-height: 400px;
+	margin-top: 20px;
+	color: #aaa;
+	padding: 8px;
+}
+
 #menu_buttons{
 	width: 100px;
 	margin: 2px;
@@ -122,20 +163,4 @@ form, .content{
 	background-color: #dff0d8; 
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
-}
-.profile_info img {
-	display: inline-block; 
-	width: 50px; 
-	height: 50px; 
-	margin: 5px;
-	float: left;
-}
-.profile_info div {
-	display: inline-block; 
-	margin: 5px;
-}
-.profile_info:after {
-	content: "";
-	display: block;
-	clear: both;
 }
