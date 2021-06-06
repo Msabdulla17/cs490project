@@ -10,7 +10,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- notification message -->
@@ -47,10 +47,10 @@
 				</small>
 				<?php endif ?>
 			<br><br>
-			<div class="menu_buttons">About</div>
-			<div class="menu_buttons">Friends</div>
-			<div class="menu_buttons">Photos</div>
-			<div class="menu_buttons">Settings</div> 
+			<div id="menu_buttons">About</div>
+			<div id="menu_buttons">Friends</div>
+			<div id="menu_buttons">Photos</div>
+			<div id="menu_buttons">Settings</div> 
 		</div>
 	</div>
 		
