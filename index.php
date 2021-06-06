@@ -55,6 +55,7 @@
 			<div id="menu_buttons"><a href="">Photos</a></div>
 			<div id="menu_buttons"><a href="">Settings</a></div> 
 		</div>
+		<br><br>
 		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
