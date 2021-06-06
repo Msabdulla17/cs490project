@@ -58,7 +58,6 @@
 		</div>
 
 		<!-- feed below cover photo and profile picture -->
-		<div style="display: flex; flex-direction:row; flex-basis:auto;">
 			<!--friends--> 
 			<div style= "text-align: center;background-color: white; min-height: 400px; flex: 1;">
 				<div id="friends_bar>
@@ -137,7 +136,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 	<div style="text-align: center;">
 		<?php  if (isset($_SESSION['user'])) : ?>
