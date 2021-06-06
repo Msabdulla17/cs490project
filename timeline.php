@@ -9,22 +9,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Timeline</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-	<!-- notification message -->
-	<?php if (isset($_SESSION['success'])) : ?>
-			<div class="error success" >
-				<h3>
-					<?php 
-						echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				</h3>
-			</div>
-	<?php endif ?>
-
 	<!-- top bar -->
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
@@ -35,56 +23,22 @@
 	</div>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
-		<!-- Cover photo and profile picture -->
-		<div style="background-color: white; text-align: center; color: #b1424d">
-			<img src="images/cover_photo.png" style="width:100%;">
-			<img id="profile_picture" src="images/user_profile.png">
-			<br>
-			<?php  if (isset($_SESSION['user'])) : ?>
-				<div style="font-size: 20px;">
-					<?php echo $_SESSION['user']['username']; ?>
-				</div>
-				<small>
-					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-				</small>
-				<?php endif ?>
-			<br>
-			<div id="menu_buttons"><a href="/timeline.php">Feed</a></div>
-			<div id="menu_buttons"><a href="">About</a></div>
-			<div id="menu_buttons"><a href="">Friends</a></div>
-			<div id="menu_buttons"><a href="">Photos</a></div>
-			<div id="menu_buttons"><a href="">Settings</a></div> 
-		</div>
 		<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
 			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
-				<div id="friends_bar">
-					Friends
-					<br>
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						First User
-					</div>
-
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Second User
-					</div>
-
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Third User
-					</div>
-
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Fourth User
-					</div>
+				<div id="timeline_bar">
+                    <img src="images/user_profile.png" id="profile_picture_timeline">
+                    <br>
+                    <?php  if (isset($_SESSION['user'])) : ?>
+				        <div style="font-size: 20px;">
+					    <?php echo $_SESSION['user']['username']; ?>
+				        </div>
+				        <small>
+					        <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+				        </small>
+				    <?php endif ?>
+                    <br>
 				</div>
 			</div>
 			<!--make a post and recent posts--> 

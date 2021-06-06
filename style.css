@@ -61,12 +61,22 @@ textarea{
 	margin: 8px;
 }
 
+#timeline_bar
+{
+	min-height: 400px;
+	margin-top: 20px;
+	color: #b1424d;
+	text-align: center;
+	padding: 8px;
+}
+
 #friends_bar
 {
 	background-color: white;
 	min-height: 400px;
 	margin-top: 20px;
-	color: #aaa;
+	color: #b1424d;
+	text-align: center;
 	padding: 8px;
 }
 
@@ -78,7 +88,13 @@ textarea{
 
 #profile_picture{
 	width: 200px;
-	margin-top: -200px;
+	margin-top: -300px;
+	border-radius: 50%;
+	border: solid;
+}
+
+#profile_picture_timeline{
+	width: 200px;
 	border-radius: 50%;
 	border: solid;
 }
