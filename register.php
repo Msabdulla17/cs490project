@@ -7,7 +7,7 @@ include('functions.php');
 <title>
 	Sign Up
 </title>
-	<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="logo">
