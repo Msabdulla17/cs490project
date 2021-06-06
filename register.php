@@ -23,11 +23,11 @@ include('functions.php');
 <form method="post" action="register.php" >
 	<div class="input-group">
 		<label>Email</label>
-		<input type="email" name="email" value="">
+		<input type="email" name="email" value="" placeholder="you@example.com">
 	</div>
 	<div class="input-group">
 		<label>Username</label>
-		<input type="text" name="username" value="">
+		<input type="text" name="username" value="" placeholder="Username">
 	</div>
 	<div class="input-group">
 		<label>Password</label>
@@ -49,7 +49,7 @@ include('functions.php');
 	</div>
 	<div class="input-group">
 		<label>Answer:</label>
-		<input type="text" name="security_answer">
+		<input type="text" name="security_answer" placeholder="Answer">
 	</div>
 	<div class="input-group">
 		<button type="submit" class="btn" name="register_btn">Sign Up</button>
