@@ -90,7 +90,7 @@
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
-				<div style= "width: 100%; height: 100px; border:solid thin #aaa; background-color: white;">
+				<div style= "width: 100%; min-height: 80px; border:solid thin #aaa; background-color: white;">
 					<textarea placeholder="Make a post here."></textarea>
 					<input id="post_button" type="submit" name="post_button" value="Post">
 					<br>
