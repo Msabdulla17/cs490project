@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- notification message -->
+	<!-- notification message -->
 	<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
 				<h3>
@@ -23,8 +23,9 @@
 					?>
 				</h3>
 			</div>
-	<?php endif ?>	
-	
+	<?php endif ?>
+
+	<!-- top bar -->
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
 			Artstagram &nbsp &nbsp
@@ -32,11 +33,11 @@
 			<img src="images/user_profile.png" style="width: 40px; float: right;">
  		</div>
 	</div>
-	
+	<!-- Cover photo and profile picture -->
 	<div style="width: 800px; margin: auto; background-color: black; min-height: 400px;">
 		<div style="background-color: white; text-align: center; color: #b1424d">
 			<img src="images/cover_photo.png" style="width:100%;">
-			<img class="profile_picture" src="images/user_profile.png">
+			<img id="profile_picture" src="images/user_profile.png">
 			<br>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<div style="font-size: 20px;">
@@ -47,24 +48,35 @@
 				</small>
 				<?php endif ?>
 			<br><br>
+			<div id="menu_buttons">Feed</div>
 			<div id="menu_buttons">About</div>
 			<div id="menu_buttons">Friends</div>
 			<div id="menu_buttons">Photos</div>
 			<div id="menu_buttons">Settings</div> 
 		</div>
-		
+	<!-- feed below cover photo and profile picture -->
 		<div style="display: flex;">
+				
+			<!--friends--> 
 			<div style= "min-height: 400px; flex:1"></div>
+				<div id="friends_bar">
+					Friends
+					<br>
+					<div id="friends">
+
+					</div>
+				</div>
+			<!--posts--> 
 			<div style= "min-height: 400px; flex:2.5;"></div>
-			</div>
+		</div>
 	</div>
 		
-			<div>
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<small>
-						<a href="index.php?logout='1'" style="color: red;">Log Out</a>
-					</small>
-				<?php endif ?>
-			</div>
+		<div>
+			<?php  if (isset($_SESSION['user'])) : ?>
+				<small>
+					<a href="index.php?logout='1'" style="color: red;">Log Out</a>
+				</small>
+			<?php endif ?>
+		</div>
 </body>
 </html>
