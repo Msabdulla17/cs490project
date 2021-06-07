@@ -31,17 +31,6 @@ if (isset($_POST['login_btn'])) {
 	login();
 }
 
-function create_user_id()
-{
-	$length = rand(4,19);
-	$num = "";
-	for ($i=0; $i < $length; $i++)
-	{
-		$new_rand = rand(0,9);
-		$num = $num . $new_rand;
-	}
-}
-
 function displayUser()
 {
 	if (isset($_SESSION['user'])) :
@@ -186,12 +175,11 @@ function register(){
 		//encrypt the password before saving in the database
 		$password = md5($password_1);
 		$url_address = strtolower($first_name) . "." . strtolower($last_name);
-		$logged_in_user_id = create_user_id();
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO public.user_list (id, username, email, user_type, password, security_answer, first_name, last_name, url_address) 
-					  VALUES('$logged_in_user_id', '$username', '$email', '$user_type', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
+			$query = "INSERT INTO public.user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
+					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
@@ -199,10 +187,13 @@ function register(){
 		}
 		else
 		{
-			$query = "INSERT INTO user_list (id, username, email, user_type, password, security_answer, first_name, last_name, url_address) 
-					  VALUES('$logged_in_user_id','$username', '$email', 'user', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
+			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
+					  VALUES('$username', '$email', 'user', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 
+			// get id of the created user
+			$logged_in_user_id = mysqli_insert_id($db);
+			
 			// put logged in user in session
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 
