@@ -35,7 +35,7 @@ if (isset($_POST['login_btn']))
 
 if (isset($_POST['post_btn']))
 {
-	create_post($_SESSION['user']['id'], $_POST);
+	create_post($_SESSION['user']['id']);
 }
 
 function create_random_id()
@@ -51,23 +51,27 @@ function create_random_id()
 	return $number;
 }
 
-function create_post($user_id, $data)
+function create_post($user_id)
 {
 	global $db, $errors;
 
-	if (!empty($data['post']))
-	{
-		$post = addslashes($data['post']);
-		$post_id = create_random_id();
+	$data = e($_POST['post']);
 
-		$query = "INSERT INTO posts (user_id, post_id, post)
-					VALUES ($user_id, $post_id, $post) ";
-		mysqli_query($db, $query);
-	}
-	else
+	if (empty($data))
 	{
 		array_push($errors, "Post cannot be empty.");
 	}
+
+	if (count($errors) == 0)
+	{
+		$post = addslashes($data);
+		$post_id = create_random_id();
+
+		$query = "INSERT INTO 'posts' (user_id, post_id, post)
+					VALUES ($user_id, $post_id, $post) ";
+		mysqli_query($db, $query);
+	}
+
 }
 
 function displayUser()
