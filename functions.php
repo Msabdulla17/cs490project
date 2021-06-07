@@ -131,13 +131,21 @@ function register(){
 	$url_address = e($_POST['url_address']);
 
 	// form validation: ensure that the form is correctly filled
-	if (empty($username)) 
+	if (empty($first_name)) 
 	{ 
-		array_push($errors, "Username is required."); 
+		array_push($errors, "First Name is required."); 
+	}
+	if (empty($last_name)) 
+	{ 
+		array_push($errors, "Last Name is required."); 
 	}
 	if (empty($email)) 
 	{ 
 		array_push($errors, "Email is required."); 
+	}
+	if (empty($username)) 
+	{ 
+		array_push($errors, "Username is required."); 
 	}
 	if (empty($password_1)) 
 	{ 
@@ -154,14 +162,6 @@ function register(){
 	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email))
 	{
 		array_push($errors, "Invalid Email.");
-	}
-	if (empty($first_name)) 
-	{ 
-		array_push($errors, "First Name is required."); 
-	}
-	if (empty($last_name)) 
-	{ 
-		array_push($errors, "Last Name is required."); 
 	}
 	if (is_numeric($last_name) || is_numeric($first_name)) 
 	{ 
