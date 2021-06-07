@@ -12,9 +12,6 @@ $cleardb_db = substr($cleardb_url["path"],1);
 $active_group = 'default';
 $query_builder = TRUE;
 
-//Store session ID
-$session_id = $_SESSION['user'];
-
 // Connect to DB
 $db = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
