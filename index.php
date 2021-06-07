@@ -104,7 +104,7 @@
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
 					<form method ='POST'>
-						<textarea name="post" placeholder="Make a post here."></textarea>
+						<textarea style= "width: 100%;" name="post" placeholder="Make a post here."></textarea>
 						<input id="post_button" type="submit" name="post_btn" value="Post">
 						<br>
 					</form>
