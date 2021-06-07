@@ -31,20 +31,24 @@
 			Artstagram &nbsp &nbsp
 			<input type="text" id="search_box" placeholder="Search">
 			<img src="images/user_profile.png" style="width: 40px; float: right;">
- 		</div>
+			<?php  if (isset($_SESSION['user'])) : ?>
+				<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
+				Log Out
+				</a>		
+			<?php endif ?>
+		</div>
 	</div>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<!-- Cover photo and profile picture -->
-		<div style="background-color: white; text-align: center; color: #b1424d">
+		<div style="background-color: white; text-align: center; color: #b1424d;">
 			<img src="images/cover_photo.png" style="width:100%;">
 			<img id="profile_picture" src="images/user_profile.png">
 			<br>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $_SESSION['user']['first_name']; 
-						echo $_SESSION['user']['last_name']; 
+						echo $_SESSION['user']['first_name'] + " " + $_SESSION['user']['last_name']; 
 					?>
 				</div>
 				<small>
@@ -52,11 +56,11 @@
 				</small>
 				<?php endif ?>
 			<br>
-			<div id="menu_buttons"><a href="/timeline.php">Feed</a></div>
-			<div id="menu_buttons"><a href="">About</a></div>
-			<div id="menu_buttons"><a href="">Friends</a></div>
-			<div id="menu_buttons"><a href="">Photos</a></div>
-			<div id="menu_buttons"><a href="">Settings</a></div> 
+			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
+			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
+			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
+			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
+			<div id="menu_buttons"><a href="" style="color:#b1424d;">Settings</a></div> 
 		</div>
 		<br>
 		<div style="display: flex;">
@@ -140,13 +144,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div style="text-align: center;">
-		<?php  if (isset($_SESSION['user'])) : ?>
-			<small>
-				<a href="index.php?logout='1'" style="color: red;">Log Out</a>
-			</small>
-		<?php endif ?>
 	</div>
 </body>
 </html>
