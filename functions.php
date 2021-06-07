@@ -20,6 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
+$session_id = $_SESSION['user'];
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) {
@@ -63,39 +64,6 @@ function create_post($user_id, $data)
 	}
 }
 
-function get_user_data($id)
-{
-	global $db;
-
-	$check = check_login_by_id($id);
-	if ($check)
-	{
-		$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
-		$result = mysqli_query($db, $query);
-		if ($result)
-		{
-			$user_data = $result;
-			return $user_data;
-		}
-		else
-		{
-			return false;
-		}
-	}
-}
-
-function check_login_by_id($id)
-{
-	global $db;
-
-	$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
-	$result = mysqli_query($db, $query);
-	if ($result)
-	{
-		return true;
-	}
-	return false;
-}
 function displayUser()
 {
 	if (isset($_SESSION['user'])) :
@@ -305,7 +273,7 @@ function display_error()
 
 function isLoggedIn()
 {
-	if ((isset($_SESSION['user'])) && (is_numeric($_SESSION['user'])))
+	if (isset($_SESSION['user']))
 	{
 		return true;
 	}
