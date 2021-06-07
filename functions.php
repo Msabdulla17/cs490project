@@ -23,13 +23,20 @@ $errors   = array();
 $session_id = $_SESSION['user'];
 
 // call the register() function if register_btn is clicked
-if (isset($_POST['register_btn'])) {
+if (isset($_POST['register_btn'])) 
+{
 	register();
 }
 
 // call the login() function if register_btn is clicked
-if (isset($_POST['login_btn'])) {
+if (isset($_POST['login_btn'])) 
+{
 	login();
+}
+
+if (isset($_POST['post_btn']))
+{
+	create_post($session_id, $_POST);
 }
 
 function create_random_id()

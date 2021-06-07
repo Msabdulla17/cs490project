@@ -6,11 +6,6 @@
 		header('location: login.php');
 		exit();
 	}
-
-	if($_SERVER['REQUEST_METHOD'] == ['POST'])
-	{
-		$result = create_post($session_id, $_POST);
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -108,9 +103,9 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<form method ="post">
+					<form method ='POST'>
 						<textarea name="post" placeholder="Make a post here."></textarea>
-						<input id="post_button" type="submit" name="post_button" value="Post">
+						<input id="post_button" type="submit" name="post_btn" value="Post">
 						<br>
 					</form>
 				</div>
