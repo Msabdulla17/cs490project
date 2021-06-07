@@ -20,7 +20,6 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
-$session_id = $_SESSION['user'];
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
@@ -36,7 +35,7 @@ if (isset($_POST['login_btn']))
 
 if (isset($_POST['post_btn']))
 {
-	create_post($session_id, $_POST);
+	create_post($_SESSION['user']['id'], $_POST);
 }
 
 function create_random_id()
@@ -149,7 +148,6 @@ function register(){
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
-	$logged_in_user_id = e($_POST['id']);
 	$username    =  e($_POST['username']);
 	$email       =  e($_POST['email']);
 	$password_1  =  e($_POST['password_1']);
