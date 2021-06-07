@@ -13,7 +13,7 @@ include('functions.php');
 <div id="logo">
 		<br>
 		<div style ="font-size: 35px;">Artstagram</div>
-		<div style ="font-size: 20px;">Subtitle</div>
+		<div style ="font-size: 20px;">A Social Media Website for Artists</div>
 		<br>
 	</div>
 	<br><br>

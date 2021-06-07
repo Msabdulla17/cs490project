@@ -1,12 +1,17 @@
 <?php 
 include('functions.php');
 
-
-if (isset($_GET['logout'])) 
+if (!isLoggedIn())
+ {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');
+	exit();
+}
+if (!isAdmin()) 
 {
-	session_destroy();
-	unset($_SESSION['user']);
-	header("location: login.php");
+	$_SESSION['msg'] = "You must be an admin to see this page.";
+	header('location: index.php');
+	exit();
 }
 ?>
 <!DOCTYPE html>
