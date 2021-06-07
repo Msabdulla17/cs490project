@@ -33,11 +33,6 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-if (isset($_POST['post_btn']))
-{
-	create_post($_SESSION['user']['id']);
-}
-
 function create_random_id()
 {
 	$length = rand(4,19);
@@ -51,16 +46,9 @@ function create_random_id()
 	return $number;
 }
 
-function create_post($user_id)
+function create_post($user_id, $data)	
 {
 	global $db, $errors;
-
-	$data = e($_POST['post']);
-
-	if (empty($data))
-	{
-		array_push($errors, "Post cannot be empty.");
-	}
 
 	if (count($errors) == 0)
 	{
