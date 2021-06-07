@@ -34,7 +34,7 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-if (isset($_POST['post_btn'])) 
+if($_SERVER['REQUEST_METHOD'] == "POST")
 {
 	create_post($user_id);
 }
