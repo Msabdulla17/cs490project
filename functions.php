@@ -203,9 +203,6 @@ function register(){
 					  VALUES('$logged_in_user_id','$username', '$email', 'user', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 
-			// get id of the created user
-			$logged_in_user_id = mysqli_insert_id($db);
-			
 			// put logged in user in session
 			$_SESSION['user'] = getUserById($logged_in_user_id); 
 

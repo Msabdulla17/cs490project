@@ -24,11 +24,11 @@ include('functions.php');
 	<?php echo display_error(); ?>
 	<div class="input-group">
 		<label>First Name</label>
-		<input type="text" name="first_name" value="" placeholder="Last Name">
+		<input type="text" name="first_name" value="" placeholder="First Name">
 	</div>
 	<div class="input-group">
 		<label>Last Name</label>
-		<input type="text" name="last_name" value="" placeholder="First Name">
+		<input type="text" name="last_name" value="" placeholder="Last Name">
 	</div>
 	<div class="input-group">
 		<label>Email</label>
