@@ -48,7 +48,9 @@
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $_SESSION['user']['first_name'] + " " + $_SESSION['user']['last_name']; 
+						echo $_SESSION['user']['first_name'];
+						echo " ";
+						echo $_SESSION['user']['last_name']; 
 					?>
 				</div>
 				<small>
