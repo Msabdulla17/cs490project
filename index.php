@@ -7,20 +7,6 @@
 		header('location: login.php');
 		exit();
 	}
-
-	$id = ($_SESSION['user']['id']);
-	$data = e($_POST['post']);
-
-	if (empty($data))
-	{
-		array_push($errors, "Post cannot be empty.");
-	}
-	
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		create_post($id, $data);
-		exit();
-	}
 ?>
 <!DOCTYPE html>
 <html>

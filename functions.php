@@ -20,6 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
+$user_id = ($_SESSION['user']['id']);
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
@@ -32,6 +33,13 @@ if (isset($_POST['login_btn']))
 {
 	login();
 }
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+	create_post($user_id);
+	exit();
+}
+
 
 function create_random_id()
 {
@@ -46,9 +54,16 @@ function create_random_id()
 	return $number;
 }
 
-function create_post($user_id, $data)	
+function create_post($user_id)	
 {
 	global $db, $errors;
+	
+	$data = e($_POST['post']);
+	
+	if (empty($data))
+	{
+		array_push($errors, "Post cannot be empty.");
+	}
 
 	if (count($errors) == 0)
 	{
