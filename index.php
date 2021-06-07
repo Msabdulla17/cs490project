@@ -42,7 +42,7 @@
 			<br>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<div style="font-size: 20px;">
-					<?php echo $_SESSION['user']['username']; ?>
+					<?php echo $_SESSION['user']['first_name']['last_name']; ?>
 				</div>
 				<small>
 					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>

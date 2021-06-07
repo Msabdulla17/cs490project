@@ -23,6 +23,14 @@ include('functions.php');
 <form method="post" action="register.php" >
 	<?php echo display_error(); ?>
 	<div class="input-group">
+		<label>First Name</label>
+		<input type="text" name="first_name" value="" placeholder="Last Name">
+	</div>
+	<div class="input-group">
+		<label>Last Name</label>
+		<input type="text" name="last_name" value="" placeholder="First Name">
+	</div>
+	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="" placeholder="you@example.com">
 	</div>
@@ -32,11 +40,11 @@ include('functions.php');
 	</div>
 	<div class="input-group">
 		<label>Password</label>
-		<input type="password" name="password_1">
+		<input type="password" name="password_1" placeholder="Password">
 	</div>
 	<div class="input-group">
 		<label>Confirm password</label>
-		<input type="password" name="password_2">
+		<input type="password" name="password_2" placeholder="Password">
 	</div>
 	<div class="input-group">
 		<label>Choose a security question:</label>
