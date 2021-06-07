@@ -21,7 +21,6 @@
 		create_post($id, $data);
 		exit();
 	}
-	exit();	
 ?>
 <!DOCTYPE html>
 <html>
