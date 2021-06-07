@@ -1,15 +1,21 @@
 <?php 
 	include('functions.php');
+
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
 		exit();
 	}
+
+	if($_SERVER['REQUEST_METHOD'] == ['POST'])
+	{
+		$result = create_post($session_id, $_POST);
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Profile</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -52,11 +58,12 @@
 						echo " ";
 						echo $_SESSION['user']['last_name']; 
 					?>
+					<small>
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+					</small>
 				</div>
-				<small>
-					<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-				</small>
-				<?php endif ?>
+			<?php endif ?>
+
 			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
@@ -101,9 +108,11 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<textarea placeholder="Make a post here."></textarea>
-					<input id="post_button" type="submit" name="post_button" value="Post">
-					<br>
+					<form method ="post">
+						<textarea name="post" placeholder="Make a post here."></textarea>
+						<input id="post_button" type="submit" name="post_button" value="Post">
+						<br>
+					</form>
 				</div>
 
 				<!--feed area w/ recent posts-->

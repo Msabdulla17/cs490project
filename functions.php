@@ -12,6 +12,9 @@ $cleardb_db = substr($cleardb_url["path"],1);
 $active_group = 'default';
 $query_builder = TRUE;
 
+//Store session ID
+$session_id = $_SESSION['user'];
+
 // Connect to DB
 $db = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
@@ -31,6 +34,71 @@ if (isset($_POST['login_btn'])) {
 	login();
 }
 
+function create_random_id()
+{
+	$length = rand(4,19);
+	$number = "";
+	for ($i=0; $i < $length; $i++)
+	{
+		$new_rand = rand(0,9);
+		$number = $number . $new_rand;
+	}
+
+	return $number;
+}
+
+function create_post($user_id, $data)
+{
+	global $db, $errors;
+
+	if (!empty($data['post']))
+	{
+		$post = addslashes($data['post']);
+		$post_id = create_random_id();
+
+		$query = "INSERT INTO posts (user_id, post_id, post)
+					VALUES ($user_id, $post_id, $post) ";
+		mysqli_query($db, $query);
+	}
+	else
+	{
+		array_push($errors, "Post cannot be empty.");
+	}
+}
+
+function get_user_data($id)
+{
+	global $db;
+
+	$check = check_login_by_id($id);
+	if ($check)
+	{
+		$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
+		$result = mysqli_query($db, $query);
+		if ($result)
+		{
+			$user_data = $result;
+			return $user_data;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
+function check_login_by_id($id)
+{
+	global $db;
+
+	$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
+	$result = mysqli_query($db, $query);
+	if ($result)
+	{
+		return true;
+	}
+	return false;
+}
 function displayUser()
 {
 	if (isset($_SESSION['user'])) :
@@ -175,10 +243,11 @@ function register(){
 		//encrypt the password before saving in the database
 		$password = md5($password_1);
 		$url_address = strtolower($first_name) . "." . strtolower($last_name);
+		
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO public.user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
+			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
 					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
@@ -239,7 +308,7 @@ function display_error()
 
 function isLoggedIn()
 {
-	if (isset($_SESSION['user']))
+	if ((isset($_SESSION['user'])) && (is_numeric($_SESSION['user'])))
 	{
 		return true;
 	}
