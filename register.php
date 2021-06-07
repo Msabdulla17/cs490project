@@ -21,6 +21,7 @@ include('functions.php');
 	<h2>Sign Up</h2>
 </div>
 <form method="post" action="register.php" >
+	<?php echo display_error(); ?>
 	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="" placeholder="you@example.com">
