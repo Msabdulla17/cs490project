@@ -167,6 +167,18 @@ function register(){
 	{ 
 		array_push($errors, "Your name cannot contain any numbers."); 
 	}
+	if (strrpos($username, ' ') !== false)
+	{
+		array_push($errors, "Your username cannot contain any spaces."); 
+	}
+	if (strrpos($first_name, ' ') !== false)
+	{
+		array_push($errors, "Your first name cannot contain any spaces."); 
+	}
+	if (strrpos($last_name, ' ') !== false)
+	{
+		array_push($errors, "Your last name cannot contain any spaces."); 
+	}
 
 
 	// register user if there are no errors in the form
@@ -178,8 +190,8 @@ function register(){
 		if (isset($_POST['user_type'])) 
 		{
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO public.user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
-					  VALUES('$username', '$email', '$user_type', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
+			$query = "INSERT INTO public.user_list (id, username, email, user_type, password, security_answer, first_name, last_name, url_address) 
+					  VALUES('$logged_in_user_id', '$username', '$email', '$user_type', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
@@ -187,8 +199,8 @@ function register(){
 		}
 		else
 		{
-			$query = "INSERT INTO user_list (username, email, user_type, password, security_answer, first_name, last_name, url_address) 
-					  VALUES('$username', '$email', 'user', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
+			$query = "INSERT INTO user_list (id, username, email, user_type, password, security_answer, first_name, last_name, url_address) 
+					  VALUES('$logged_in_user_id','$username', '$email', 'user', '$password', '$security_answer', '$first_name', '$last_name', '$url_address')";
 			mysqli_query($db, $query);
 
 			// get id of the created user
