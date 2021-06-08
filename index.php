@@ -129,8 +129,7 @@
 						{
 							foreach ($all_posts as $ROW)
 							{
-								$ROW_USER_FNAME = get_first_name($ROW['user_id']);
-								$ROW_USER_FNAME = get_last_name($ROW['user_id']);
+								var_dump($ROW);
 								include('post.php');
 							}
 						}
