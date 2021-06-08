@@ -64,7 +64,7 @@ function create_post()
 	{
 		$post = addslashes($data);
 		$query = "INSERT INTO posts (post_id, user_id, post)
-					VALUES ($post_id, $user_id, $post)";
+					VALUES ($post_id, $user_id, 'post')";
 		mysqli_query($db, $query);
 		exit();
 	}
