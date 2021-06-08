@@ -12,6 +12,9 @@
 	{
 		print_r($_POST);
 		create_post();
+		print_r($user_id);
+		print_r($post);
+		print_r($post_id);
 	}
 ?>
 <!DOCTYPE html>
