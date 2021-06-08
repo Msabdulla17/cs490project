@@ -129,7 +129,7 @@
 						{
 							foreach ($all_posts as $ROW)
 							{
-								$ROW_USER = get_first_name($ROW['user_id']);
+								$ROW_USER = getUserById($ROW['user_id']);
 								var_dump($ROW_USER);
 								include('post.php');
 							}

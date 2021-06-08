@@ -271,38 +271,6 @@ function getUserById($id)
 	return $user;
 }
 
-function get_first_name($id)
-{
-	global $db;
-	$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
-	$result = mysqli_query($db, $query);
-
-	if($result)
-	{
-		return $result[9];
-	}
-	else
-	{
-		return false;
-	}
-}
-
-function get_last_name($id)
-{
-	global $db;
-	$query = "SELECT * FROM user_list WHERE id = '$id' LIMIT 1";
-	$result = mysqli_query($db, $query);
-
-	if($result)
-	{
-		return $result[10];
-	}
-	else
-	{
-		return false;
-	}
-}
-
 // escape string
 function e($val)
 {
