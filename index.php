@@ -10,8 +10,8 @@
 
 	if (isset($_POST['post_btn'])) 
 	{
+		header('location: index.php');
 		create_post();
-		header('location: login.php');
 		exit();
 	}
 ?>

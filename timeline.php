@@ -8,8 +8,8 @@
 
 	if (isset($_POST['post_btn'])) 
 	{
+		header('location: timeline.php');
 		create_post();
-		header('location: https://cs490summerproject.herokuapp.com/timeline.php');
 		exit();
 	}
 ?>
