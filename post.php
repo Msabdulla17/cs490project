@@ -12,7 +12,7 @@
         <br><br>
 		<a href="">Like</a> . <a href="">Comment</a> . 
         <span style="color: #999;">
-            <?php echo $ROW['date']; ?>
+            <?php echo $ROW['timestamp']; ?>
         </span>
 	</div>
 </div>
