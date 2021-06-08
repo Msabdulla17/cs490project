@@ -21,6 +21,7 @@ $email    = "";
 $security_answer = "";
 $errors   = array(); 
 $user_id = ($_SESSION['user']['id']);
+$data = "";
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
@@ -36,7 +37,7 @@ if (isset($_POST['login_btn']))
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-	create_post($user_id);
+	create_post($user_id, $data);
 }
 
 
