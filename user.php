@@ -4,4 +4,4 @@
 	<?php 
         echo $FRIEND_ROW["first_name"] . " " . $FRIEND_ROW["last_name"]; 
     ?>
-	</div>
+</div>
