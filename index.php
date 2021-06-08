@@ -87,9 +87,9 @@
 					<?php
 						if($all_friends)
 						{
+							var_dump($all_friends);
 							foreach ($all_friends as $FRIEND_ROW)
 							{
-								var_dump($FRIEND_ROW);
 								include('user.php');
 							}
 						}
