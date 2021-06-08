@@ -125,6 +125,7 @@
 					<div style= "color: #b1424d; float:left;">Posts</div>
 					<br>
 					<?php
+						var_dump($posts);
 						if($posts)
 						{
 							foreach ($posts as $row => $value)
