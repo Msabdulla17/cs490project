@@ -35,12 +35,6 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == ['POST']) 
-{
-	create_post();
-}
-
-
 function create_random_id()
 {
 	$length = rand(4,19);
