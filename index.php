@@ -127,8 +127,10 @@
 					<?php
 						if($all_posts)
 						{
-							foreach ($all_posts as $row => $value)
+							foreach ($all_posts as $row)
 							{
+								
+								$ROW_USER = get_first_name($row['id']) + " " + get_last_name($row['id']);
 								include('post.php');
 							}
 						}
