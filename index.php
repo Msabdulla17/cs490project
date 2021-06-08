@@ -8,7 +8,7 @@
 		exit();
 	}
 
-	if ($_SERVER['REQUEST_METHOD'] == ['POST']) 
+	if (isset($_POST['post_btn'])) 
 	{
 		print_r($_POST);
 		create_post();
