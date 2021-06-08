@@ -50,16 +50,24 @@ function create_random_id()
 
 function create_post()	
 {
-	global $db;
+	global $db, $errors;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
 	$user_id = ($_SESSION['user']['id']);
 
-	$post = addslashes($data);
-	$query = "INSERT INTO posts (post_id, user_id post)
-				VALUES ($post_id, $user_id, $post)";
-	mysqli_query($db, $query);
-	exit();
+	if (empty($data))
+	{
+		array_push($errors, "Post cannot be empty.");
+	}
+
+	if (count($errors) == 0)
+	{
+		$post = addslashes($data);
+		$query = "INSERT INTO posts (post_id, user_id, post)
+					VALUES ($post_id, $user_id, $post)";
+		mysqli_query($db, $query);
+		exit();
+	}
 }
 
 function displayUser()
