@@ -11,6 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		create_post();
+		header('location: index.php');
 	}
 ?>
 <!DOCTYPE html>
