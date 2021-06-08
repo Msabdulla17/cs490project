@@ -48,6 +48,24 @@ function create_random_id()
 	return $number;
 }
 
+function get_friends()
+{
+	global $db;
+
+	$query = "SELECT * FROM user_list
+					ORDER BY id DESC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function get_posts()
 {
 	global $db, $user_id;

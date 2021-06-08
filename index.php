@@ -15,7 +15,7 @@
 	}
 
 	$all_posts = get_posts();
-
+	$all_friends = get_friends();
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,29 +84,17 @@
 				<div id="friends_bar">
 					Friends
 					<br>
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						First User
-					</div>
+					<?php
+						if($all_friends)
+						{
+							foreach ($all_friends as $ROW)
+							{
+								$ROW_USER = getUserById($ROW['user_id']);
+								include('user.php');
+							}
+						}
+					?>
 
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Second User
-					</div>
-
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Third User
-					</div>
-
-					<div id="friends">
-						<img id="friends_img" src="images/user_profile.png">
-						<br>
-						Fourth User
-					</div>
 				</div>
 			</div>
 			<!--make a post and recent posts--> 

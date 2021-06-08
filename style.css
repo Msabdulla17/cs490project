@@ -22,6 +22,7 @@ body {
 }
 
 #post{
+	background-color: white;
 	padding: 4px;
 	font-size: 14px;
 	display: flex;
