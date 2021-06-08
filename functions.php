@@ -20,7 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
-$user_id = ($_SESSION['user']['id']);
+$user_id = ($_SESSION['user']);
 $data = "";
 
 // call the register() function if register_btn is clicked
@@ -60,14 +60,14 @@ function create_post($user_id, $data)
 	
 	$data = e($_POST['post']);
 	
-	if (empty($data))
+	if (empty($data['post']))
 	{
 		array_push($errors, "Post cannot be empty.");
 	}
 
 	if (count($errors) == 0)
 	{
-		$post = addslashes($data);
+		$post = addslashes($data['post']);
 		$post_id = create_random_id();
 
 		$query = "INSERT INTO posts (id, user_id, post_id, post)
