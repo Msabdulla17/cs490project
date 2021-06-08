@@ -11,6 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		create_post();
+		exit();
 	}
 ?>
 <!DOCTYPE html>
