@@ -11,7 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		create_post();
-		header('location: https://cs490summerproject.herokuapp.com/index.php');
+		header('location: login.php');
 		exit();
 	}
 ?>
