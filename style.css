@@ -63,6 +63,7 @@ textarea{
 
 #timeline_bar
 {
+	background-color: white;
 	min-height: 400px;
 	margin-top: 20px;
 	color: #b1424d;
@@ -72,7 +73,6 @@ textarea{
 
 #friends_bar
 {
-	background-color: white;
 	min-height: 400px;
 	margin-top: 20px;
 	color: #b1424d;
