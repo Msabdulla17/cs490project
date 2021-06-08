@@ -55,10 +55,6 @@ function create_post()
 	$post_id = create_random_id();
 	$user_id = ($_SESSION['user']['id']);
 
-	print_r($user_id);
-	print_r($data);
-	print_r($post_id);
-
 	if (empty($data))
 	{
 		array_push($errors, "Post cannot be empty.");
@@ -72,7 +68,7 @@ function create_post()
 		mysqli_query($db, $query);
 		exit();
 	}
-
+	print_r($post_id);
 }
 
 function displayUser()
