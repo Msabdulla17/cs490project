@@ -11,7 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		header('location: index.php');
-		create_post();
+		$result = create_post();
 		exit();
 	}
 ?>
