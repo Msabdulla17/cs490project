@@ -53,7 +53,7 @@ function create_post()
 	global $db, $errors;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
-	$user_id = ($_SESSION['user']);
+	$user_id = ($_SESSION['user']['id']);
 
 	print_r($user_id);
 	print_r($data);
