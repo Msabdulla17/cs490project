@@ -52,7 +52,6 @@ function create_post()
 {
 	global $db, $errors;
 	$data = $_POST['post'];
-	$id = create_random_id();
 	$post_id = create_random_id();
 	$user_id = ($_SESSION['user']['id']);
 
@@ -64,8 +63,8 @@ function create_post()
 	if (count($errors) == 0)
 	{
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (id, post_id, user_id, post)
-					VALUES ($id, $post_id, $user_id, $post)";
+		$query = "INSERT INTO posts (post_id, user_id, post)
+					VALUES ($post_id, $user_id, $post)";
 		mysqli_query($db, $query);
 		exit();
 	}
