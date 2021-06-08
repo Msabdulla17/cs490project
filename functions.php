@@ -295,7 +295,7 @@ function get_last_name($id)
 
 	if($result)
 	{
-		return $result[9];
+		return $result[10];
 	}
 	else
 	{

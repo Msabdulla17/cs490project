@@ -129,7 +129,6 @@
 						{
 							foreach ($all_posts as $ROW)
 							{
-								var_dump($ROW);
 								include('post.php');
 							}
 						}
