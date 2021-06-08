@@ -125,10 +125,9 @@
 					<div style= "color: #b1424d; float:left;">Posts</div>
 					<br>
 					<?php
-						var_dump($posts);
-						if($posts)
+						if($all_posts)
 						{
-							foreach ($posts as $row => $value)
+							foreach ($all_posts as $row => $value)
 							{
 								include('post.php');
 							}
