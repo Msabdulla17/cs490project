@@ -123,7 +123,10 @@
 					<div style= "color: #b1424d; float:left;">Posts</div>
 					<br>
 					<?php
-						include('post.php');
+						for($i=0; $i<10; $i++)
+						{
+							include('post.php');
+						}
 					?>
 				</div>
 			</div>
