@@ -37,6 +37,7 @@ if (isset($_POST['login_btn']))
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
+	$data = e($_POST['post']);
 	create_post($user_id, $data);
 }
 
@@ -57,8 +58,6 @@ function create_random_id()
 function create_post($user_id, $data)	
 {
 	global $db, $errors;
-	
-	$data = e($_POST['post']);
 	
 	if (empty($data['post']))
 	{
