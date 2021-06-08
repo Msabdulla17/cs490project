@@ -60,14 +60,14 @@ function create_post()
 	$data = e($_POST['post']);
 	$user_id = ($_SESSION['user']);
 
-	if (empty($data['post']))
+	if (empty($data))
 	{
 		array_push($errors, "Post cannot be empty.");
 	}
 
 	if (count($errors) == 0)
 	{
-		$post = addslashes($data['post']);
+		$post = addslashes($data);
 		$post_id = create_random_id();
 
 		$query = "INSERT INTO posts (user_id, post_id, post)
