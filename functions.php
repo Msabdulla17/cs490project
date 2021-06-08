@@ -58,7 +58,7 @@ function create_post()
 {
 	global $db, $errors;
 	$data = e($_POST['post']);
-	$user_id = ($_SESSION['user']);
+	$user_id = ($_SESSION['user']['id']);
 
 	if (empty($data))
 	{
