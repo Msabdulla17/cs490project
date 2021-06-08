@@ -87,9 +87,8 @@
 					<?php
 						if($all_friends)
 						{
-							foreach ($all_friends as $ROW)
+							foreach ($all_friends as $FRIEND_ROW)
 							{
-								$ROW_USER = getUserById($ROW['user_id']);
 								include('user.php');
 							}
 						}

@@ -50,10 +50,10 @@ function create_random_id()
 
 function get_friends()
 {
-	global $db;
+	global $db, $user_id;
 
 	$query = "SELECT * FROM user_list
-					ORDER BY id DESC";
+					WHERE user_id != '$user_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
