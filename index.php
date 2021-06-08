@@ -12,8 +12,10 @@
 	{
 		header('location: index.php');
 		$result = create_post();
-		exit();
 	}
+
+	$all_posts = get_posts();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -123,9 +125,12 @@
 					<div style= "color: #b1424d; float:left;">Posts</div>
 					<br>
 					<?php
-						for($i=0; $i<10; $i++)
+						if($posts)
 						{
-							include('post.php');
+							foreach ($posts as $row => $value)
+							{
+								include('post.php');
+							}
 						}
 					?>
 				</div>

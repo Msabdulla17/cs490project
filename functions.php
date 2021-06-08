@@ -20,7 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
-
+$user_id = ($_SESSION['user']['id']);
 $data = "";
 
 // call the register() function if register_btn is clicked
@@ -48,12 +48,29 @@ function create_random_id()
 	return $number;
 }
 
+function get_posts()
+{
+	global $db, $user_id;
+
+	$query = "SELECT * FROM posts
+					WHERE user_id = '$user_id' ORDER BY id DESC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function create_post()	
 {
-	global $db, $errors;
+	global $db, $errors, $user_id;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
-	$user_id = ($_SESSION['user']['id']);
 
 	if (empty($data))
 	{
