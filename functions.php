@@ -63,6 +63,7 @@ function create_post()
 	if (count($errors) == 0)
 	{
 		$post = addslashes($data);
+		print_r($post);
 		$query = "INSERT INTO posts (post_id, user_id post)
 					VALUES ($post_id, $user_id, $post)";
 		mysqli_query($db, $query);
