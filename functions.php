@@ -57,7 +57,8 @@ function create_random_id()
 function create_post()	
 {
 	global $db, $errors;
-	$data = e($_POST['post']);
+	$data = $_POST['post'];
+	$post_id = create_random_id();
 	$user_id = ($_SESSION['user']['id']);
 
 	if (empty($data))
@@ -68,8 +69,6 @@ function create_post()
 	if (count($errors) == 0)
 	{
 		$post = addslashes($data);
-		$post_id = create_random_id();
-
 		$query = "INSERT INTO posts (user_id, post_id, post)
 					VALUES ($user_id, $post_id, $post) ";
 		mysqli_query($db, $query);
