@@ -66,6 +66,7 @@ function create_post()
 		$query = "INSERT INTO posts (user_id, post_id, post)
 					VALUES ($user_id, $post_id, $post) ";
 		mysqli_query($db, $query);
+		exit();
 	}
 
 }
