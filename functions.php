@@ -53,7 +53,7 @@ function create_random_id()
 	return $number;
 }
 
-function create_post($user_id)	
+function create_post($user_id, $data)	
 {
 	global $db, $errors;
 	
@@ -69,7 +69,7 @@ function create_post($user_id)
 		$post = addslashes($data);
 		$post_id = create_random_id();
 
-		$query = "INSERT INTO 'posts' (user_id, post_id, post)
+		$query = "INSERT INTO posts (user_id, post_id, post)
 					VALUES ($user_id, $post_id, $post) ";
 		mysqli_query($db, $query);
 	}
