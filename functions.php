@@ -70,8 +70,8 @@ function create_post($user_id, $data)
 		$post = addslashes($data['post']);
 		$post_id = create_random_id();
 
-		$query = "INSERT INTO posts (id, user_id, post_id, post)
-					VALUES ($post_id, $user_id, $post_id, $post) ";
+		$query = "INSERT INTO posts (user_id, post_id, post)
+					VALUES ($user_id, $post_id, $post) ";
 		mysqli_query($db, $query);
 	}
 
