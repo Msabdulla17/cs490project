@@ -8,10 +8,12 @@
             echo $ROW_USER["first_name"] . " " . $ROW_USER["last_name"]; 
             ?>
         </div>
-		
         <?php echo $ROW['post']; ?>
         <br><br>
-		<a href="">Like</a> . <a href="">Comment</a> . <span style="color: #999;">Jun 6 2021</span>
+		<a href="">Like</a> . <a href="">Comment</a> . 
+        <span style="color: #999;">
+            <?php echo $ROW['date']; ?>
+        </span>
 	</div>
 </div>
 <br><br>
