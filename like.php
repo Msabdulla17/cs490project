@@ -1,4 +1,7 @@
 <?php
+    
+    var_dump($_GET['type']);
+
     if(isset($_SERVER['HTTP_REFERER']))
     {
         $return_to = $_SERVER['HTTP_REFERER'];
@@ -7,8 +10,6 @@
     {
         $return_to = "index.php";
     }
-
-    var_dump($_GET['type']);
 
     if(isset($_GET['type']) && isset($_GET['id']))
     {
