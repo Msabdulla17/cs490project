@@ -71,7 +71,7 @@
 						<input id="post_button" type="button" value="Messages" style="margin-right:10px;background-color:#888; width:auto;">
 					</a>
 					<?php else: ?>
-					<a href="<?=ROOT?>messages/new">
+					<a href="<?=ROOT?>messages/new/<?=ROOT?>">
 						<input id="post_button" type="button" value="Message" style="margin-right:10px;background-color:#888; width:auto;">
 					</a>
 					<?php endif; ?>
