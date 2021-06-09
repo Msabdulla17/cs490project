@@ -1,5 +1,5 @@
 <?php
-include("classes/upload.php");
+include("functions.php");
 $login = new login();
 $user_data = $login->check_login($_SESSION['user']);
 $USER = $user_id;
