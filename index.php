@@ -68,9 +68,7 @@
 					</small>
 				</div>
 			<?php endif ?>
-
-			<br>
-			<?php if($user_data['userid'] == $_SESSION['mybook_userid']): ?>	 
+			<?php if($user_data['userid'] == $_SESSION['userid']): ?>	 
 				<a href="<?=ROOT?>messages">
 		                	<input id="post_button" type="button" value="Messages" style="margin-right:10px;background-color:#888; width:auto;">
 		        	</a>
@@ -79,6 +77,7 @@
 		               		<input id="post_button" type="button" value="Message" style="margin-right:10px;background-color:#888; width:auto;">
 		        	</a>
 		        <?php endif; ?>
+			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
