@@ -7,6 +7,9 @@
     {
         $return_to = "index.php";
     }
+
+    var_dump($_GET['type']);
+
     if(isset($_GET['type']) && isset($_GET['id']))
     {
         if (is_numeric($_GET['id']))
