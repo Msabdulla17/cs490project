@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +38,5 @@
     ...
   ]
 }
-		
 		</div>
 	</div>
