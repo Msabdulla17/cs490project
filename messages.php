@@ -10,10 +10,12 @@ if(isset($URL[1] && is_numeric($URL[1]){
 		$user_data = $profile_data[0];
 	}
 }
-//if something was posted
-if($ERROR == $_SERVER['REQUEST_METHOD'] == "POST"){
+//if message was sent
+if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 	$Post->delete_post($_POST['posted']);
-	header("Location: ".$_SESSION['return_to']);
+	show($_POST);
+	show($_FILES);
+	//header("Location: ".$_SESSION['return_to']);
 	die;
 }
 ?>
@@ -31,7 +33,7 @@ if($ERROR == $_SERVER['REQUEST_METHOD'] == "POST"){
 		<!-- feed below cover photo and profile picture -->
 		 <div style= "min-height: 400px; flex:2.5;padding: 20px;padding-right: 0px;"> 
 			<div style= "border:solid thin #aaa; background-color: white; color:#b1424d;">
-				<form method="post">
+				<form method="post" enctype="multipart/form-data">
 					<?php
 						if($ERROR != "")
 						{
@@ -40,14 +42,32 @@ if($ERROR == $_SERVER['REQUEST_METHOD'] == "POST"){
 						else
 						{
 							if(isset($URL[1]) && $URL[1] == "new"){
-								echo "Start New Message<br><br>";
+								echo "Start New Message with:<br><br>";
+								if(isset($URL[2]) && is_numeric($URL[2])
+								{
+									$user = new User();
+									$FRIEND_ROW = $user->get_user($URL[2]);
+								}
+								include "user.php";
+								   echo '
+								<div style= "border:solid thin #aaa; padding: 10px; background-color: white; color:#b1424d;">
+									<form method="POST">
+								 	  <textarea name="message" placeholder="Write your message here"></textarea>
+								 	  <input type="file" name="file" multiple>
+								 	  <input id="post_button" type="submit" value="Send">
+								   	</form>
+								   </div>';
+								else
+								{
+									echo "That user could not be found<br><br>";
+								}
 							}
 							else
 							{
 								echo "Messages<br><br>";
+								$user = new User();
+								$ROW_USER = $user->get_user($ROW['userid']);
 							}
-							$user = new User();
-							$ROW_USER = $user->get_user($ROW['userid]');
 							include("message.php");
 							echo "<input type='hidden' name='postid' value='$ROW[postid]'>";
 							echo "<input id='post_button' type=submit value='Delete'>";
