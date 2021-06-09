@@ -61,16 +61,6 @@ textarea{
 	margin: 8px;
 }
 
-#timeline_bar
-{
-	background-color: white;
-	min-height: 400px;
-	margin-top: 20px;
-	color: #b1424d;
-	text-align: center;
-	padding: 8px;
-}
-
 #friends_bar
 {
 	min-height: 400px;

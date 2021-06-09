@@ -39,9 +39,9 @@
 	<!-- top bar -->
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
-			Artstagram &nbsp &nbsp
+			<a href="timeline.php" style="color: white";>Artstagram</a> &nbsp &nbsp
 			<input type="text" id="search_box" placeholder="Search">
-			<img src="images/user_profile.png" style="width: 40px; float: right;">
+			<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
 				Log Out
