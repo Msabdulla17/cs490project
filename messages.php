@@ -15,7 +15,8 @@ if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 	$Post->delete_post($_POST['posted']);
 	show($_POST);
 	show($_FILES);
-	$message = new Messages
+	$msg_class= new Messages();
+	$msg_class->send();
 	//header("Location: ".$_SESSION['return_to']);
 	die;
 }
