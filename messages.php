@@ -1,5 +1,5 @@
 <?php
-include("functions.php");
+include("files.php");
 $login = new login();
 $user_data = $login->check_login($_SESSION['user']);
 $USER = $user_id;
