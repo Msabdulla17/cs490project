@@ -39,10 +39,16 @@ if($ERROR == $_SERVER['REQUEST_METHOD'] == "POST"){
 						}
 						else
 						{
-							echo "Are you want to delete this post??<br><br>";
+							if(isset($URL[1]) && $URL[1] == "new"){
+								echo "Start New Message<br><br>";
+							}
+							else
+							{
+								echo "Messages<br><br>";
+							}
 							$user = new User();
-							$ROW_USER = $user->get_user($ROW['userid]);
-							include("DM.php");
+							$ROW_USER = $user->get_user($ROW['userid]');
+							include("message.php");
 							echo "<input type='hidden' name='postid' value='$ROW[postid]'>";
 							echo "<input id='post_button' type=submit value='Delete'>";
 						}
