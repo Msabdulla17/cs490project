@@ -42,3 +42,5 @@
           $likes = ($COMMENT['likes'] > 0) ? "(" .$COMMENT['likes']. ")" : "" ;
    ?>
 <a href="<?=ROOT?>like/post/<?php echo $COMMENT['postid'] ?>">Likes<?ph echo $likes ?></a>.
+</div>
+</div>
