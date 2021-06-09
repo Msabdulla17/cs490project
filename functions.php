@@ -20,6 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
+$user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
 
@@ -34,6 +35,53 @@ if (isset($_POST['login_btn']))
 {
 	login();
 }
+
+function like_post($id, $type, $user_id)
+{
+	global $db, $user_data;
+
+	if ($type == 'post')
+	{
+		$query = "UPDATE posts set likes = likes + 1 
+				WHERE post_id = '$id' LIMIT 1";
+		mysqli_query($db, $query);
+
+		$query = "SELECT likes FROM likes
+				WHERE like_type = 'post' && content_id '$id' LIMIT 1";
+		$result = mysqli_query($db, $query);
+		
+		if(is_array($result))
+		{
+			$likes = json_decode($result['likes'],true);
+			$liker_user_ids = array_column($likes, "user_id");
+
+			if(!in_array($user_id, $liker_user_ids))
+			{
+				$arr[] = $user_data;
+				$arr[] = date("Y-m-d H:i:s");
+				$likes[] = $arr;
+
+				$likes_string = json_encode($likes);
+
+				$query = "UPDATE likes set likes = $likes_string
+						WHERE like_type = 'post' && content_id = $id LIMIT 1";
+				mysqli_query($db, $query);
+			}
+		}
+		else
+		{
+			$arr["user_id"] = $user_id;
+			$arr["date"] = date("Y-m-d H:i:s");
+
+			$arr2[] = $arr;
+			$likes = json_encode($arr);
+
+			$query = "INSERT INTO likes (like_type, content_id, likes)
+						VALUES ('$type','$id', '$likes')";
+			mysqli_query($db, $query);
+		}
+	}
+}	
 
 function create_random_id()
 {
