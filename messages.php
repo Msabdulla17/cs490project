@@ -1,7 +1,7 @@
 <?php
 include("classes/upload.php");
 $login = new login();
-$user_data = $login->check_login($_SESSION['mybook_userid']);
+$user_data = $login->check_login($_SESSION['user']);
 $USER = $user_id;
 if(isset($URL[1] && is_numeric($URL[1]){
 	$profile = new Profile();
@@ -67,10 +67,10 @@ if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 							{
 								echo "Messages<br><br>";
 								$user = new User();
-								$ROW_USER = $user->get_user($ROW['userid']);
+								$ROW_USER = $user->get_user($ROW['user']);
 							}
 							include("message.php");
-							echo "<input type='hidden' name='postid' value='$ROW[postid]'>";
+							echo "<input type='hidden' name='postid' value='$ROW[post]'>";
 							echo "<input id='post_button' type=submit value='Delete'>";
 						}
 					?>
