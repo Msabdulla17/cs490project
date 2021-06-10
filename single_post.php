@@ -54,14 +54,11 @@
                 <div style= "color: #b1424d;">Comment</div>
                 <br>
                 <?php
-                    if(is_array($ROW))
-                    {
-                        $some_id = $ROW['users_id'];
-                        var_dump($some_id);
-                        $ROW_USER = getUserById($some_id);
-                        include('post.php');
-                        var_dump($ROW);
-                    }
+                    $some_id = $ROW['users_id'];
+                    var_dump($some_id);
+                    $ROW_USER = getUserById($some_id);
+                    include('post.php');
+                    var_dump($ROW);
                 ?>
             </div>
             <br>
