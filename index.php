@@ -13,16 +13,18 @@
 		header('location: index.php');
 		$result = create_post();
 	}
-	$all_posts = get_posts();
-	$all_friends = get_friends();
 
 	if (isset($_GET['id'])) 
 	{
 		$profile_data = getUserById($_GET['id']);
+		$all_posts = get_posts();
+		$all_friends = get_friends();
 	}
 	else
 	{
 		$profile_data = $user_data;
+		$all_posts = get_posts();
+		$all_friends = get_friends();
 	}
 ?>
 <!DOCTYPE html>
