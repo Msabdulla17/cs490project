@@ -15,7 +15,6 @@
 	}
 	$all_posts = get_posts();
 	$all_friends = get_friends();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,9 +57,7 @@
 			<br>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $user_data[8];
-						echo " ";
-						echo $user_data[9]; 
+						echo $user_data[8] + " " + $user_data[9]; 
 					?>
 					<small>
 						<i  style="color: #888;">(<?php echo $user_data[5]; ?>)</i>
