@@ -138,7 +138,7 @@ function get_posts()
 	$profile_id = $profile_data['id'];
 
 	$query = "SELECT * FROM posts
-		WHERE user_id = '$profile_id' ORDER BY id DESC";
+		WHERE users_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
@@ -165,7 +165,7 @@ function create_post()
 	if (count($errors) == 0)
 	{
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (post_id, user_id, post)
+		$query = "INSERT INTO posts (post_id, users_id, post)
 					VALUES ($post_id, $user_id, '$post')";
 		mysqli_query($db, $query);
 		exit();
