@@ -5,10 +5,14 @@
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">
             <?php 
-            echo $ROW_USER["first_name"] . " " . $ROW_USER["last_name"]; 
+            echo $ROW_USER["first_name"];
+            echo " ";
+            echo $ROW_USER["last_name"]; 
             ?>
         </div>
-        <?php echo $ROW['post']; ?>
+        <?php 
+            echo $ROW['post']; 
+        ?>
         <br><br>
 		<a href="like.php?like_type=post&post_id=<?php echo $ROW['post_id']?>">Like(<?php echo $ROW['likes']?>)</a> . <a href="">Comment</a> . 
         <span style="color: #999;">

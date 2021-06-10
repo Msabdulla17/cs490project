@@ -71,7 +71,11 @@
 						echo $user_data['last_name']; 
 					?>
 					<small>
-						<i  style="color: #888;">(<?php echo $user_data[5]; ?>)</i>
+						<i  style="color: #888;">
+							(<?php 
+							echo $user_data['user_type']; 
+							?>)
+						</i>
 					</small>
 				</div>
 			<br>
