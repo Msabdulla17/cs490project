@@ -129,7 +129,6 @@ function get_posts()
 		WHERE users_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
-	var_dump($result);
 	if($result)
 	{
 		return $result;
@@ -142,7 +141,8 @@ function get_posts()
 
 function create_post()	
 {
-	global $db, $errors, $user_id;
+	global $db, $errors, $profile_data;
+	$profile_id = $profile_data['id'];
 	$data = $_POST['post'];
 	$post_id = create_random_id();
 
@@ -155,7 +155,7 @@ function create_post()
 	{
 		$post = addslashes($data);
 		$query = "INSERT INTO posts (post_id, users_id, post)
-					VALUES ($post_id, $user_id, '$post')";
+					VALUES ($post_id, $profile_id, '$post')";
 		mysqli_query($db, $query);
 		exit();
 	}
