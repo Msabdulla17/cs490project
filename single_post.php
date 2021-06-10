@@ -1,6 +1,13 @@
 <?php
     include ('functions.php');
 
+	if (!isLoggedIn()) 
+	{
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+		exit();
+	}
+
     $ROW2 = false;
     if (isset($_GET['post_id']))
     {
@@ -12,6 +19,20 @@
         array_push($errors, "No post was found.");
     }
 
+    if (isset($_GET['users_id'])) 
+	{
+		$profile_data = getUserById($_GET['users_id']);
+	}
+	else
+	{
+		$profile_data = $user_data;
+	}
+
+    if (isset($_POST['post_btn'])) 
+	{
+		header('location: ' . $_SERVER['HTTP_REFERER']);
+		$result = create_post();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,6 +81,30 @@
                         include('post.php');
                     }
                 ?>
+                <br style="clear: both;">
+
+                <div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
+					<form style= "width: 80%;" action="index.php" method ="post">
+						<textarea name="post" placeholder="Post a comment here."></textarea>
+						<input type="hidden" name="parent" value="<?php echo $ROW['posts_id']?>">
+                        <input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
+						<br>
+					</form>
+				</div>
+                
+                <?php
+                   
+                   $comments = get_comments();
+
+                   if (is_array($comments))
+                   {
+                       foreach ($comments as $COMMENT)
+                       {
+                           include('comment.php');
+                       }
+                   }
+                ?>
+
             </div>
             <br>
 		</div>

@@ -138,13 +138,35 @@ function get_post($post_id)
 	}
 }
 
+function get_comments()
+{
+	global $db, $profile_data;
+	$profile_id = $profile_data['id'];
+
+	$query = "SELECT * FROM posts
+		WHERE parent = '$profile_id'
+		ORDER BY id ASC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
 function get_posts()
 {
 	global $db, $profile_data;
 	$profile_id = $profile_data['id'];
 
 	$query = "SELECT * FROM posts
-		WHERE users_id = '$profile_id' ORDER BY id DESC";
+		WHERE users_id = '$profile_id' AND parent = '0'
+		ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
@@ -162,6 +184,12 @@ function create_post()
 	global $db, $errors, $user_id;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
+	$parent = 0;
+
+	if(isset($data['parent']))
+	{
+		$parent = $data['parent'];
+	}
 
 	if (empty($data))
 	{
@@ -171,8 +199,8 @@ function create_post()
 	if (count($errors) == 0)
 	{
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (post_id, users_id, post)
-					VALUES ($post_id, $user_id, '$post')";
+		$query = "INSERT INTO posts (post_id, users_id, post, parent)
+					VALUES ($post_id, $user_id, '$post', '$parent')";
 		mysqli_query($db, $query);
 		exit();
 	}
