@@ -18,7 +18,7 @@
 
 	if (isset($_GET['id'])) 
 	{
-		$profile_data = get_profile($_GET['id']);
+		$profile_data = getUserById($_GET['id']);
 	}
 	else
 	{
@@ -123,7 +123,6 @@
 					<?php
 						if($all_posts)
 						{
-							var_dump($all_posts);
 							foreach ($all_posts as $ROW)
 							{
 								$ROW_USER = getUserById($ROW['user_id']);

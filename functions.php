@@ -36,18 +36,6 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-
-function get_profile($id)
-{
-	global $db;
-
-	$query = "SELECT * FROM user_list
-					WHERE id = '$id' LIMIT 1";
-	$result = mysqli_query($db, $query);
-	
-	return $result;
-}
-
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
@@ -136,6 +124,8 @@ function get_posts()
 {
 	global $db, $profile_data;
 	$profile_id = $profile_data['id'];
+
+	var_dump($profile_id);
 
 	$query = "SELECT * FROM posts
 		WHERE users_id = '$profile_id' ORDER BY id DESC";
