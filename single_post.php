@@ -1,11 +1,11 @@
 <?php
     include ('functions.php');
 
-    $ROW2 = false;
+    $ROW = false;
     if (isset($_GET['post_id']))
     {
         $post_id = $_GET['post_id'];
-        $ROW2 = get_post($post_id);
+        $ROW = get_post($post_id);
     }
     else
     {
@@ -54,10 +54,9 @@
                 <div style= "color: #b1424d;">Comment</div>
                 <br>
                 <?php
-                    var_dump($ROW2);
-                    if(is_array($ROW2))
+                    if(is_array($ROW))
                     {
-                        $ROW_USER = getUserById($ROW2['users_id']);
+                        $ROW_USER = getUserById($ROW['users_id']);
                         include('post.php');
                     }
                 ?>
