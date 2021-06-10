@@ -10,7 +10,7 @@
         </div>
         <?php echo $ROW['post']; ?>
         <br><br>
-		<a href="like.php?type=post&=<?php echo $ROW['post_id']?>">Like</a> . <a href="">Comment</a> . 
+		<a href="like.php?like_type=post&=<?php echo $ROW['post_id']?>">Like</a> . <a href="">Comment</a> . 
         <span style="color: #999;">
             <?php echo $ROW['timestamp']; ?>
         </span>
