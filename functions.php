@@ -20,7 +20,6 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
-$profile_data = get_profile($_GET['id']);
 $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
@@ -35,6 +34,15 @@ if (isset($_POST['register_btn']))
 if (isset($_POST['login_btn'])) 
 {
 	login();
+}
+
+if (isset($_GET['id'])) 
+{
+	$profile_data = get_profile($_GET['id']);
+}
+else
+{
+	$profile_data = $user_data;
 }
 
 function get_profile($id)
