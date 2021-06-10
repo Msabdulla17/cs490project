@@ -36,6 +36,20 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
+if (isset($_GET['id'])) 
+{
+	$profile_data = getUserById($_GET['id']);
+	$all_posts = get_posts();
+	$all_friends = get_friends();
+}
+else
+{
+	$profile_data = $user_data;
+	$all_posts = get_posts();
+	$all_friends = get_friends();
+}
+$profile_id = $profile_data['id'];
+
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
@@ -103,8 +117,7 @@ function create_random_id()
 
 function get_friends()
 {
-	global $db, $profile_data;
-	$profile_id = $profile_data['id'];
+	global $db, $profile_id;
 
 	$query = "SELECT * FROM user_list
 					WHERE id != '$profile_id' ORDER BY id DESC";
@@ -122,8 +135,7 @@ function get_friends()
 
 function get_posts()
 {
-	global $db, $profile_data;
-	$profile_id = $profile_data['id'];
+	global $db, $profile_id;
 
 	$query = "SELECT * FROM posts
 		WHERE users_id = '$profile_id' ORDER BY id DESC";
@@ -141,8 +153,7 @@ function get_posts()
 
 function create_post()	
 {
-	global $db, $errors, $profile_data;
-	$profile_id = $profile_data['id'];
+	global $db, $errors, $profile_id;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
 
