@@ -15,7 +15,11 @@
 	}
 	$all_posts = get_posts();
 	$all_friends = get_friends();
-	$profile_data = get_profile($_GET['id']);
+	
+	if (!empty($_GET['id']))
+	{
+		$profile_data = get_profile($_GET['id']);
+	}
 ?>
 <!DOCTYPE html>
 <html>
