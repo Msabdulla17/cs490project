@@ -114,8 +114,8 @@ function create_random_id()
 
 function get_friends()
 {
-	global $db, $user_data;
-	$profile_id = $user_data[0];
+	global $db, $profile_data;
+	$profile_id = $profile_data[0];
 
 	$query = "SELECT * FROM user_list
 					WHERE id != '$profile_id' ORDER BY id DESC";
@@ -133,8 +133,8 @@ function get_friends()
 
 function get_posts()
 {
-	global $db, $user_data;
-	$profile_id = $user_data[0];
+	global $db, $profile_data;
+	$profile_id = $profile_data[0];
 
 	$query = "SELECT * FROM posts
 					WHERE user_id = '$profile_id' ORDER BY id DESC";

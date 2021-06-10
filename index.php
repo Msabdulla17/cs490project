@@ -16,11 +16,6 @@
 	$all_posts = get_posts();
 	$all_friends = get_friends();
 	$profile_data = get_profile($_GET['id']);
-
-	if (is_array($profile_data))
-	{
-		$user_data = $profile_data[0];
-	}
 ?>
 <!DOCTYPE html>
 <html>
