@@ -48,6 +48,22 @@ function like_post($id, $like_type)
 
 		if(!is_array($result))
 		{
+			$query = "UPDATE posts SET likes = likes + 1 
+					WHERE post_id = '$id' LIMIT 1";
+			mysqli_query($db, $query);
+
+			$arr["user_id"] = $user_id;
+			$arr["date"] = date("Y-m-d H:i:s");
+			$arr2[] = $arr;
+			$likes_string = json_encode($arr2);
+
+			$query = "INSERT INTO likes (like_type, content_id, likes)
+						VALUES ('$like_type','$id', '$likes_string')";
+			mysqli_query($db, $query);
+			
+		}
+		else
+		{
 			$likes = json_decode($result['likes'],true);
 			$liker_user_ids = array_column($likes, "user_id");
 
@@ -59,29 +75,16 @@ function like_post($id, $like_type)
 				
 				$arr["user_id"] = $user_id;
 				$arr["date"] = date("Y-m-d H:i:s");
-				$likes[] = $arr;
-				$likes_string = json_encode($likes);
+				$arr2[] = $arr;
+				$likes_string = json_encode($arr2);
 
 				$query = "UPDATE likes SET likes = '$likes_string'
 						WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 				mysqli_query($db, $query);
 			}
 		}
-		else
-		{
-			$query = "UPDATE posts SET likes = likes + 1 
-					WHERE post_id = '$id' LIMIT 1";
-			mysqli_query($db, $query);
-
-			$arr["user_id"] = $user_id;
-			$arr["date"] = date("Y-m-d H:i:s");
-			$likes[] = $arr;
-			$likes = json_encode($likes);
-
-			$query = "INSERT INTO likes (like_type, content_id, likes)
-						VALUES ('$like_type','$id', '$likes')";
-			mysqli_query($db, $query);
-		}
+		header('location: index.php');
+		exit();
 	}
 }	
 
