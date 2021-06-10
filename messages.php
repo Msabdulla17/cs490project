@@ -29,7 +29,7 @@ if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body>
 <br>
-<?php include("header.php"); ?>
+<?php include("index.php"); ?>
  <div style="width: 800px; margin: auto; min-height: 400px;">
 	<div style="display: flex;">
 		<!-- feed below cover photo and profile picture -->
@@ -71,7 +71,7 @@ if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 								$ROW_USER = $user->get_user($ROW['user']);
 							}
 							include("message.php");
-							echo "<input type='hidden' name='postid' value='$ROW[post]'>";
+							echo "<input type='hidden' name='post_id' value='$ROW[post]'>";
 							echo "<input id='post_button' type=submit value='Delete'>";
 						}
 					?>
