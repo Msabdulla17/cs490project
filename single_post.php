@@ -48,7 +48,7 @@
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<!--post that you want to view--> 
-		<div style= "background-color: white; color:#b1424d; min-height: 400px; text-align: center;">
+		<div style= "background-color: white; min-height: 400px;">
 			<br>
 			<div id="single_post_bar">
                 <div style= "color: #b1424d;">Comment</div>
