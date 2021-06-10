@@ -30,8 +30,8 @@
 
     if (isset($_POST['post_btn'])) 
 	{
-		$result = create_post();
         var_dump($_POST['parent']);
+		$result = create_post();
 	}
 ?>
 <!DOCTYPE html>
