@@ -11,6 +11,7 @@
             ?>
         </div>
         <?php 
+            var_dump($ROW['post']);
             echo $ROW['post']; 
         ?>
         <br><br>

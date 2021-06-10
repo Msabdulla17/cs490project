@@ -123,6 +123,7 @@
 					<?php
 						if($all_posts)
 						{
+							var_dump($all_posts);
 							foreach ($all_posts as $ROW)
 							{
 								$ROW_USER = getUserById($ROW['user_id']);
