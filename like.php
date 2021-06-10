@@ -1,17 +1,10 @@
 <?php
-    
-    var_dump($_GET['type']);
 
-    if(isset($_SERVER['HTTP_REFERER']))
-    {
-        $return_to = $_SERVER['HTTP_REFERER'];
-    }
-    else
-    {
-        $return_to = "index.php";
-    }
+    echo "<pre";
+    echo ($_GET);
+    echo "<pre";
 
-    if(isset($_GET['type']) && isset($_GET['id']))
+    if(isset($_GET['like_type']) && isset($_GET['id']))
     {
         if (is_numeric($_GET['id']))
         {
@@ -25,7 +18,6 @@
             }
         }
     }
-    header("location: " . $return_to);
     die;
 ?>
 
