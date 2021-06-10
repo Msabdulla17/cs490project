@@ -76,7 +76,7 @@ function like_post($id, $like_type)
 			$arr["user_id"] = $user_id;
 			$arr["date"] = date("Y-m-d H:i:s");
 			$likes[] = $arr;
-			$likes = json_encode($arr);
+			$likes = json_encode($likes);
 
 			$query = "INSERT INTO likes (like_type, content_id, likes)
 						VALUES ('$like_type','$id', '$likes')";
