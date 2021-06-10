@@ -6,9 +6,9 @@
 	    <div style="font-weight: bold; color: #b1424d;">
             <?php
             echo "<a href='index.php?id=$COMMENT[users_id]'>"; 
-            echo $ROW_USER["first_name"];
+            echo $profile_data["first_name"];
             echo " ";
-            echo $ROW_USER["last_name"]; 
+            echo $profile_data["last_name"]; 
             echo "</a>"
             ?>
         </div>
