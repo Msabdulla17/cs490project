@@ -184,11 +184,14 @@ function create_post()
 	global $db, $errors, $user_id;
 	$data = $_POST['post'];
 	$post_id = create_random_id();
-	$parent = 0;
 
-	if(isset($data['parent']))
+	if(isset($_POST['parent']))
 	{
-		$parent = $data['parent'];
+		$parent = $_POST['parent'];
+	}
+	else
+	{
+		$parent = 0;
 	}
 
 	if (empty($data))

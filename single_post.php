@@ -30,7 +30,6 @@
 
     if (isset($_POST['post_btn'])) 
 	{
-        var_dump($_POST['post']);
 		$result = create_post();
 	}
 ?>
