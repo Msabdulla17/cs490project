@@ -10,10 +10,7 @@
             echo $ROW_USER["last_name"]; 
             ?>
         </div>
-        <?php 
-            var_dump($ROW['post']);
-            echo $ROW['post']; 
-        ?>
+        <?php echo $ROW['post']; ?>
         <br><br>
 		<a href="like.php?like_type=post&post_id=<?php echo $ROW['post_id']?>">Like(<?php echo $ROW['likes']?>)</a> . <a href="">Comment</a> . 
         <span style="color: #999;">
