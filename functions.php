@@ -129,6 +129,7 @@ function get_posts()
 		WHERE users_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
+	var_dump($result);
 	if($result)
 	{
 		return $result;
