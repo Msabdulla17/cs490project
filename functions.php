@@ -124,9 +124,9 @@ function get_posts()
 {
 	global $db, $profile_data;
 	$profile_id = $profile_data['id'];
-
+	$profile_id_str = json_encode($profile_id);
 	$query = "SELECT * FROM posts
-		WHERE users_id = '$profile_id' ORDER BY id DESC";
+		WHERE users_id = '$profile_id_str' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
