@@ -66,7 +66,9 @@
 			<br>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $user_data['first_name'] + " " + $user_data['last_name']; 
+						echo $user_data['first_name']; 
+						echo " ";
+						echo $user_data['last_name']; 
 					?>
 					<small>
 						<i  style="color: #888;">(<?php echo $user_data[5]; ?>)</i>
