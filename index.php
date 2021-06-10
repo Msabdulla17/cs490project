@@ -17,6 +17,8 @@
 	$all_friends = get_friends();
 
 	var_dump($profile_data);
+	var_dump($all_posts);
+	var_dump($all_friends);
 ?>
 <!DOCTYPE html>
 <html>
