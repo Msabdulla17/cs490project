@@ -1,11 +1,11 @@
 <?php
     include ('functions.php');
 
-    $ROW = false;
+    $ROW2 = false;
     if (isset($_GET['post_id']))
     {
         $post_id = $_GET['post_id'];
-        $ROW = get_post($post_id);
+        $ROW2 = get_post($post_id);
     }
     else
     {
@@ -54,12 +54,11 @@
                 <div style= "color: #b1424d;">Comment</div>
                 <br>
                 <?php
-                    var_dump($ROW);
-                    $some_id = $ROW['users_id'];
-                    var_dump($some_id);
-                    $ROW_USER = getUserById($some_id);
-                    include('post.php');
-                    var_dump($ROW);
+                    foreach ($ROW2 as $ROW)
+                    {
+                        $ROW_USER = getUserById($ROW['users_id']);
+                        include('post.php');
+                    }
                 ?>
             </div>
             <br>
