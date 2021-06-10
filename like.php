@@ -13,14 +13,12 @@
     {
         if (is_numeric($_GET['post_id']))
         {
-           $allowed[] = 'post';
-           $allowed[] = 'user';
-           $allowed[] = 'comment';
-
-            if (in_array($_GET['like_type'], $allowed))
+            if ($_GET['like_type'] == 'post')
             {
                 like_post($_GET['post_id'], $_GET['like_type']);
+                exit;
             }
+            exit;
         }
     }
     header("location: " . $return_to);

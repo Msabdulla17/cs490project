@@ -42,12 +42,12 @@ function like_post($id, $like_type)
 
 	if ($like_type == 'post')
 	{
-		$query = "UPDATE posts set likes = likes + 1 
+		$query = "UPDATE posts SET likes = likes + 1 
 				WHERE post_id = '$id' LIMIT 1";
 		mysqli_query($db, $query);
 
 		$query = "SELECT likes FROM likes
-				WHERE like_type = 'post' && content_id '$id' LIMIT 1";
+				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 		$result = mysqli_query($db, $query);
 		
 		if(is_array($result))
@@ -57,16 +57,18 @@ function like_post($id, $like_type)
 
 			if(!in_array($user_id, $liker_user_ids))
 			{
-				$arr[] = $user_id;
-				$arr[] = date("Y-m-d H:i:s");
+				$arr["user_id"] = $user_id;
+				$arr["date"] = date("Y-m-d H:i:s");
 				$likes[] = $arr;
 
 				$likes_string = json_encode($likes);
 
-				$query = "UPDATE likes set likes = $likes_string
-						WHERE like_type = 'post' && content_id = $id LIMIT 1";
+				$query = "UPDATE likes SET likes = '$likes_string'
+						WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 				mysqli_query($db, $query);
+				exit;
 			}
+			exit;
 		}
 		else
 		{
@@ -79,6 +81,7 @@ function like_post($id, $like_type)
 			$query = "INSERT INTO likes (like_type, content_id, likes)
 						VALUES ('$like_type','$id', '$likes')";
 			mysqli_query($db, $query);
+			exit;
 		}
 	}
 }	
