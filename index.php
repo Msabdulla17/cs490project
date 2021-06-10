@@ -127,6 +127,8 @@
 						{
 							foreach ($all_posts as $ROW)
 							{
+								var_dump($ROW_USER);
+								var_dump($ROW);
 								$ROW_USER = getUserById($ROW['user_id']);
 								include('post.php');
 							}
