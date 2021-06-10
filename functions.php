@@ -36,20 +36,6 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-if (isset($_GET['id'])) 
-{
-	$profile_data = getUserById($_GET['id']);
-	$all_posts = get_posts();
-	$all_friends = get_friends();
-}
-else
-{
-	$profile_data = $user_data;
-	$all_posts = get_posts();
-	$all_friends = get_friends();
-}
-$profile_id = $profile_data['id'];
-
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
