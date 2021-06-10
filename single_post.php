@@ -54,6 +54,7 @@
                 <div style= "color: #b1424d;">Comment</div>
                 <br>
                 <?php
+                    var_dump($ROW);
                     $some_id = $ROW['users_id'];
                     var_dump($some_id);
                     $ROW_USER = getUserById($some_id);
