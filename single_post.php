@@ -86,7 +86,7 @@
                 <div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
 					<form style= "width: 80%;" method ="post">
 						<textarea name="post" placeholder="Post a comment here."></textarea>
-						<input type="hidden" name="parent" value="<?php echo $ROW['posts_id']?>">
+						<input type="hidden" name="parent" value="<?php echo $ROW['post_id']?>">
                         <input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
