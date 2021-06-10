@@ -31,6 +31,7 @@
     if (isset($_POST['post_btn'])) 
 	{
 		$result = create_post();
+        var_dump($_POST['parent']);
 	}
 ?>
 <!DOCTYPE html>
