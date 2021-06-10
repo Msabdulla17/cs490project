@@ -30,7 +30,6 @@
 
     if (isset($_POST['post_btn'])) 
 	{
-        var_dump($_POST['parent']);
 		$result = create_post();
 	}
 ?>
@@ -86,7 +85,7 @@
                 <div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
 					<form style= "width: 80%;" method ="post">
 						<textarea name="post" placeholder="Post a comment here."></textarea>
-						<input type="hidden" id="parent" name="parent" value=" . $post_id>
+						<input type="hidden" id="parent" name="parent" value= . $post_id>
                         <input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
