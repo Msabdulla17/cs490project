@@ -66,14 +66,14 @@
 			<br>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $user_data['first_name']; 
+						echo $profile_data['first_name']; 
 						echo " ";
-						echo $user_data['last_name']; 
+						echo $profile_data['last_name']; 
 					?>
 					<small>
 						<i  style="color: #888;">
 							(<?php 
-							echo $user_data['user_type']; 
+							echo $profile_data['user_type']; 
 							?>)
 						</i>
 					</small>
