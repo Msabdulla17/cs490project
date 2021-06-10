@@ -30,9 +30,8 @@
 
     if (isset($_POST['post_btn'])) 
 	{
-		header('location: ' . $_SERVER['HTTP_REFERER']);
-		$result = create_post();
         var_dump($_POST['post']);
+		$result = create_post();
 	}
 ?>
 <!DOCTYPE html>
