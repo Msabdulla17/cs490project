@@ -27,7 +27,6 @@
 		$all_posts = get_posts();
 		$all_friends = get_friends();
 	}
-	$profile_id = $profile_data['id'];
 ?>
 <!DOCTYPE html>
 <html>
