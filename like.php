@@ -14,7 +14,6 @@
         }
         exit;
     }
-    header("location: index.php");
     die;
 ?>
 
