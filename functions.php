@@ -20,6 +20,7 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
+$profile_data = get_profile($_GET['id']);
 $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
@@ -137,7 +138,7 @@ function get_posts()
 	$profile_id = $profile_data[0];
 
 	$query = "SELECT * FROM posts
-					WHERE user_id = '$profile_id' ORDER BY id DESC";
+		WHERE user_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
