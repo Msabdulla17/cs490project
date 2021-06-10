@@ -16,6 +16,12 @@ body {
 	background: radical-gradient(#fc2629, #fc7984);
 }*/
 
+#single_post_bar{
+	margin-top: 20px;
+	padding: 10px;
+	background-color: white;
+}
+
 #post_bar{
 	margin-top: 20px;
 	padding: 10px;

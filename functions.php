@@ -120,6 +120,24 @@ function get_friends()
 	}
 }
 
+function get_post($post_id)
+{
+	global $db, $post_id;
+
+	$query = "SELECT * FROM posts
+		WHERE post_id = '$post_id' LIMIT 1";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function get_posts()
 {
 	global $db, $profile_data;
