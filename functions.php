@@ -36,6 +36,17 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
+function get_profile($id)
+{
+	global $db;
+
+	$query = "SELECT * FROM user_list
+					WHERE id = '$id' LIMIT 1";
+	$result = mysqli_query($db, $query);
+	
+	return $result;
+}
+
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
@@ -64,7 +75,7 @@ function like_post($id, $like_type)
 		}
 		else
 		{
-			$likes = json_decode($result['likes'],true);
+			$likes = json_decode($result[0]['likes'],true);
 			$liker_user_ids = array_column($likes, "user_id");
 
 			if(!in_array($user_id, $liker_user_ids))
@@ -103,10 +114,11 @@ function create_random_id()
 
 function get_friends()
 {
-	global $db, $user_id;
+	global $db, $user_data;
+	$profile_id = $user_data[0];
 
 	$query = "SELECT * FROM user_list
-					WHERE id != '$user_id' ORDER BY id DESC";
+					WHERE id != '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)
@@ -121,10 +133,11 @@ function get_friends()
 
 function get_posts()
 {
-	global $db, $user_id;
+	global $db, $user_data;
+	$profile_id = $user_data[0];
 
 	$query = "SELECT * FROM posts
-					WHERE user_id = '$user_id' ORDER BY id DESC";
+					WHERE user_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
 
 	if($result)

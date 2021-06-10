@@ -13,9 +13,14 @@
 		header('location: index.php');
 		$result = create_post();
 	}
-
 	$all_posts = get_posts();
 	$all_friends = get_friends();
+	$profile_data = get_profile($_GET['id']);
+
+	if (is_array($profile_data))
+	{
+		$user_data = $profile_data[0];
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,19 +61,16 @@
 			<img src="images/cover_photo.png" style="width:100%;">
 			<img id="profile_picture" src="images/user_profile.png">
 			<br>
-			<?php  if (isset($_SESSION['user'])) : ?>
 				<div style="font-size: 20px;">
 					<?php 
-						echo $_SESSION['user']['first_name'];
+						echo $user_data[8];
 						echo " ";
-						echo $_SESSION['user']['last_name']; 
+						echo $user_data[9]; 
 					?>
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+						<i  style="color: #888;">(<?php echo $user_data[5]; ?>)</i>
 					</small>
 				</div>
-			<?php endif ?>
-			
 			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
