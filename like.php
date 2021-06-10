@@ -19,7 +19,7 @@
 
             if (in_array($_GET['like_type'], $allowed))
             {
-                like_post($_GET['post_id'], $_GET['type']);
+                like_post($_GET['post_id'], $_GET['like_type']);
             }
         }
     }
