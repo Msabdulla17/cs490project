@@ -83,6 +83,7 @@ function like_post($id, $like_type)
 			mysqli_query($db, $query);
 			exit;
 		}
+		exit;
 	}
 }	
 
