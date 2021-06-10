@@ -11,15 +11,8 @@
 
     if(isset($_GET['like_type']) && isset($_GET['post_id']))
     {
-        if (is_numeric($_GET['post_id']))
-        {
-            if ($_GET['like_type'] == 'post')
-            {
-                like_post($_GET['post_id'], $_GET['like_type']);
-                exit;
-            }
-            exit;
-        }
+        like_post($_GET['post_id'], $_GET['like_type']);
+        exit;
     }
     header("location: " . $return_to);
     die;
