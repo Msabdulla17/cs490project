@@ -56,7 +56,8 @@
                 <?php
                     if(is_array($ROW))
                     {
-                        $ROW_USER = getUserById($ROW['users_id']);
+                        $some_id = $ROW['users_id'];
+                        $ROW_USER = getUserById($some_id);
                         var_dump($ROW_USER);
                         include('post.php');
                         var_dump($ROW);
