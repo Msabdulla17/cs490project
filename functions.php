@@ -42,7 +42,6 @@ function like_post($id, $like_type)
 
 	if ($like_type == 'post')
 	{
-		var_dump($like_type);
 		$query = "UPDATE posts SET likes = likes + 1 
 				WHERE post_id = '$id' LIMIT 1";
 		mysqli_query($db, $query);
