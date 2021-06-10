@@ -16,9 +16,14 @@
 	$all_posts = get_posts();
 	$all_friends = get_friends();
 
-	var_dump($profile_data);
-	var_dump($all_posts);
-	var_dump($all_friends);
+	if (isset($_GET['id'])) 
+	{
+		$profile_data = get_profile($_GET['id']);
+	}
+	else
+	{
+		$profile_data = $user_data;
+	}
 ?>
 <!DOCTYPE html>
 <html>

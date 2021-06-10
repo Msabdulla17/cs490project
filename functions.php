@@ -36,14 +36,6 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
-if (isset($_GET['id'])) 
-{
-	$profile_data = get_profile($_GET['id']);
-}
-else
-{
-	$profile_data = $user_data;
-}
 
 function get_profile($id)
 {
@@ -124,7 +116,7 @@ function create_random_id()
 function get_friends()
 {
 	global $db, $profile_data;
-	$profile_id = $profile_data[0];
+	$profile_id = $profile_data['id'];
 
 	$query = "SELECT * FROM user_list
 					WHERE id != '$profile_id' ORDER BY id DESC";
@@ -143,7 +135,7 @@ function get_friends()
 function get_posts()
 {
 	global $db, $profile_data;
-	$profile_id = $profile_data[0];
+	$profile_id = $profile_data['id'];
 
 	$query = "SELECT * FROM posts
 		WHERE user_id = '$profile_id' ORDER BY id DESC";
