@@ -1,5 +1,5 @@
 <div id="friends">
-	<a href="profile.php?id=<?php echo $FRIEND_ROW['id'];?>">
+	<a href="index.php?id=<?php echo $FRIEND_ROW['id'];?>">
 		<img id="friends_img" src="images/user_profile.png">
 		<br>
 		<?php 
