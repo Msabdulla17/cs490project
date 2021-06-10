@@ -46,7 +46,7 @@ function like_post($id, $like_type)
 				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 		$result = mysqli_query($db, $query);
 
-		if(!empty($result))
+		if(!is_array($result))
 		{
 			$likes = json_decode($result['likes'],true);
 			$liker_user_ids = array_column($likes, "user_id");
@@ -69,7 +69,6 @@ function like_post($id, $like_type)
 					WHERE post_id = '$id' LIMIT 1";
 			mysqli_query($db, $query);
 
-			
 			$arr["user_id"] = $user_id;
 			$arr["date"] = date("Y-m-d H:i:s");
 
