@@ -1,15 +1,6 @@
 <?php
     include('functions.php');
 
-    if(isset($_SERVER['HTTP_REFERER']))
-    {
-       $return_to = $_SERVER['HTTP_REFERER'];
-    }
-    else
-    {
-       $return_to = "index.php";
-    }
-
     if(isset($_GET['like_type']) && isset($_GET['post_id']))
     {
         if (is_numeric($_GET['post_id']))
@@ -23,7 +14,7 @@
         }
         exit;
     }
-    header("location: " . $return_to);
+    header("location: index.php");
     die;
 ?>
 

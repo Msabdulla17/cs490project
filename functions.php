@@ -49,11 +49,10 @@ function like_post($id, $like_type)
 		$query = "SELECT likes FROM likes
 				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 		$result = mysqli_query($db, $query);
-		$result = json_decode($result['likes'],true);
+		$likes = json_decode($result['likes'],true);
 
-		if(is_array($result))
+		if(is_array($likes))
 		{
-			$likes = json_decode($result['likes'],true);
 			$liker_user_ids = array_column($likes, "user_id");
 
 			if(!in_array($user_id, $liker_user_ids))
