@@ -97,9 +97,9 @@
 
                    if (is_array($comments))
                    {
-                       foreach ($comments as $COMMENT)
+                       foreach ($comments as $ROW)
                        {
-                           include('comment.php');
+                           include('post.php');
                        }
                    }
                 ?>
