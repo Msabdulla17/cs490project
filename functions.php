@@ -191,6 +191,8 @@ function create_post()
 		$parent = $data['parent'];
 	}
 
+	var_dump($parent);
+
 	if (empty($data))
 	{
 		array_push($errors, "Post cannot be empty.");
