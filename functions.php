@@ -122,10 +122,9 @@ function get_friends()
 
 function get_posts()
 {
-	global $db, $profile_data, $user_id;
+	global $db, $profile_data;
 	$profile_id = $profile_data['id'];
-	var_dump($profile_id);
-	var_dump($user_id);
+
 	$query = "SELECT * FROM posts
 		WHERE users_id = '$profile_id' ORDER BY id DESC";
 	$result = mysqli_query($db, $query);
