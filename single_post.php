@@ -31,6 +31,7 @@
     if (isset($_POST['post_btn'])) 
 	{
 		$result = create_post();
+        header("location: {$_SERVER['HTTP_REFERER']}");
 	}
 ?>
 <!DOCTYPE html>
