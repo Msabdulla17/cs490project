@@ -138,13 +138,12 @@ function get_post($post_id)
 	}
 }
 
-function get_comments()
+function get_comments($post_id)
 {
-	global $db, $profile_data;
-	$profile_id = $profile_data['id'];
+	global $db;
 
 	$query = "SELECT * FROM posts
-		WHERE parent = '$profile_id'
+		WHERE parent = '$post_id'
 		ORDER BY id ASC";
 	$result = mysqli_query($db, $query);
 
