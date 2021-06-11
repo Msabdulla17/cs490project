@@ -94,12 +94,12 @@
                 <?php
                    
                    $comments = get_comments();
-
+                   var_dump($comments); 
                    if (is_array($comments))
                    {
-                       foreach ($comments as $ROW)
+                       foreach ($comments as $COMMENT)
                        {
-                           include('post.php');
+                           include('comment.php');
                        }
                    }
                 ?>
