@@ -214,6 +214,10 @@ function create_post()
 	{
     	header("Location: ".$_SERVER['HTTP_REFERER']);
 	}
+	else
+	{
+		header("Location: index.php");
+	}
 }
 
 function displayUser()
