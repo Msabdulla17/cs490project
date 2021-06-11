@@ -94,6 +94,7 @@
                 <?php
                    
                    $comments = get_comments($post_id);
+                   var_dump($comments);
                    if (is_array($comments))
                    {
                        foreach ($comments as $COMMENT)
