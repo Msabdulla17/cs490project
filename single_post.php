@@ -94,10 +94,8 @@
                 <?php
                    
                    $comments = get_comments($post_id);
-                   var_dump($comments);
-                   if (is_array($comments))
+                   if ($comments)
                    {
-                       
                        foreach ($comments as $COMMENT)
                        {   
                             include('comment.php');
