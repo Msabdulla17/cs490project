@@ -10,7 +10,6 @@
 
 	if (isset($_POST['post_btn'])) 
 	{
-		header('location: index.php');
 		$result = create_post();
 	}
 

@@ -83,7 +83,11 @@ function like_post($id, $like_type)
 				mysqli_query($db, $query);
 			}
 		}
-		header('location: index.php');
+		
+		if (!empty($_SERVER['HTTP_REFERER']))
+		{
+    		header("Location: ".$_SERVER['HTTP_REFERER']);
+		}
 		exit();
 	}
 }	
@@ -205,6 +209,10 @@ function create_post()
 					VALUES ($post_id, $user_id, '$post', '$parent')";
 		mysqli_query($db, $query);
 		exit();
+	}
+	if (!empty($_SERVER['HTTP_REFERER']))
+	{
+    	header("Location: ".$_SERVER['HTTP_REFERER']);
 	}
 }
 
