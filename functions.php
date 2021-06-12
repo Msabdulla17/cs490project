@@ -85,11 +85,12 @@ function like_post($id, $like_type)
 				else
 				{
 					exit();
+				}
 			}
 		}
 	}
-		exit();
-	}
+	exit();
+
 }	
 
 function create_random_id()
