@@ -50,7 +50,9 @@
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
 			<a href="timeline.php" style="color: white";>Artstagram</a> &nbsp &nbsp
+			<form method = "get" action="search.php"
 			<input type="text" id="search_box" placeholder="Search">
+	</form>
 			<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
 			<?php  if (isset($_SESSION['user'])) : ?>
 				<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
