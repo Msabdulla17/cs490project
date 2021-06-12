@@ -66,8 +66,9 @@ function like_post($id, $like_type)
 		{
 			foreach ($result as $results)
 			{
-				$likes = json_decode($results[0]['likes'],true);
+				$likes = json_decode($results['likes'],true);
 				$liker_user_ids = array_column($likes, "user_id");
+				var_dump($likes);
 				if(!in_array($user_id, $liker_user_ids))
 				{
 					$query = "UPDATE posts SET likes = likes + 1 
