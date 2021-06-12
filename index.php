@@ -10,6 +10,7 @@
 
 	if (isset($_POST['post_btn'])) 
 	{
+		header("location: ".$_SERVER['HTTP_REFERER']);
 		$result = create_post();
 	}
 
