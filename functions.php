@@ -46,7 +46,7 @@ function like_post($id, $like_type)
 				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 		$result = mysqli_query($db, $query);
 
-		if(empty($result))
+		if(is_array($result))
 		{
 			$query = "UPDATE posts SET likes = likes + 1 
 					WHERE post_id = '$id' LIMIT 1";
@@ -66,7 +66,7 @@ function like_post($id, $like_type)
 		{
 			foreach ($result as $results)
 			{
-				$likes = json_decode($results['likes'],true);
+				$likes = json_decode($results[0]['likes'],true);
 				$liker_user_ids = array_column($likes, "user_id");
 				var_dump($likes);
 				if(!in_array($user_id, $liker_user_ids))
