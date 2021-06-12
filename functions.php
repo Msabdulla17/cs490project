@@ -39,6 +39,7 @@ if (isset($_POST['login_btn']))
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
+	$result[] = "";
 
 	if ($like_type == 'post')
 	{
