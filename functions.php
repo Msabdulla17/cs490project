@@ -162,6 +162,11 @@ function get_friends()
 	}
 }
 
+function delete_post($post_id)
+{
+
+}
+
 function get_post($post_id)
 {
 	global $db, $post_id;

@@ -6,10 +6,10 @@
 		exit();
 	}
 
-	if (isset($_POST['post_btn'])) 
+	if ($_SERVER['REQUEST_METHOD'] == "POST") 
 	{
-		header('location: timeline.php');
-		create_post();
+		header("location: index.php");
+		delete_post($post_id);
 		exit();
 	}
 
@@ -51,23 +51,27 @@
 	<div style="display: flex;">
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
-				<div style= "width: 100%;color: #b1424d;text-align: center;">
-					
-				</div>
-				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white; color: #b1424d;">
-					<h2>Delete Post</h2>
-					<br>
+				<div> 
 					<form style= "width: 100%;" method= "post">
-						Are you sure you want to delete this post?
 						<hr>
 							<?php
-								foreach ($ROW2 as $ROW)
+								if($ROW)
 								{
-									$ROW_USER = getUserById($ROW['users_id']);
-									include("post_delete.php");
+									echo "Are you sure you want to delete this post?<br>";
+									foreach ($ROW2 as $ROW)
+									{
+										$ROW_USER = getUserById($ROW['users_id']);
+										include("post_delete.php");
+									}
+								}
+								else
+								{
+									array_push($errors, "No post was found.");
+									header("index.php");
 								}
 							?>
 						<hr>
+						<input type ="hidden" name="post_id" value=<?php echo $post_id ?>>
 						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
 						<br>
 					</form>
