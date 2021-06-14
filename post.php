@@ -27,10 +27,8 @@
        
         </span>
         <?php        
-            
             $i_liked = false;
             $likes_minus_one = ($ROW['likes'] - 1);
-            $user_id = ($_SESSION['user']['id']);
             if (!isLoggedIn()) 
             {
                 $_SESSION['msg'] = "You must log in first";
@@ -43,7 +41,7 @@
             $result = read($query);
             if(is_array($result))
             {
-                $likes = $result['likes'];
+                $likes = json_decode($result[0]['likes'],true);
                 $liker_user_ids = array_column($likes, "user_id");
                 if(in_array($user_id, $liker_user_ids))
                 {
