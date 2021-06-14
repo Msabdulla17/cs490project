@@ -36,6 +36,47 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
+function save($query)
+{
+	global $cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db;
+	$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+	$result = mysqli_query($conn,$query);
+
+	if(!$result)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+
+}
+
+function read($query)
+{
+	global $cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db;
+	$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+	$result = mysqli_query($conn,$query);
+
+	if(!$result)
+	{
+		return false;
+	}
+	else
+	{
+		$data = false;
+		while($row = mysqli_fetch_assoc($result))
+		{
+			$data[] = $row;
+		}
+		return $data;
+	}
+
+}
+
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
@@ -44,7 +85,7 @@ function like_post($id, $like_type)
 	{
 		$query = "SELECT likes FROM likes
 				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
-		$result = mysqli_query($db, $query);
+		$result = read($query);
 		if(is_array($result))
 		{
 			$likes = json_decode($result[0]['likes'],true);

@@ -39,7 +39,7 @@
      
             $query = "SELECT likes FROM likes
             WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
-            $result = mysqli_query($db, $query);
+            $result = read($query);
             if(is_array($result))
             {
                 $likes = $result['likes'];
