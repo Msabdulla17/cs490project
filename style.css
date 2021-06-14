@@ -165,8 +165,25 @@ form, .content{
 	border-radius: 5px;
 	border: 1px solid gray;
 }
-
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background-color: #5F9EA0;
+	border: none;
+	border-radius: 5px;
+}
 #delete_button{
+	float:right;
+	background-color: #b1424d;
+	border:none;
+	color: white;
+	padding: 4px;
+	font-size: 16px;
+	border-radius: 2px;
+	width: 50px;
+}
+#post_button{
 	float:right;
 	background-color: #b1424d;
 	border:none;

@@ -16,9 +16,9 @@
 	$profile_data = $user_data;
 
 	$ROW2 = false;
-    if (isset($_GET['post_id']))
+    if (isset($_GET['id']))
     {
-        $post_id = $_GET['post_id'];
+        $post_id = $_GET['id'];
         $ROW2 = get_post($post_id);
     }
     else
@@ -50,11 +50,12 @@
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 	<div style="display: flex;">
 			<!--make a post and recent posts--> 
-			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5; color: #b1424d;">
+			<div style= "text-align: center; min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5; color: #b1424d;">
 				<h2>Delete Post</h2>
 				<br>
 				<form method = "post">
 					Are you sure you want to delete this post?
+					<br>
 					<input id="delete_button" type="submit" name="delete_btn" value="Delete">
 					<br>
 				</form>
