@@ -12,7 +12,7 @@
 		create_post();
 		exit();
 	}
-	
+
 	if (isset($_GET['id'])) 
 	{
 		$profile_data = getUserById($_GET['id']);
@@ -53,7 +53,7 @@
 			<!--friends--> 
 			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
 				<div style="background-color: white; text-align: center; color: #b1424d;">
-					<img id="profile_picture" src="images/user_profile.png">
+					<img id="profile_picture_timeline" src="images/user_profile.png">
 					<br>
 					<div style="font-size: 20px;">
 						<?php 
