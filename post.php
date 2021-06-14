@@ -1,3 +1,12 @@
+<?php 
+	include('functions.php');
+	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+		exit();
+	}
+
+?>
 <div id="post">
 	<div>
 		<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
@@ -29,13 +38,7 @@
         <?php        
             $i_liked = false;
             $likes_minus_one = ($ROW['likes'] - 1);
-            if (!isLoggedIn()) 
-            {
-                $_SESSION['msg'] = "You must log in first";
-                header('location: login.php');
-                exit();
-            }
-     
+            
             $query = "SELECT likes FROM likes
             WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
             $result = read($query);
