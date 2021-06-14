@@ -42,7 +42,8 @@
             $result = mysqli_query($db, $query);
             if(is_array($result))
             {
-                $liker_user_ids = array_column($result, "user_id");
+                $likes = json_decode($result['likes'],true);
+                $liker_user_ids = array_column($likes, "user_id");
                 if(in_array($user_id, $liker_user_ids))
                 {
                     $i_liked = true;
