@@ -23,6 +23,16 @@
         <span style="color: #999;">
             <?php echo $ROW['timestamp']; ?>
         </span>
-	</div>
+        <span>
+       
+        </span>
+        <?php
+            if ($ROW['likes'] > 0)
+            {
+                echo "<br>";
+                echo "<div style = 'text-align: left;'> See who likes this post </div>"; 
+            }
+        ?>
+    </div>  
 </div>
 <br><br>
