@@ -31,6 +31,15 @@
         <span style="color: #999;">
             <?php echo $ROW['timestamp']; ?>
         </span>
+        <span style="color: #999; float:right">
+            <a href="edit.php">
+                Edit 
+            </a>
+            . 
+            <a href="delete.php">
+                Delete 
+            </a>
+        </span>
         <span>
        
         </span>
@@ -53,6 +62,7 @@
             if ($ROW['likes'] > 0)
             {
                 echo "<br><br>";
+                echo "<a href='likes.php?type=post&id=$ROW[post_id]'>";
                 if ($ROW['likes'] == 1)
                 {
                     if ($i_liked)
@@ -82,6 +92,7 @@
                         echo "<div style = 'text-align: left;'>" . $ROW['likes'] . " people like this post </div>"; 
                     }
                 }
+                echo "<a>";
             }
         ?>
     </div>  
