@@ -199,8 +199,26 @@ function get_comments($post_id)
 	}
 }
 
+function get_all_posts()
+{
+	global $db;
 
-function get_posts()
+	$query = "SELECT * FROM posts
+		WHERE parent = '0'
+		ORDER BY id DESC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function get_users_posts()
 {
 	global $db, $profile_data;
 	$profile_id = $profile_data['id'];

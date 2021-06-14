@@ -36,7 +36,7 @@
                 Edit 
             </a>
             . 
-            <a href="delete.php">
+            <a href="delete.php?id=<?php echo $ROW['post_id'] ?>">
                 Delete 
             </a>
         </span>
