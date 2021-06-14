@@ -54,9 +54,13 @@
 				<div style= "width: 100%;color: #b1424d;text-align: center;">
 					<h2>Delete Post</h2>
 					<br>
-					<form method = "post">
+					<form style= "width: 100%;" method= "post">
 						Are you sure you want to delete this post?
-						<br>
+						<hr>
+							<?php
+								include("post_delete.php");
+							?>
+						<hr>
 						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
 						<br>
 					</form>

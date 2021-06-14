@@ -17,13 +17,13 @@
 	if (isset($_GET['id'])) 
 	{
 		$profile_data = getUserById($_GET['id']);
-		$all_posts = get_posts();
+		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
 	else
 	{
 		$profile_data = $user_data;
-		$all_posts = get_posts();
+		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
 ?>
