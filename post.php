@@ -27,9 +27,10 @@
        
         </span>
         <?php        
+            
             $i_liked = false;
             $likes_minus_one = ($ROW['likes'] - 1);
-
+            $user_id = ($_SESSION['user']['id']);
             if (!isLoggedIn()) 
             {
                 $_SESSION['msg'] = "You must log in first";
