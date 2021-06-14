@@ -6,13 +6,6 @@
 		exit();
 	}
 
-	if ($_SERVER['REQUEST_METHOD'] == "POST") 
-	{
-		header("location: index.php");
-		delete_post($post_id);
-		exit();
-	}
-
 	$profile_data = $user_data;
 
 	$ROW2 = false;
@@ -25,6 +18,13 @@
     {
         array_push($errors, "No post was found.");
     }
+
+	if ($_SERVER['REQUEST_METHOD'] == "POST") 
+	{
+		header("location: index.php");
+		delete_post($post_id);
+		exit();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +55,7 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
-								if($ROW)
+								if($ROW2)
 								{
 									echo "Are you sure you want to delete this post?<br>";
 									foreach ($ROW2 as $ROW)
