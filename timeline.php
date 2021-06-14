@@ -12,9 +12,19 @@
 		create_post();
 		exit();
 	}
-
-	$all_posts = get_posts();
-	$all_friends = get_friends();
+	
+	if (isset($_GET['id'])) 
+	{
+		$profile_data = getUserById($_GET['id']);
+		$all_posts = get_posts();
+		$all_friends = get_friends();
+	}
+	else
+	{
+		$profile_data = $user_data;
+		$all_posts = get_posts();
+		$all_friends = get_friends();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,26 +52,31 @@
 		<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
 			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
-				<div id="friends_bar">
-					Friends
+				<div style="background-color: white; text-align: center; color: #b1424d;">
+					<img id="profile_picture" src="images/user_profile.png">
 					<br>
-					<?php
-						if($all_friends)
-						{
-							foreach ($all_friends as $FRIEND_ROW)
-							{
-								include('user.php');
-							}
-						}
-					?>
-
+					<div style="font-size: 20px;">
+						<?php 
+							echo $profile_data['first_name']; 
+							echo " ";
+							echo $profile_data['last_name']; 
+						?>
+						<small>
+							<i  style="color: #888;">
+							(<?php 
+								echo $profile_data['user_type']; 
+							?>)
+							</i>
+						</small>
+					</div>
+					<br>
 				</div>
 			</div>
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<form style= "width: 80%;" action="timeline.php" method ="post">
+					<form style= "width: 80%;" action="index.php" method ="post">
 						<textarea name="post" placeholder="Make a post here."></textarea>
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
@@ -77,7 +92,7 @@
 						{
 							foreach ($all_posts as $ROW)
 							{
-								$ROW_USER = getUserById($ROW['user_id']);
+								$ROW_USER = getUserById($ROW['users_id']);
 								include('post.php');
 							}
 						}

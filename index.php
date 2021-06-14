@@ -14,7 +14,6 @@
 		$result = create_post();
 	}
 
-
 	if (isset($_GET['id'])) 
 	{
 		$profile_data = getUserById($_GET['id']);
