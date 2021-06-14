@@ -164,12 +164,16 @@ function get_friends()
 
 function delete_post($post_id)
 {
+	global $db;
 
+	$query = "DELETE FROM posts
+		WHERE post_id = '$post_id' LIMIT 1";
+	mysqli_query($db, $query);
 }
 
 function get_post($post_id)
 {
-	global $db, $post_id;
+	global $db;
 
 	$query = "SELECT * FROM posts
 		WHERE post_id = '$post_id' LIMIT 1";

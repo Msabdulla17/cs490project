@@ -23,7 +23,7 @@
 	{
 		header("location: index.php");
 		delete_post($post_id);
-		exit();
+		die();
 	}
 ?>
 <!DOCTYPE html>
