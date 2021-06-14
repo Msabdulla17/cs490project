@@ -1,11 +1,10 @@
 <?php 
-	include('functions.php');
-	if (!isLoggedIn()) {
+    if (!isLoggedIn()) 
+    {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
 		exit();
 	}
-
 ?>
 <div id="post">
 	<div>
@@ -38,7 +37,7 @@
         <?php        
             $i_liked = false;
             $likes_minus_one = ($ROW['likes'] - 1);
-            
+
             $query = "SELECT likes FROM likes
             WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
             $result = read($query);
