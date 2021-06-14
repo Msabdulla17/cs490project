@@ -16,7 +16,7 @@ if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
 	show($_POST);
 	show($_FILES);
 	$msg_class= new Messages();
-	$msg_class->send($_POST,$_FILES);
+	$msg_class->send($_POST,$_GET);
 	//header("Location: ".$_SESSION['return_to']);
 	die;
 }
