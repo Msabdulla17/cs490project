@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Timeline</title>
+	<title>Delete Post</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -50,15 +50,17 @@
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 	<div style="display: flex;">
 			<!--make a post and recent posts--> 
-			<div style= "text-align: center; min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5; color: #b1424d;">
-				<h2>Delete Post</h2>
-				<br>
-				<form method = "post">
-					Are you sure you want to delete this post?
+			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
+				<div style= "width: 100%;color: #b1424d;text-align: center;">
+					<h2>Delete Post</h2>
 					<br>
-					<input id="delete_button" type="submit" name="delete_btn" value="Delete">
-					<br>
-				</form>
+					<form method = "post">
+						Are you sure you want to delete this post?
+						<br>
+						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
+						<br>
+					</form>
+				</div>
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white; color: #b1424d;">
 					<?php
 						foreach ($ROW2 as $ROW)
