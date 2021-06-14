@@ -52,27 +52,25 @@
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<div style= "width: 100%;color: #b1424d;text-align: center;">
+					
+				</div>
+				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white; color: #b1424d;">
 					<h2>Delete Post</h2>
 					<br>
 					<form style= "width: 100%;" method= "post">
 						Are you sure you want to delete this post?
 						<hr>
 							<?php
-								include("post_delete.php");
+								foreach ($ROW2 as $ROW)
+								{
+									$ROW_USER = getUserById($ROW['users_id']);
+									include("post_delete.php");
+								}
 							?>
 						<hr>
 						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
 						<br>
 					</form>
-				</div>
-				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white; color: #b1424d;">
-					<?php
-						foreach ($ROW2 as $ROW)
-                    	{
-                        	$ROW_USER = getUserById($ROW['users_id']);
-                        	include('post.php');
-                    	}
-                	?>
                 <br style="clear: both;">
 				</div>
 			</div>

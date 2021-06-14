@@ -1,4 +1,11 @@
-
+<?php 
+    if (!isLoggedIn()) 
+    {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+		exit();
+	}
+?>
 <div id="post">
 	<div>
 		<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
@@ -15,8 +22,18 @@
         </div>
         <?php echo $ROW['post']; ?>
         <br><br>
-		<span style="color: #999;">
+        <?php
+            $likes = "";
+            $likes = ($ROW['likes'] > 0) ? " (". $ROW['likes'] . ")": "";
+        ?> 
+		<a href="like.php?like_type=post&post_id=<?php echo $ROW['post_id']?>">Like<?php echo $likes?></a> . 
+        <a href="single_post.php?post_id=<?php echo $ROW['post_id'] ?>">Comment</a> . 
+        <span style="color: #999;">
             <?php echo $ROW['timestamp']; ?>
         </span>
-    </div>
+        <span>
+       
+        </span>
+    </div>  
 </div>
+<br>
