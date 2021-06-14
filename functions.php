@@ -44,7 +44,7 @@ function like_post($id, $like_type)
 	{
 		$query = "SELECT likes FROM likes
 				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
-		$result[] = mysqli_query($db, $query);
+		$result = mysqli_query($db, $query);
 		if(is_array($result))
 		{
 			$likes = json_decode($result['likes'],true);
