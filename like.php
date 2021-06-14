@@ -7,11 +7,11 @@
         {
             if ($_GET['like_type'] == 'post')
             {
+                header("location: ".$_SERVER['HTTP_REFERER']);
                 like_post($_GET['post_id'], $_GET['like_type']);
             }
         }
     }
-    header("Location: ".$_SERVER['HTTP_REFERER']);
     die;
 ?>
 
