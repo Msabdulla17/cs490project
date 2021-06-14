@@ -26,11 +26,61 @@
         <span>
        
         </span>
-        <?php
+        <?php        
+            $i_liked = false;
+            $likes_minus_one = ($ROW['likes'] - 1);
+
+            if (!isLoggedIn()) 
+            {
+                $_SESSION['msg'] = "You must log in first";
+                header('location: login.php');
+                exit();
+            }
+     
+            $query = "SELECT likes FROM likes
+            WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
+            $result = mysqli_query($db, $query);
+            if(is_array($result))
+            {
+                $likes = json_decode($result[0]['likes'],true);
+                $liker_user_ids = array_column($likes, "user_id");
+                if(in_array($user_id, $liker_user_ids))
+                {
+                    $i_liked = true;
+                }
+            }
             if ($ROW['likes'] > 0)
             {
-                echo "<br>";
-                echo "<div style = 'text-align: left;'> See who likes this post </div>"; 
+                echo "<br><br>";
+                if ($ROW['likes'] == 1)
+                {
+                    if ($i_liked)
+                    {
+                        echo "<div style = 'text-align: left;'>You like this post </div>"; 
+                    }
+                    else
+                    {
+                        echo "<div style = 'text-align: left;'>1 person likes this post </div>"; 
+                    }
+                }
+                if ($ROW['likes'] > 1)
+                {
+                    if ($i_liked)
+                    {
+                        if ($likes_minus_one == 1)
+                        {
+                            echo "<div style = 'text-align: left;'>You and 1 other person like this post </div>";
+                        }
+                        else
+                        {
+                            echo "<div style = 'text-align: left;'>You and " . $ROW['likes'] . " other people like this post </div>"; 
+                        }
+                    } 
+                    else
+                    {
+                        echo "<div style = 'text-align: left;'>" . $ROW['likes'] . " people like this post </div>"; 
+                    }
+                }
             }
         ?>
     </div>  
