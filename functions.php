@@ -23,7 +23,6 @@ $errors   = array();
 $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
-$i_liked = false;
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
@@ -80,7 +79,7 @@ function read($query)
 
 function like_post($id, $like_type)
 {
-	global $db, $user_id, $i_liked;
+	global $db, $user_id;
 
 	if ($like_type == 'post')
 	{
@@ -108,11 +107,7 @@ function like_post($id, $like_type)
 			}
 			else
 			{
-
-				if(in_array($user_id, $liker_user_ids))
-                {
-                    $i_liked = true;
-                }
+				exit();
 			}
 		}
 		else
