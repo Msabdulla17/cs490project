@@ -81,11 +81,6 @@
 							?>)
 						</i>
 					</small>
-					<br>
-					<a href="<?=ROOT?>messages">
-						<input id="post_button" type="button" value="Messages" style="margin-right:10px;color:#b1424d;">
-					</a>
-					</br>
 				</div>
 			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
