@@ -208,7 +208,7 @@ function get_likes($id, $like_type)
 	if ($like_type == 'post')
 	{
 		$query = "SELECT likes FROM likes
-				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
+				WHERE like_type = 'post' && content_id = '$id'";
 		$result = read($query);
 		if(is_array($result))
 		{

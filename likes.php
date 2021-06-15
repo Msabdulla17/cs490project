@@ -58,7 +58,6 @@
                                     }
                                 }
 							?>
-						<hr>
 						<br>
                 <br style="clear: both;">
 				</div>
