@@ -13,6 +13,18 @@
     {
         $post_id = $_GET['id'];
         $ROW2 = get_post($post_id);
+
+		if (!$ROW)
+		{
+			array_push($errors, "No post was found.");
+		}
+		else
+		{
+			if($ROW['users_id'] != $user_id)
+			{
+				array_push($errors, "Access Denied.");
+			}
+		}
     }
     else
     {
@@ -55,13 +67,23 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
+								echo display_error();
 								if($ROW2)
 								{
-									echo "Are you sure you want to delete this post?<br>";
-									foreach ($ROW2 as $ROW)
+									if($ROW2['users_id'] == $user_id)
 									{
-										$ROW_USER = getUserById($ROW['users_id']);
-										include("post_delete.php");
+										echo "Are you sure you want to delete this post?<br>";
+										foreach ($ROW2 as $ROW)
+										{
+											$ROW_USER = getUserById($ROW['users_id']);
+											include("post_delete.php");
+										}
+										echo "<input type ='hidden' name='post_id' value=<'$post_id'>";
+										echo "<input id='delete_button' type='submit' name='delete_btn' value='Delete'>";
+									}
+									else
+									{
+										array_push($errors, "Access Denied.");  
 									}
 								}
 								else
@@ -71,11 +93,7 @@
 								}
 							?>
 						<hr>
-						<input type ="hidden" name="post_id" value=<?php echo $post_id ?>>
-						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
-						<br>
 					</form>
-                <br style="clear: both;">
 				</div>
 			</div>
 		</div>

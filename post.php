@@ -32,16 +32,19 @@
             <?php echo $ROW['timestamp']; ?>
         </span>
         <span style="color: #999; float:right">
-            <a href="edit.php">
-                Edit 
-            </a>
-            . 
-            <a href="delete.php?id=<?php echo $ROW['post_id'] ?>">
-                Delete 
-            </a>
-        </span>
-        <span>
-       
+            <?php
+                if(is_my_post($ROW['post_id']))
+                {
+                    echo "
+                    <a href='edit.php'>
+                        Edit 
+                    </a>
+                    . 
+                    <a href='delete.php?id=<?php echo $ROW[post_id] ?>''>
+                        Delete 
+                    </a>";
+                }
+            ?>
         </span>
         <?php        
             $i_liked = false;
@@ -55,7 +58,7 @@
                 $likes = json_decode($result[0]['likes'],true);
                 $liker_user_ids = array_column($likes, "user_id");
                 if(in_array($user_id, $liker_user_ids))
-                {
+                { 
                     $i_liked = true;
                 }
             }
