@@ -169,12 +169,10 @@ function is_my_post($post_id)
 	$query = "SELECT * FROM posts
 		WHERE post_id = '$post_id' LIMIT 1";
 	$result = read($query);
-	$user = json_decode($result[0]['users_id'],true);
-	$post_owner = array_column($user, 'users_id');
 
 	if(is_array($result))
 	{
-		if($post_owner == $user_id)
+		if($result['user_id'] == $user_id)
 		{
 			return true;
 		}
