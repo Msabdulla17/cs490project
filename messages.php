@@ -31,6 +31,16 @@ if(isset($URL[1] && is_numeric($URL[1]){
 		$user_data = $profile_data[0];
 	}
 }
+	   //if message was sent
+/*if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
+	delete_post($post_id);
+	show($_POST);
+	show($_FILES);
+	$msg_class= new Messages();
+	$msg_class->send($_POST,$_GET);
+	//header("Location: ".$_SESSION['return_to']);
+	die;
+}*/
 ?>
 <!DOCTYPE html>
 <html>
