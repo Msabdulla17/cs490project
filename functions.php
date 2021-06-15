@@ -203,6 +203,26 @@ function is_my_post($post_id)
 	}
 }
 
+function get_likes($id, $like_type)
+{
+	if ($like_type == 'post')
+	{
+		$query = "SELECT likes FROM likes
+				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
+		$result = read($query);
+		if(is_array($result))
+		{
+			$likes = json_decode($result[0]['likes'],true);
+			return $likes;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	exit();
+}
+
 function delete_post($post_id)
 {
 	global $db;
