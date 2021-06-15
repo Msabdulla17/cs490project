@@ -1,24 +1,35 @@
-<?php
-include("functions.php");
-$login = new login();
-$user_data = $login->check_login($_SESSION['user']);
-$USER = $user_id;
+<?php 
+	include('functions.php');
+	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+		exit();
+	}
+	$profile_data = $user_data;
+	$ROW2 = false;
+    if (isset($_GET['id']))
+    {
+        $post_id = $_GET['id'];
+        $ROW2 = get_post($post_id);
+    }
+    else
+    {
+        array_push($errors, "No post was found.");
+    }
+	if ($_SERVER['REQUEST_METHOD'] == "POST") 
+ 	{
+ 		header("location: index.php");
+ 		delete_post($post_id);
+ 		exit();
+ 		die();
+ 	}
+ 
 if(isset($URL[1] && is_numeric($URL[1]){
 	$profile = new Profile();
 	$profile_data = $profile->get_profile($URL[1]);
 	if(is_array($profile_data){
 		$user_data = $profile_data[0];
 	}
-}
-//if message was sent
-if($ERROR == "" && $_SERVER['REQUEST_METHOD'] == "POST"){
-	$Post->delete_post($_POST['posted']);
-	show($_POST);
-	show($_FILES);
-	$msg_class= new Messages();
-	$msg_class->send($_POST,$_GET);
-	//header("Location: ".$_SESSION['return_to']);
-	die;
 }
 ?>
 <!DOCTYPE html>
