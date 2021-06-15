@@ -72,14 +72,14 @@ if(isset($URL[1] && is_numeric($URL[1]){
 									$FRIEND_ROW = $user->get_user($URL[2]);
 								}
 								include "user.php";
-								   echo '
+								   echo '';
 								<div style= "border:solid thin #aaa; padding: 10px; background-color: white; color:#b1424d;">
 									<form method="POST">
 								 	  <textarea name="message" placeholder="Write your message here"></textarea>
 								 	  <input type="file" name="file" multiple>
 								 	  <input id="post_button" type="submit" value="Send">
 								   	</form>
-								   </div>';
+								   </div>;
 								else
 								{
 									echo "That user could not be found<br><br>";
@@ -89,7 +89,7 @@ if(isset($URL[1] && is_numeric($URL[1]){
 							{
 								echo "Messages<br><br>";
 								$user = new User();
-								$ROW_USER = $user->get_user($ROW['user']);
+								$ROW_USER = $user->get_user($ROW['users_id']);
 							}
 							include("message.php");
 							echo "<input type='hidden' name='post_id' value='$ROW[post]'>";
