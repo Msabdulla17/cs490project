@@ -48,6 +48,7 @@
 							<?php
                                 if(is_array($likes))
                                 {
+                                    var_dump($likes);
                                     foreach ($likes as $ROW)
                                     {
                                         $FRIEND_ROW = getUserByID($ROW);
