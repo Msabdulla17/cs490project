@@ -215,9 +215,9 @@ function get_likes($id, $like_type)
 			$likes = $result;
 			foreach ($likes as $like)
 			{
-				$user_ids[] = $like['user_id'];
+				var_dump($like['user_id']);
 			}
-			return $user_ids;
+			return $likes;
 		}
 		else
 		{
