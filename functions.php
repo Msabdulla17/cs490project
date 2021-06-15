@@ -213,11 +213,11 @@ function get_likes($id, $like_type)
 		if(is_array($result))
 		{
 			$likes = $result;
-			foreach ($likes as $like)
-			{
-				$results[] = ($like['likes']);
-			}
-			return $results;
+ 			foreach ($likes as $like)
+ 			{
+ 				$results[] = ($like['likes']);
+ 			}
+ 			return $results;
 		}
 		else
 		{
