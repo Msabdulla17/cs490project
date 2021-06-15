@@ -8,11 +8,11 @@
 
 	$profile_data = $user_data;
 
-	$ROW2 = false;
+	$ROW = false;
     if (isset($_GET['id']))
     {
         $post_id = $_GET['id'];
-        $ROW2 = get_post($post_id);
+        $ROW = get_post($post_id);
 
 		if (!$ROW)
 		{
@@ -67,16 +67,13 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
-								if($ROW2)
+								if($ROW)
 								{
-									if($ROW2['users_id'] == $user_id)
+									if($ROW['users_id'] == $user_id)
 									{
 										echo "Are you sure you want to delete this post?<br>";
-										foreach ($ROW2 as $ROW)
-										{
-											$ROW_USER = getUserById($ROW['users_id']);
-											include("post_delete.php");
-										}
+										$ROW_USER = getUserById($ROW['users_id']);
+										include("post_delete.php");
 										echo "<input type ='hidden' name='post_id' value=<'$post_id'>";
 										echo "<input id='delete_button' type='submit' name='delete_btn' value='Delete'>";
 									}
