@@ -212,8 +212,12 @@ function get_likes($id, $like_type)
 		$result = read($query);
 		if(is_array($result))
 		{
-			$likes = json_decode($result[0]['likes'],true);
-			return $likes;
+			$likes = $result;
+			foreach ($likes as $like)
+			{
+				$user_ids[] = $like['user_id'];
+			}
+			return $user_ids;
 		}
 		else
 		{
