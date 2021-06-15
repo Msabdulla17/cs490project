@@ -190,7 +190,6 @@ function is_my_post($post_id)
 	$query = "SELECT * FROM posts
 		WHERE post_id = '$post_id' LIMIT 1";
 	$result = read($query);
-	var_dump($result[0]['users_id']);
 	if(is_array($result))
 	{
 		if($result[0]["users_id"] == $user_id)
