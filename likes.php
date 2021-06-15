@@ -51,6 +51,7 @@
                                     foreach ($likes as $ROW)
                                     {
                                         parse_str($ROW);
+                                        var_dump($user_id);
                                         $FRIEND_ROW = getUserByID($user_id);
                                         include("user.php");
                                     }
