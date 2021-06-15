@@ -53,7 +53,7 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
-								if($ROW2['users_id'] == $user_id)
+								if($ROW2)
 								{
 									echo "Are you sure you want to delete this post?<br>";
 									foreach ($ROW2 as $ROW)
