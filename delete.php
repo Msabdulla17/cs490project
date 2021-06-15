@@ -70,7 +70,7 @@
 								echo display_error();
 								if($ROW2)
 								{
-									if($ROW2['users_id'] == $user_id)
+									if($ROW2[0]['users_id'] == $user_id)
 									{
 										echo "Are you sure you want to delete this post?<br>";
 										foreach ($ROW2 as $ROW)
