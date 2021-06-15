@@ -13,18 +13,6 @@
     {
         $post_id = $_GET['id'];
         $ROW = get_post($post_id);
-
-		if (!$ROW)
-		{
-			array_push($errors, "No post was found.");
-		}
-		else
-		{
-			if($ROW['users_id'] != $user_id)
-			{
-				array_push($errors, "Access Denied.");
-			}
-		}
     }
     else
     {
