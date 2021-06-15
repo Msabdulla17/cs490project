@@ -48,11 +48,14 @@
 							<?php
                                 if(is_array($likes))
                                 {
-                                    foreach ($likes as $ROW)
+                                    foreach ($likes as $ $array)
                                     {
-                                        var_dump($ROW);
-                                        $FRIEND_ROW = getUserByID($ROW['user_id']);
-                                        include("user.php");
+                                        foreach ($array as $ $ROW)
+                                        {
+                                            var_dump($ROW);
+                                            $FRIEND_ROW = getUserByID($ROW['user_id']);
+                                            include("user.php");
+                                        }
                                     }
                                 }
 							?>
