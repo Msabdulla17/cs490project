@@ -65,7 +65,7 @@
                 }
                 if ($ROW['likes'] > 1)
                 {
-                    if ($i_liked)
+                    if ($i_liked($ROW['post_id']))
                     {
                         if ($likes_minus_one == 1)
                         {

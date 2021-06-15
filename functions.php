@@ -81,7 +81,7 @@ function i_liked($id)
 {
 	global $user_id;
 	$query = "SELECT likes FROM likes
-				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
+				WHERE content_id = '$id' LIMIT 1";
 		$result = read($query);
 		if(is_array($result))
 		{
