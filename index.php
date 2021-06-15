@@ -50,7 +50,7 @@
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
 			<a href="timeline.php" style="color: white";>Artstagram</a>
-			<form method = "get" action="search.php">
+			<form style="height:fit-content;" method = "get" action="search.php">
 				&nbsp &nbsp <input type="text" name="find" id="search_box" placeholder="Search">
 			</form>
 			<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
