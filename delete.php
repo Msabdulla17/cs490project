@@ -5,28 +5,26 @@
 		header('location: login.php');
 		exit();
 	}
-
 	$profile_data = $user_data;
-
-	$ROW = false;
+	$ROW2 = false;
     if (isset($_GET['id']))
     {
         $post_id = $_GET['id'];
-        $ROW = get_post($post_id);
+        $ROW2 = get_post($post_id);
     }
     else
     {
         array_push($errors, "No post was found.");
     }
-
 	if ($_SERVER['REQUEST_METHOD'] == "POST") 
-	{
-		header("location: index.php");
-		delete_post($post_id);
-		die();
-	}
-?>
-<!DOCTYPE html>
+ 	{
+ 		header("location: index.php");
+ 		delete_post($post_id);
+ 		exit();
+ 		die();
+ 	}
+ ?>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Delete Post</title>
@@ -55,19 +53,13 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
-								if($ROW)
+								if($ROW2)
 								{
-									if($ROW['users_id'] == $user_id)
+									echo "Are you sure you want to delete this post?<br>";
+									foreach ($ROW2 as $ROW)
 									{
-										echo "Are you sure you want to delete this post?<br>";
 										$ROW_USER = getUserById($ROW['users_id']);
 										include("post_delete.php");
-										echo "<input type ='hidden' name='post_id' value=<'$post_id'>";
-										echo "<input id='delete_button' type='submit' name='delete_btn' value='Delete'>";
-									}
-									else
-									{
-										array_push($errors, "Access Denied.");  
 									}
 								}
 								else
@@ -77,7 +69,11 @@
 								}
 							?>
 						<hr>
+						<input type ="hidden" name="post_id" value=<?php echo $post_id ?>>
+						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
+						<br>
 					</form>
+                <br style="clear: both;">
 				</div>
 			</div>
 		</div>
