@@ -77,6 +77,27 @@ function read($query)
 
 }
 
+function i_liked($id)
+{
+	global $user_id;
+	$query = "SELECT likes FROM likes
+				WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
+		$result = read($query);
+		if(is_array($result))
+		{
+			$likes = json_decode($result[0]['likes'],true);
+			$liker_user_ids = array_column($likes, "user_id");
+			if(in_array($user_id, $liker_user_ids))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+}
+
 function like_post($id, $like_type)
 {
 	global $db, $user_id;
@@ -169,10 +190,10 @@ function is_my_post($post_id)
 	$query = "SELECT * FROM posts
 		WHERE post_id = '$post_id' LIMIT 1";
 	$result = read($query);
-	var_dump($result['users_id']);
+	var_dump($result[0]['users_id']);
 	if(is_array($result))
 	{
-		if($result["users_id"] == $user_id)
+		if($result[0]["users_id"] == $user_id)
 		{
 			return true;
 		}
