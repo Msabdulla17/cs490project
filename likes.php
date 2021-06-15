@@ -54,7 +54,7 @@
                                         {
                                             var_dump($item);
                                         }
-                                        $FRIEND_ROW = getUserByID($user_id);
+                                        $FRIEND_ROW = getUserByID($ROW['user_id']);
                                         include("user.php");
                                     }
                                 }
