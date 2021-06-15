@@ -87,6 +87,7 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
+			<div id="menu_buttons"><a href="messages.php" style="color:#b1424d;">Messages</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Settings</a></div> 
 		</div>
 		<br>
