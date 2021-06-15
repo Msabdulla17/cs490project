@@ -67,8 +67,7 @@
 					<form style= "width: 100%;" method= "post">
 						<hr>
 							<?php
-								echo display_error();
-								if(!empty($ROW2))
+								if($ROW2)
 								{
 									if($ROW2['users_id'] == $user_id)
 									{
