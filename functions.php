@@ -171,7 +171,7 @@ function is_my_post($post_id)
 	$result = read($query);
 	if(is_array($result))
 	{
-		if($result['users_id'] == $user_id)
+		if($result["users_id"] == $user_id)
 		{
 			return true;
 		}
