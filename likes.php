@@ -21,7 +21,7 @@
  <!DOCTYPE html>
 <html>
 <head>
-	<title>Who Likes this Post</title>
+	<title>Who Post</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -48,14 +48,10 @@
 							<?php
                                 if(is_array($likes))
                                 {
-                                    foreach ($likes as $ $array)
+                                    foreach ($likes as $ROW)
                                     {
-                                        foreach ($array as $ $ROW)
-                                        {
-                                            var_dump($ROW);
-                                            $FRIEND_ROW = getUserByID($ROW['user_id']);
-                                            include("user.php");
-                                        }
+                                        $FRIEND_ROW = getUserByID($ROW);
+                                        include("user.php");
                                     }
                                 }
 							?>
