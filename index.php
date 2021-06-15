@@ -49,9 +49,9 @@
 	<!-- top bar -->
 	<div id="top_bar">
 		<div style="width: 800px;margin:auto;font-size: 30px;">
-			<a href="timeline.php" style="color: white";>Artstagram</a> &nbsp &nbsp
-			<form style= "width: 400px; height: 20px; border-radius: 5px; border: none;" method = "get" action="search.php">
-				<input type="text" id="search_box" placeholder="Search">
+			<a href="timeline.php" style="color: white";>Artstagram</a>
+			<form method = "get" action="search.php">
+				&nbsp &nbsp <input type="text" name="find" id="search_box" placeholder="Search">
 			</form>
 			<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
 			<?php  if (isset($_SESSION['user'])) : ?>
