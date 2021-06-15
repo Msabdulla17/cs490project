@@ -6,10 +6,10 @@
 		exit();
 	}
 	$likes = false;
-    if (isset($_GET['id']) && isset($_GET['type']))
+    if (isset($_GET['post_id']) && isset($_GET['like_type']))
     {
-        $post_id = $_GET['id'];
-        $post_type = $_GET['type'];
+        $post_id = $_GET['post_id'];
+        $post_type = $_GET['like_type'];
         $likes = get_likes($post_id,$post_type);
     }
     else
@@ -50,8 +50,7 @@
                                 {
                                     foreach ($likes as $ROW)
                                     {
-                                        var_dump($likes);
-                                        $likers[] = getUserByID($ROW['user_id']);
+                                        $FRIEND_ROW = getUserByID($ROW['user_id']);
                                         include("user.php");
                                     }
                                 }

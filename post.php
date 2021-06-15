@@ -65,7 +65,7 @@
             if ($ROW['likes'] > 0)
             {
                 echo "<br><br>";
-                echo "<a href='likes.php?type=post&id=$ROW[post_id]'>";
+                echo "<a href='likes.php?like_type=post&post_id=$ROW[post_id]'>";
                 if ($ROW['likes'] == 1)
                 {
                     if ($i_liked)
