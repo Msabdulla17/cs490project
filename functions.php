@@ -118,7 +118,7 @@ function like_post($id, $like_type)
 				$arr2[] = $arr;
 				$likes_string = json_encode($arr2);
 
-				$query = "UPDATE likes SET likes = '$likes_string'
+				$query = "UPDATE likes SET likes = CONCAT('$likes_string', likes)
 						WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 				mysqli_query($db, $query);
 
@@ -215,7 +215,7 @@ function get_likes($id, $like_type)
 			$likes = $result;
 			foreach ($likes as $like)
 			{
-				var_dump($like['user_id']);
+				var_dump($like['likes']);
 			}
 			return $likes;
 		}

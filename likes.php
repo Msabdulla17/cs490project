@@ -21,7 +21,7 @@
  <!DOCTYPE html>
 <html>
 <head>
-	<title>Delete Post</title>
+	<title>Who Likes this Post</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
