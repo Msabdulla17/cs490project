@@ -23,10 +23,10 @@
         <?php echo $ROW['post']; ?>
         <br><br>
         <?php
-            $likes = "";
-            $likes = ($ROW['likes'] > 0) ? " (". $ROW['likes'] . ")": "";
+            $num_likes = "";
+            $num_likes = ($ROW['likes'] > 0) ? " (". $ROW['likes'] . ")": "";
         ?> 
-		<a href="like.php?like_type=post&post_id=<?php echo $ROW['post_id']?>">Like<?php echo $likes?></a> . 
+		<a href="like.php?like_type=post&post_id=<?php echo $ROW['post_id']?>">Like<?php echo $num_likes?></a> . 
         <a href="single_post.php?post_id=<?php echo $ROW['post_id'] ?>">Comment</a> . 
         <span style="color: #999;">
             <?php echo $ROW['timestamp']; ?>
