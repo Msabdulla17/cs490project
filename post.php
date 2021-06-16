@@ -56,8 +56,8 @@
              if(is_array($result))
              {
                  $likes = json_decode($result[0]['likes'],true);
-                 $liker_user_ids = array_column($likes, "user_id");
-                 if(in_array($user_id, $liker_user_ids))
+                foreach ($likes as $arry)
+                 if(in_array($user_id, $array['user_id']))
                  { 
                      $i_liked = true;
                  }

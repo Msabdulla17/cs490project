@@ -50,9 +50,6 @@
                                 {
                                     foreach ($likes as $ROW)
                                     {
-                                        echo "<pre>";
-                                        print_r($ROW);
-                                        echo "</pre>";
                                         $FRIEND_ROW = getUserByID($ROW["user_id"]);
                                         include("user.php");
                                     }
