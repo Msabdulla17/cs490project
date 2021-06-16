@@ -120,7 +120,7 @@
 						<br>
 					</form>
 					<form action="upload.php" method="post" enctype="multipart/form-data">
-						<textarea name="post" placeholder="Select image to upload:"></textarea>
+						Select image to upload:
 						<input type="file" name="fileToUpload" id="fileToUpload">
 						<input type="submit" value="Upload Image" name="submit">
 					</form>
