@@ -11,6 +11,7 @@
         $post_id = $_GET['post_id'];
         $post_type = $_GET['like_type'];
         $likes = get_likes($post_id,$post_type);
+        var_dump($likes);
     }
     else
     {
@@ -48,7 +49,6 @@
 							<?php
                                 if(is_array($likes))
                                 {
-                                    var_dump($likes);
                                     foreach ($likes as $ROW)
                                     {
                                         $FRIEND_ROW = getUserByID($ROW["user_id"]);
