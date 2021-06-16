@@ -32,12 +32,12 @@
 </head>
 <body>
 	<!-- top bar -->
-	<div id="top_bar">
-		<form  method = "get" action="search.php">	
+	<form style="width:100%; background-color: #b1424d;" method = "get" action="search.php">	
+		<div id="top_bar">
 			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
 				<a href="timeline.php" style="color: white";>Artstagram</a>
-					&nbsp &nbsp <input type="text" name="find" id="search_box" placeholder="Search">
-				
+				&nbsp &nbsp 
+				<input type="text" name="find" id="search_box" placeholder="Search">
 				<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
@@ -45,8 +45,8 @@
 					</a>		
 				<?php endif ?>
 			</div>
-		</form>
-	</div>
+		</div>
+	</form>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 	<div style="display: flex;">
