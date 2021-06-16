@@ -97,7 +97,7 @@ function like_post($id, $like_type)
 				$likes[] = $arr;
 				$likes_string = json_encode($likes);
 
-				$query = "UPDATE likes SET likes = $likes_string
+				$query = "UPDATE likes SET likes = '$likes_string'
 						WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 				mysqli_query($db, $query);
 
