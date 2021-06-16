@@ -11,33 +11,61 @@
     {
         $find = addslashes($_GET['find']);
         
-        $query = "SELECT * FROM user_list WHERE first_name LIKE '%$find%' 
-        OR last_name LIKE '%$find%'";
-        $result = mysqli_query($db, $query);
+        $query = "SELECT * FROM user_list 
+				WHERE first_name LIKE '%$find%' OR last_name LIKE '%$find%'";
+        $result = read($query);
     }
     else
     {
-
+		array_push($errors, "Page not available;");
     }
 ?>
-<!DOCTYPE HTML>
+ <!DOCTYPE html>
 <html>
 <head>
-    <title>Search</title>
+	<title>Search</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-    <!-- notification message -->
-	<?php if (isset($_SESSION['success'])) : ?>
-			<div class="error success" >
-				<h3>
-					<?php 
-						echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				</h3>
+	<!-- top bar -->
+	<div id="top_bar">
+		<div style="width: 800px;margin:auto;font-size: 30px;">
+			<a href="timeline.php" style="color: white";>Artstagram</a> &nbsp &nbsp
+			<input type="text" id="search_box" placeholder="Search">
+			<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
+			<?php  if (isset($_SESSION['user'])) : ?>
+				<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
+				Log Out
+				</a>		
+			<?php endif ?>
+		</div>
+	</div>
+	<!-- Main Body -->
+	<div style="width: 800px; margin: auto; min-height: 400px;">
+	<div style="display: flex;">
+			<!--make a post and recent posts--> 
+			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
+				<div> 
+						<hr>
+							<?php
+                                if(is_array($result))
+                                {
+                                    foreach ($result as $ROW)
+                                    {
+                                        $FRIEND_ROW = getUserByID($ROW["user_id"]);
+                                        include("user.php");
+                                    }
+                                }
+								else
+								{
+									echo "No results found.";
+								}
+							?>
+						<br>
+                <br style="clear: both;">
+				</div>
 			</div>
-	<?php endif ?>
-
+		</div>
+	</div>
 </body>
 </html>

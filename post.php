@@ -47,28 +47,14 @@
             ?>
         </span>
         <?php        
-             $i_liked = false;
              $likes_minus_one = ($ROW['likes'] - 1);
-
-             $query = "SELECT likes FROM likes
-             WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
-             $result = read($query);
-             if(is_array($result))
-             {
-                 $likes = json_decode($result[0]['likes'],true);
-                foreach ($likes as $arry)
-                 if(in_array($user_id, $array['user_id']))
-                 { 
-                     $i_liked = true;
-                 }
-             }
             if ($ROW['likes'] > 0)
             {
                 echo "<br><br>";
                 echo "<a href='likes.php?like_type=post&post_id=$ROW[post_id]'>";
                 if ($ROW['likes'] == 1)
                 {
-                    if ($i_liked)
+                    if ($i_liked($ROW['post_id']))
                     {
                         echo "<div style = 'text-align: left;'>You like this post </div>"; 
                     }
@@ -79,7 +65,7 @@
                 }
                 if ($ROW['likes'] > 1)
                 {
-                    if ($i_liked)
+                    if ($i_liked($ROW['post_id']))
                     {
                         if ($likes_minus_one == 1)
                         {
