@@ -90,7 +90,7 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
 			<?php if ($profile_data['id'] == $user_id): ?>
 				<a href='messages.php'>
-				<div id='menu_buttons'>Messages</div>
+					<div id='menu_buttons'>Messages</div>
 				</a>
 				<a href='index'.$user_id.'/settings'>
 					<div id='menu_buttons'>Settings</div>
@@ -130,10 +130,10 @@
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
+					<form style= "width: 20%;" action="upload.php" method="post" enctype="multipart/form-data">
  						Select image to upload:
  						<input type="file" name="file_to_upload" id="file_to_upload">
- 						<input type="submit" value="upload_image" name="submit">
+ 						<input type="submit" value="Upload Image" name="upload_image">
  					</form>
 				</div>
 
