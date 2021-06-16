@@ -95,13 +95,6 @@
 						<br>
 					</form>
 				</div>
-				<div>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
-						<textarea name="post" placeholder="Select image to upload:"></textarea>
-						<input type="file" name="fileToUpload" id="fileToUpload">
-						<input type="submit" value="Upload Image" name="submit">
-					</form>
-				</div>
                 <?php
                    
                    $comments = get_comments($post_id);
