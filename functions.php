@@ -23,6 +23,7 @@ $errors   = array();
 $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
+$file = "";
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
