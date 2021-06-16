@@ -1,13 +1,5 @@
 <?php 
 	include('functions.php');
-	if(!empty($_GET['filetoUpload'])){
-		$new_url = 'https://www.deviantart.com/api/v1/oauth2/browse/newest' . urlencode ($_GET['']);
-		$new_json = file_get_contents($new_url);
-		$new_array = json_decode($new_json, true);
-		$deviant_url = 'https://cs490summerproject.herokuapp.com/';
-		$deviant_json = file_get_contents($deviant_url);
-		$deviant_array = json_decode($deviant_json, true);
-	}
 
 	if (!isLoggedIn()) 
 	{
@@ -35,7 +27,7 @@
 		$all_friends = get_friends();
 	}
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>Profile</title>
@@ -96,11 +88,23 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
-			<div id="menu_buttons"><a href="" style="color:#b1424d;">Settings</a></div> 
+			<?php if ($profile_data['id'] == $user_id): ?>
+				<a href='messages.php'.$user_id.'/settings'>
+					<input id='menu_buttons' type='button' value='Messages'>
+				</a>
+				<a href='index'.$user_id.'/settings'>
+					<div id='menu_buttons'>Settings</div>
+				</a>
+
+			<?php else: ?>
+				<a href='message.php'.$user_id.'/settings'>
+					<input id='menu_buttons' type='button' value='Message'>
+				</a>
+			<?php endif; ?>
 		</div>
 		<br>
 		<div style="display: flex;">
-		<!-- feed below cover photo and profile picture -->
+			<!-- feed below cover photo and profile picture -->
 			<!--friends--> 
 			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
 				<div id="friends_bar">
@@ -122,35 +126,33 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<form style= "width: 80%;" action="index.php" method ="post" enctype="multipart/form-data">
+					<form style= "width: 80%;" action="index.php" method ="post">
 						<textarea name="post" placeholder="Make a post here."></textarea>
-						<input type="file" name="fileToUpload" id="fileToUpload">
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
-				<?php
-					if(!empty($deviant_array)){
-					foreach($deviant_array['data'] as $image){
-						echo '<img scr="'.$image['images']['low_resolution']['url'].'" alt=""/>;
-					}
-					}
-				?>
+					<form action="upload.php" method="post" enctype="multipart/form-data">
+ 						Select image to upload:
+ 						<input type="file" name="file_to_upload" id="file_to_upload">
+ 						<input type="submit" value="upload_image" name="submit">
+ 					</form>
 				</div>
 
 				<!--feed area w/ recent posts-->
 				<div id="post_bar">
 					<div style= "color: #b1424d; float:left;">Posts</div>
-					<br>
-					<?php
-						if($all_posts)
-						{
-							foreach ($all_posts as $ROW)
+						<br>
+						<?php
+							if($all_posts)
 							{
-								$ROW_USER = getUserById($ROW['users_id']);
-								include('post.php');
+								foreach ($all_posts as $ROW)
+								{
+									$ROW_USER = getUserById($ROW['users_id']);
+									include('post.php');
+								}
 							}
-						}
-					?>
+						?>
+					</div>
 				</div>
 			</div>
 		</div>
