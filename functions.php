@@ -89,6 +89,7 @@ function like_post($id, $like_type)
 		if(is_array($result))
 		{
 			$likes = json_decode($result[0]['likes'],true);
+			print_r($likes);
 			$liker_user_ids = array_column($likes, "user_id");
 			if(!in_array($user_id, $liker_user_ids))
 			{
