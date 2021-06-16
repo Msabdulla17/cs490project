@@ -1,5 +1,13 @@
 <?php 
 	include('functions.php');
+	if(!empty($_GET['filetoUpload'])){
+		$new_url = 'https://www.deviantart.com/api/v1/oauth2/browse/newest' . urlencode ($_GET['']);
+		$new_json = file_get_contents($new_url);
+		$new_array = json_decode($new_json, true);
+		$deviant_url = 'https://cs490summerproject.herokuapp.com/';
+		$deviant_json = file_get_contents($deviant_url);
+		$deviant_array = json_decode($deviant_json, true);
+	}
 
 	if (!isLoggedIn()) 
 	{
@@ -120,6 +128,13 @@
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
+				<?php
+					if(!empty($deviant_array)){
+					foreach($deviant_array['data'] as $image){
+						echo '<img scr="'.$image['images']['low_resolution']['url'].'" alt=""/>;
+					}
+					}
+				?>
 				</div>
 
 				<!--feed area w/ recent posts-->
