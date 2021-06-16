@@ -212,7 +212,7 @@ function get_likes($id, $like_type)
 		$result = read($query);
 		if(is_array($result))
 		{
-			$likes = json_decode($result['likes'],true);
+			$likes = json_decode($result[0]['likes'],true);
  			return $likes;
 		}
 		else
