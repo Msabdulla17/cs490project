@@ -7,9 +7,9 @@
 	}
 	$profile_data = $user_data;
 	$ROW2 = false;
-    if (isset($_GET['id']))
+    if (isset($_GET['user_id']))
     {
-        $post_id = $_GET['id'];
+        $post_id = $_GET['user_id'];
         $ROW2 = get_post($post_id);
     }
     else
