@@ -94,7 +94,7 @@ function like_post($id, $like_type)
 			{
 				$arr["user_id"] = $user_id;
 				$arr["date"] = date("Y-m-d H:i:s");
-				$likes = $arr;
+				$likes[] = $arr;
 				$likes_string = json_encode($likes);
 
 				$query = "UPDATE likes SET likes = $likes_string
