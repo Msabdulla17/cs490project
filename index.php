@@ -119,13 +119,11 @@
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
-				<div>
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 						<textarea name="post" placeholder="Select image to upload:"></textarea>
 						<input type="file" name="fileToUpload" id="fileToUpload">
 						<input type="submit" value="Upload Image" name="submit">
 					</form>
-				</div>
 				</div>
 
 				<!--feed area w/ recent posts-->
