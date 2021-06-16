@@ -89,16 +89,15 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
 			<?php if ($profile_data['id'] == $user_id): ?>
-				<a href='messages.php'.$user_id.'/settings'>
-					<input id='menu_buttons' type='button' value='Messages'>
+				<a href='messages.php'>
+				<div id='menu_buttons'>Messages</div>
 				</a>
 				<a href='index'.$user_id.'/settings'>
 					<div id='menu_buttons'>Settings</div>
 				</a>
-
 			<?php else: ?>
-				<a href='message.php'.$user_id.'/settings'>
-					<input id='menu_buttons' type='button' value='Message'>
+				<a href='messages.php'>
+					<div id='menu_buttons'>Message</div>
 				</a>
 			<?php endif; ?>
 		</div>
