@@ -47,8 +47,8 @@
 	<?php endif ?>
 
 	<!-- top bar -->
-	<div id="top_bar">
-		<form  method = "get" action="search.php">	
+	<form  method = "get" action="search.php">	
+		<div id="top_bar">
 			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
 				<a href="timeline.php" style="color: white";>Artstagram</a>
 				&nbsp &nbsp 
@@ -60,8 +60,8 @@
 					</a>		
 				<?php endif ?>
 			</div>
-		</form>
-	</div>
+		</div>
+	</form>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<!-- Cover photo and profile picture -->
