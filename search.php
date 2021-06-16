@@ -52,8 +52,7 @@
                                 {
                                     foreach ($result as $ROW)
                                     {
-										var_dump($ROW);
-                                        $FRIEND_ROW = getUserByID($ROW["user_id"]);
+                                        $FRIEND_ROW = $ROW;
                                         include("user.php");
                                     }
                                 }
