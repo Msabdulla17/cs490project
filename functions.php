@@ -115,10 +115,10 @@ function like_post($id, $like_type)
 			{
 				$arr["user_id"] = $user_id;
 				$arr["date"] = date("Y-m-d H:i:s");
-				$arr2[] = $arr;
-				$likes_string = json_encode($arr2);
+				$likes[] = $arr;
+				$likes_string = json_encode($likes);
 
-				$query = "UPDATE likes SET likes = CONCAT('$likes_string', likes)
+				$query = "UPDATE likes SET likes = $likes_string
 						WHERE like_type = 'post' && content_id = '$id' LIMIT 1";
 				mysqli_query($db, $query);
 
