@@ -47,7 +47,7 @@
 	<?php endif ?>
 
 	<!-- top bar -->
-	<form  method = "get" action="search.php">	
+	<form style="width:100%; background-color: #b1424d;" method = "get" action="search.php">	
 		<div id="top_bar">
 			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
 				<a href="timeline.php" style="color: white";>Artstagram</a>
