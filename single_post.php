@@ -94,11 +94,6 @@
                         <input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
-  						Select image to upload:
- 						<input type="file" name="fileToUpload" id="fileToUpload">
-  						<input type="submit" value="Upload Image" name="submit">
-					</form>
 				</div>
                 
                 <?php
