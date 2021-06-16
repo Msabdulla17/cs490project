@@ -109,7 +109,7 @@ function like_post($id, $like_type)
 		$result = read($query);
 		if(is_array($result))
 		{
-			$likes = json_decode($result['likes'],true);
+			$likes = json_decode($result[0]['likes'],true);
 			$liker_user_ids = array_column($likes, "user_id");
 			if(!in_array($user_id, $liker_user_ids))
 			{
