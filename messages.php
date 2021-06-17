@@ -39,50 +39,46 @@
 	</form>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
-	<div style="display: flex;">
+	    <div style="display: flex;">
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<div> 
-					<form style= "width: 100%;" method= "post">
-						<hr>
-							<?php
-								if($error != "")
-								{
-									array_push($errors, "Error.");
-									header("timeline.php");
-								}
+                    <?php
+                        if($error != "")
+                        {
+                            array_push($errors, "Error.");
+                            header("timeline.php");
+                        }
+                        else
+                        {
+                            if (isset($_GET['type']) && $_GET['type'] == "new")
+                            {
+                                echo "Compose a New Message<br><br>";
+                                if (isset($_GET['user_id']))
+                                {
+                                    $FRIEND_ROW = getUserById($profile_id);
+                                    include "user.php";
+                                    echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px;'>
+                                    <form method='post' enctype='multipart/form-data'>
+                                    <textarea name='message' placeholder='Send a message'></textarea>
+                                    <input type='file' name='file'>
+                                    <input id='post_button' type='submit' value='Send'>
+                                    <br></form></div>";
+                                }
                                 else
                                 {
-                                    if (isset($_GET['type']) && $_GET['type'] == "new")
-                                    {
-                                        echo "Compose a New Message<br><br>";
-                                        if (isset($_GET['user_id']))
-                                        {
-                                            $FRIEND_ROW = getUserById($profile_id);
-                                            include "user.php";
-                                            echo "<div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
-                                            <form method='post' enctype='multipart/form-data'>
-                                            <textarea name='post' placeholder='Send a message'></textarea>
-                                            <input type='file' name='file'>
-                                            <input id='post_button' type='submit' value='Send'>
-                                            <br></form></div>";
-                                        }
-                                        else
-                                        {
-                                            echo "That user could not be found.<br><br>";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        echo "Messages<br><br>";
-                                        $ROW_USER = getUserById($user_id);
-                                        include("message.php");
-                                    }  
-								}
-							?>
-						<hr>
-					</form>
-                <br style="clear: both;">
+                                    echo "That user could not be found.<br><br>";
+                                }
+                            }
+                            else
+                            {
+                                echo "Messages<br><br>";
+                                $ROW_USER = getUserById($user_id);
+                                include("message.php");
+                            }  
+                        }
+                    ?>
+                    <br style="clear: both;">
 				</div>
 			</div>
 		</div>
