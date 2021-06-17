@@ -13,6 +13,12 @@
         $profile_id = $_GET['user_id'];
     }
 
+    if ($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        var_dump($_POST);
+        var_dump($_FILES);
+    }
+
  ?>
  <!DOCTYPE html>
 <html>
@@ -39,7 +45,7 @@
 	</form>
 	<!-- Main Body -->
 	<div style="width: 800px; margin: auto; min-height: 400px;">
-	    <div style="display: flex;">
+	    <div style="display: flex; padding: 20px; background-color: white;">
 			<!--make a post and recent posts--> 
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<div> 
@@ -58,8 +64,8 @@
                                 {
                                     $FRIEND_ROW = getUserById($profile_id);
                                     include "user.php";
-                                    echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px;'>
-                                    <form method='post' enctype='multipart/form-data'>
+                                    echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
+                                    <form style='width: 100%' method='post' enctype='multipart/form-data'>
                                     <textarea name='message' placeholder='Send a message'></textarea>
                                     <input type='file' name='file'>
                                     <input id='post_button' type='submit' value='Send'>
