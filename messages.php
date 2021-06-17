@@ -15,10 +15,13 @@
 
     if (isset($_GET['type']) && $_GET['type'] == "new")
     {
-        $old_thread = read_message($profile_id);
-        if (is_object($old_thread))
+        $thread = read_message($profile_id);
+        foreach ($thread as $old_thread)
         {
-            header("location: messages.php?type=read&user_id=" . $profile_id);
+            if (is_array($old_thread))
+            {
+                header("location: messages.php?type=read&user_id=" . $profile_id);
+            }
         }
     }
 
