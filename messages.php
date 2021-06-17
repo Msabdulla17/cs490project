@@ -84,7 +84,7 @@
                                     $data = read_message($profile_id);
                                     $FRIEND_ROW = getUserById($profile_id);
                                     include "user.php";
-                                    
+                                    echo "<br><br><br>";
                                     echo'<div>';
                                         foreach ($data as $msg_row)
                                         {

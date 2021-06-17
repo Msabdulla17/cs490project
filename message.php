@@ -5,10 +5,11 @@
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">
             <?php
-            echo "<a href='index.php?id=$msg_row[receiver]'>"; 
-            echo $FRIEND_ROW["first_name"];
+            $message_owner = getUserById($msg_row['sender']);
+            echo "<a href='index.php?id=$msg_row[sender]'>"; 
+            echo $message_owner["first_name"];
             echo " ";
-            echo $FRIEND_ROW["last_name"]; 
+            echo $message_owner["last_name"]; 
             echo "</a>"
             ?>
         </div>
