@@ -5,19 +5,17 @@
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">
             <?php
-            echo "<a href='index.php?id=$COMMENT[users_id]'>"; 
-            echo $profile_data["first_name"];
+            echo "<a href='index.php?id=$msg_row[receiver]'>"; 
+            echo $FRIEND_ROW["first_name"];
             echo " ";
-            echo $profile_data["last_name"]; 
+            echo $FRIEND_ROW["last_name"]; 
             echo "</a>"
             ?>
         </div>
-        <?php echo $COMMENT['post']; ?>
+        <?php echo $msg_row['message']; ?>
         <br><br>
-		<a href="like.php?like_type=post&post_id=<?php echo $COMMENT['post_id']?>">Like(<?php echo $COMMENT['likes']?>)</a> . 
-        <a href="single_post.php?post_id=<?php echo $COMMENT['post_id'] ?>">Comment</a> . 
-        <span style="color: #999;">
-            <?php echo $COMMENT['timestamp']; ?>
+		<span style="color: #999;">
+            <?php echo $msg_row['date']; ?>
         </span>
 	</div>
 </div>

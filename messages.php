@@ -88,7 +88,7 @@
                                     echo'<div>';
                                         foreach ($data as $msg_row)
                                         {
-                                            var_dump($msg_row);
+                                           include ('message.php');
                                         }
                                     echo'</div>';
 
