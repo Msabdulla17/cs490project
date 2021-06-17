@@ -13,6 +13,15 @@
         $profile_id = $_GET['user_id'];
     }
 
+    if (isset($_GET['type']) && $_GET['type'] == "new")
+    {
+        $old_thread = read_message($profile_id);
+        if (is_array($old_thread))
+        {
+            header("location: messages.php?type=read&user_id=" . $profile_id);
+        }
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
         if (is_array(getUserById($profile_id)))
