@@ -26,20 +26,7 @@
 		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
-$client = new http\Client;
-$request = new http\Client\Request;
 
-$request->setRequestUrl('https://instagram85.p.rapidapi.com/account/badgalriri/info');
-$request->setRequestMethod('GET');
-$request->setHeaders([
-	'x-rapidapi-key' => 'f57f39d658mshc8cb5b1a871b6e3p1b0d14jsnf0d710d0d955',
-	'x-rapidapi-host' => 'instagram85.p.rapidapi.com'
-]);
-
-$client->enqueue($request)->send();
-$response = $client->getResponse();
-
-echo $response->getBody();
 ?>
 <!DOCTYPE HTML>
 <html>
