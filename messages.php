@@ -16,8 +16,7 @@
     if (isset($_GET['type']) && $_GET['type'] == "new")
     {
         $old_thread = read_message($profile_id);
-        var_dump($old_thread);
-        if (is_array($old_thread))
+        if (is_object($old_thread))
         {
             header("location: messages.php?type=read&user_id=" . $profile_id);
         }
