@@ -99,7 +99,7 @@
                                         }
                                     echo'</div>';
 
-                                    echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
+                                    echo "<br><br><br><div style= 'padding: 10px; background-color: white;'>
                                     <form style='width: auto' method='post' enctype='multipart/form-data'>
                                     <textarea name='message' placeholder='Send a message'></textarea>
                                     <input type='file' name='file'>
