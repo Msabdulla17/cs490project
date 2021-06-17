@@ -131,6 +131,16 @@ function send_message($data, $file, $receiver)
 		$sender = addslashes($user_id); 
 		$receiver = addslashes($receiver);
 		$file = addslashes($my_image);
+		
+		$query = "SELECT * FROM messages 
+		WHERE (sender = '$sender' AND receiver = '$receiver') ||
+		(receiver = '$sender' AND sender = '$receiver') LIMIT 1";
+		$result = mysqli_query($db, $query);
+
+		if(is_array($result))
+		{
+			$message_id = $result[0]['message_id'];
+		}
 
 		$query = "INSERT INTO messages (message_id, sender, receiver, message, file)
 					VALUES ('$message_id', '$sender', '$receiver', '$message', '$file')";
