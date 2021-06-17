@@ -15,8 +15,8 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        var_dump($_POST);
-        var_dump($_FILES);
+        send_message($_POST,$_FILES, $profile_id);
+        //header("location: ".$_SERVER['HTTP_REFERER']);
     }
 
  ?>
@@ -65,7 +65,7 @@
                                     $FRIEND_ROW = getUserById($profile_id);
                                     include "user.php";
                                     echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
-                                    <form style='width: 100%' method='post' enctype='multipart/form-data'>
+                                    <form style='width: auto' method='post' enctype='multipart/form-data'>
                                     <textarea name='message' placeholder='Send a message'></textarea>
                                     <input type='file' name='file'>
                                     <input id='post_button' type='submit' value='Send'>

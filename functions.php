@@ -23,7 +23,6 @@ $errors   = array();
 $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
-$file = "";
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
@@ -35,6 +34,103 @@ if (isset($_POST['register_btn']))
 if (isset($_POST['login_btn'])) 
 {
 	login();
+}
+
+
+function resize_image($original_file,$cropped_file,$max_width,$max_height)
+{
+	if (file_exists($original_file))
+	{
+		$original_image = imagecreatefromjpeg($original_file);
+		$original_width = imagesx($original_image);
+		$original_height = imagesy($original_image);
+
+		if($original_height > $original_width)
+		{
+			$ratio = $max_width / $original_width;
+			$new_width = $max_width;
+			$new_height = $original_height * $ratio;
+		}
+		else
+		{
+			$ratio = $max_height / $original_height;
+			$new_height = $max_height;
+			$new_width = $original_width * $ratio;
+		}
+	}
+	$new_image = imagecreatetruecolor($new_width, $new_height);
+	imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+	imagejpeg($cropped_file,90);
+}
+
+function generate_filename($length)
+{
+	$array = array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+	$text = "";
+	$length = rand(4,$length);
+
+	for($x = 0; $x < $length; $x++)
+	{
+		$random = rand(0,61);
+		$text .= $array[$random];
+	}
+
+	return $text;
+}
+
+function send_message($data, $file, $receiver)	
+{
+	global $db, $errors, $user_id;
+
+	if(!empty($data['message']) || !empty($file['file']['name']))
+	{
+		$message_id = generate_filename(30);
+		$my_image = "";
+		if (!empty($file['file']['name']))
+		{
+			$folder = "uploads/" . $user_id . "/";
+			if(!file_exists($folder))
+			{
+				mkdir($folder, 0777, true);
+				file_put_contents($folder . "timeline.php" , "");
+			}
+			$allowed[] = "image/jpeg";
+
+			if(in_array($file['file']['type'], $allowed))
+			{
+				$my_image = $folder . generate_filename(15) . ".jpg";
+				move_uploaded_file($file['file']['tmp_name'], $my_image);
+
+				resize_image($my_image, $my_image, 1500, 1500);
+			}
+			else
+			{
+				array_push($errors, "Please select .jpg and .jpeg images only.");
+			}
+		}
+		$message = "";
+		if (isset($data['message']))
+		{
+			$message = addslashes($data['message']);
+		}
+
+		if (count($errors) == 0)
+		{
+			$message_id = addslashes($message_id); 
+			$sender = addslashes($user_id); 
+			$receiver = addslashes($receiver);
+			$file = addslashes($my_image);
+
+			$query = "INSERT INTO messages (message_id, sender, receiver, message, file)
+						VALUES ('$message_id', '$sender', '$receiver', '$message', '$file')";
+			mysqli_query($db, $query);
+			exit();
+		}
+	}
+	else
+	{
+		array_push($errors, "Message cannot be empty.");
+	}
 }
 
 function save($query)
