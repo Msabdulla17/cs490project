@@ -135,7 +135,7 @@ function send_message($data, $file, $receiver)
 		$query = "SELECT * FROM messages 
 		WHERE (sender = '$sender' AND receiver = '$receiver') ||
 		(receiver = '$sender' AND sender = '$receiver') LIMIT 1";
-		$result = mysqli_query($db, $query);
+		$result = read($query);
 
 		if(is_array($result))
 		{
