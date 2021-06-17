@@ -84,7 +84,7 @@ function send_message($data, $file, $receiver)
 
 	if(!empty($data['message']) || !empty($file['file']['name']))
 	{
-		$message_id = generate_filename(30);
+		$message_id = generate_filename(60);
 		$my_image = "";
 		if (!empty($file['file']['name']))
 		{
