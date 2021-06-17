@@ -55,11 +55,11 @@
                                 {
                                     if (isset($_GET['type']) && $_GET['type'] == "new")
                                     {
-                                        echo "Compose a new message";
+                                        echo "Compose a New Message<br><br>";
                                         if (isset($_GET['user_id']))
                                         {
-                                            $ROW_USER = getUserById($profile_id);
-                                            var_dump($ROW_USER);
+                                            $FRIEND_ROW = getUserById($profile_id);
+                                            include "user.php";
                                         }
                                         else
                                         {
@@ -75,9 +75,6 @@
 								}
 							?>
 						<hr>
-						<input type ="hidden" name="post_id" value=<?php echo $post_id ?>>
-						<input id="delete_button" type="submit" name="delete_btn" value="Delete">
-						<br>
 					</form>
                 <br style="clear: both;">
 				</div>
