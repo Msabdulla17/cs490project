@@ -15,9 +15,15 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        var_dump($profile_id);
-        send_message($_POST,$_FILES, $profile_id);
-        //header("location: ".$_SERVER['HTTP_REFERER']);
+        if (is_array(getUserById($profile_id)))
+        {
+            send_message($_POST,$_FILES, $profile_id);
+            header("location: messages.php?type=read&user_id=" . $profile_id);
+        }
+        else
+        {
+            array_push($errors, "No user found.");
+        }
     }
 
  ?>
@@ -58,7 +64,35 @@
                         }
                         else
                         {
-                            if (isset($_GET['type']) && $_GET['type'] == "new")
+                            if (isset($_GET['type']) && $_GET['type'] == "read")
+                            {
+                                echo "Chatting with<br><br>";
+                                if (isset($_GET['user_id']))
+                                {
+                                    $data = read_message($profile_id);
+                                    $FRIEND_ROW = getUserById($profile_id);
+                                    include "user.php";
+                                    
+                                    echo'<div>';
+                                        foreach ($data as $msg_row)
+                                        {
+                                            var_dump($msg_row);
+                                        }
+                                    echo'</div>';
+
+                                    echo "<br><br><br><div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
+                                    <form style='width: auto' method='post' enctype='multipart/form-data'>
+                                    <textarea name='message' placeholder='Send a message'></textarea>
+                                    <input type='file' name='file'>
+                                    <input id='post_button' type='submit' value='Send'>
+                                    <br></form></div>";
+                                }
+                                else
+                                {
+                                    echo "That user could not be found.<br><br>";
+                                }
+                            }
+                            elseif (isset($_GET['type']) && $_GET['type'] == "new")
                             {
                                 echo "Compose a New Message<br><br>";
                                 if (isset($_GET['user_id']))

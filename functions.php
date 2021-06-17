@@ -36,6 +36,19 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
+function read_message($receiver)
+{
+	global $db, $user_id;
+	$sender = addslashes($user_id);
+	$receiver = addslashes($receiver);
+
+	$query = "SELECT * FROM messages 
+		WHERE (sender = '$sender' AND receiver = '$receiver') ||
+		(receiver = '$sender' AND sender = '$receiver') ORDER BY id DESC LIMIT 20";
+	$data = mysqli_query($db, $query);
+
+	return $data;
+}
 
 function resize_image($original_file,$cropped_file,$max_width,$max_height)
 {
@@ -114,18 +127,14 @@ function send_message($data, $file, $receiver)
 			$message = addslashes($data['message']);
 		}
 
-		if (count($errors) == 0)
-		{
-			$message_id = addslashes($message_id); 
-			$sender = addslashes($user_id); 
-			$receiver = addslashes($receiver);
-			$file = addslashes($my_image);
+		$message_id = addslashes($message_id); 
+		$sender = addslashes($user_id); 
+		$receiver = addslashes($receiver);
+		$file = addslashes($my_image);
 
-			$query = "INSERT INTO messages (message_id, sender, receiver, message, file)
-						VALUES ('$message_id', '$sender', '$receiver', '$message', '$file')";
-			save($query);
-			exit();
-		}
+		$query = "INSERT INTO messages (message_id, sender, receiver, message, file)
+					VALUES ('$message_id', '$sender', '$receiver', '$message', '$file')";
+		mysqli_query($db, $query);
 	}
 	else
 	{
