@@ -88,7 +88,7 @@
                                     echo'<div>';
                                         foreach ($data as $msg_row)
                                         {
-                                           include ('message.php');
+                                           include ('message_left.php');
                                         }
                                     echo'</div>';
 
