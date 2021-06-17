@@ -28,6 +28,26 @@ body {
 	background-color: white;
 }
 
+#message_left{
+	padding: 4px;
+	font-size: 14px;
+	display: flex;
+	margin: 10px;
+	width: 60%;
+	float: left;
+	border-radius: 15px;
+}
+
+#message_right{
+	padding: 4px;
+	font-size: 14px;
+	display: flex;
+	margin: 10px;
+	width: 60%;
+	float: right;
+	border-radius: 15px;
+}
+
 #post{
 	padding: 2px;
 	font-size: 14px;
