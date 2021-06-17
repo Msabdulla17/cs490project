@@ -15,9 +15,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        var_dump($_POST['message']);
-        var_dump($_FILES['file']['name']);
-        var_dump($_FILES['file']['type']);
+        var_dump($profile_id);
         send_message($_POST,$_FILES, $profile_id);
         //header("location: ".$_SERVER['HTTP_REFERER']);
     }
