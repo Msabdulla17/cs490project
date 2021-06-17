@@ -123,7 +123,7 @@ function send_message($data, $file, $receiver)
 
 			$query = "INSERT INTO messages (message_id, sender, receiver, message, file)
 						VALUES ('$message_id', '$sender', '$receiver', '$message', '$file')";
-			mysqli_query($db, $query);
+			save($query);
 			exit();
 		}
 	}
