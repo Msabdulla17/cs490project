@@ -36,6 +36,16 @@ if (isset($_POST['login_btn']))
 	login();
 }
 
+function i_own($message_row)
+{
+	global $user_id;
+
+	if ($message_row['sender'] == $user_id)
+	{
+		return true;
+	}
+}
+
 function read_message($receiver)
 {
 	global $db, $user_id;

@@ -88,7 +88,14 @@
                                     echo'<div>';
                                         foreach ($data as $msg_row)
                                         {
-                                           include ('message_left.php');
+                                            if(i_own($msg_row))
+                                            {
+                                                include ('message_left.php');
+                                            }
+                                            else
+                                            {
+                                                include ('message_left.php');
+                                            }
                                         }
                                     echo'</div>';
 
