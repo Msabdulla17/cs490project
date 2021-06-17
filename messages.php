@@ -90,7 +90,7 @@
                                         {
                                             if(i_own($msg_row))
                                             {
-                                                include ('message_left.php');
+                                                include ('message_right.php');
                                             }
                                             else
                                             {
