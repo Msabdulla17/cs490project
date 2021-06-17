@@ -127,14 +127,10 @@
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
 					<form style= "width: 80%;" action="index.php" method ="post">
 						<textarea name="post" placeholder="Make a post here."></textarea>
+						<input type="file" name="file_to_upload" id="file_to_upload">
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
-					<form style= "width: 20%;" action="upload.php" method="post" enctype="multipart/form-data">
- 						Select image to upload:
- 						<input type="file" name="file_to_upload" id="file_to_upload">
- 						<input type="submit" value="Upload Image" name="upload_image">
- 					</form>
 				</div>
 
 				<!--feed area w/ recent posts-->

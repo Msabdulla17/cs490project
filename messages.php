@@ -60,6 +60,12 @@
                                         {
                                             $FRIEND_ROW = getUserById($profile_id);
                                             include "user.php";
+                                            echo "<div style= 'border:solid thin #aaa; padding: 10px; background-color: white;'>
+                                            <form method='post' enctype='multipart/form-data'>
+                                            <textarea name='post' placeholder='Send a message'></textarea>
+                                            <input type='file' name='file'>
+                                            <input id='post_button' type='submit' value='Send'>
+                                            <br></form></div>";
                                         }
                                         else
                                         {
