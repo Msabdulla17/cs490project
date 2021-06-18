@@ -32,7 +32,7 @@
 <meta charset="UTF-8">
 <meta name "viewport" content="width=devicewidth, initial-scale=1.0">
 <title>Unsplash API Photo Search</title>
-<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
 </head>
 <body>
   <div class="container">
@@ -50,7 +50,6 @@
   </form>
   <div id="result"></div>
   </div>
-  <script src="./api.js"</script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -65,6 +64,7 @@
   console.log(data)
     data.results.forEach(photo => {
       $("#result").append('
+                          <
                           <img src="${photo.urls.regular}"/>')
     });
   }
