@@ -1,30 +1,6 @@
 
 <?php
 	include('functions.php');
-	if (!isLoggedIn()) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: login.php');
-		exit();
-	}
-	$profile_data = $user_data;
-    $error = "";
-
-    if (isset($_GET['user_id']))
-    {
-        $profile_id = $_GET['user_id'];
-    }
-
-    if (isset($_GET['type']) && $_GET['type'] == "new")
-    {
-        $thread = read_message($profile_id);
-        foreach ($thread as $old_thread)
-        {
-            if (is_array($old_thread))
-            {
-                header("location: messages.php?type=read&user_id=" . $profile_id);
-            }
-        }
-    }
     if(!empty($_GET['search']){
 	    $url = 'https://api.unsplash.com/search/photos?query='+$_GET['search']+'&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50'
     }
