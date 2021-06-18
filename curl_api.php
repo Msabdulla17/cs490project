@@ -1,4 +1,3 @@
-
 <?php
 	include('functions.php');
     if(!empty($_GET['search']){
