@@ -89,6 +89,7 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
+			<div id="menu_buttons"><a href="" style="color:#b1424d;">API</a></div>
 			<?php if ($profile_data['id'] == $user_id): ?>
 				<a href='messages.php?user_id=<?php echo $profile_data['id']?>'>
 					<div id='menu_buttons'>Messages</div>
