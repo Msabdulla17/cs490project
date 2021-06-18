@@ -1,10 +1,38 @@
+
+<?php
+	include('functions.php');
+	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+		exit();
+	}
+	$profile_data = $user_data;
+    $error = "";
+
+    if (isset($_GET['user_id']))
+    {
+        $profile_id = $_GET['user_id'];
+    }
+
+    if (isset($_GET['type']) && $_GET['type'] == "new")
+    {
+        $thread = read_message($profile_id);
+        foreach ($thread as $old_thread)
+        {
+            if (is_array($old_thread))
+            {
+                header("location: messages.php?type=read&user_id=" . $profile_id);
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name "viewport" content="width=devicewidth, initial-scale=1.0">
 <title>Unsplash API Photo Search</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
   <div class="container">
