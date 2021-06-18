@@ -1,32 +1,6 @@
 <?php 
 	include('functions.php');
 
-	if (!isLoggedIn()) 
-	{
-		$_SESSION['msg'] = "You must log in first";
-		header('location: login.php');
-		exit();
-	}
-
-	if (isset($_POST['post_btn'])) 
-	{
-		header("location: ".$_SERVER['HTTP_REFERER']);
-		$result = create_post();
-	}
-
-	if (isset($_GET['id'])) 
-	{
-		$profile_data = getUserById($_GET['id']);
-		$all_posts = get_users_posts();
-		$all_friends = get_friends();
-	}
-	else
-	{
-		$profile_data = $user_data;
-		$all_posts = get_users_posts();
-		$all_friends = get_friends();
-	}
-
 ?>
 <!DOCTYPE HTML>
 <html>
