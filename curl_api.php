@@ -25,6 +25,9 @@
             }
         }
     }
+    if(!empty($_GET['search']){
+	    $url = 'https://api.unsplash.com/search/photos?query='+$_GET['search']+'&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50'
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
