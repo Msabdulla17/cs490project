@@ -1,5 +1,9 @@
 <?php
 	include('functions.php');
+    if(!empty($_GET['search']))
+    {
+	    $url = 'https://api.unsplash.com/search/photos?query='+$_GET['search']+'&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +30,7 @@
   <div id="result"></div>
   </div>
 </body>
+<script   src="https://code.jquery.com/jquery-3.6.0.js"   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="   crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   $("#myForm").submit(function(event){
@@ -37,9 +42,9 @@
   url:url,
   success:function(data){
   console.log(data)
-    data.results.forEach(photo => {
-      $("#result").append('
-                          <img src="${photo.urls.regular}"/>')
+    data.results.forEach(photo => 
+    {
+      $("#result").append('<img src="${photo.urls.regular}"/>')
     });
   }
   })
