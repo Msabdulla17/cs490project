@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
+	//top bar
 	<form style="width:100%; background-color: #b1424d;" method = "get" action="search.php">	
 		<div id="top_bar">
 			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
@@ -29,6 +30,7 @@
 			</div>
 		</div>
 	</form>
+	//photo search
   <div class="container">
   <br><br>
   <h1 style="text-align: center;">Unsplash Photo Search</h1>
@@ -45,6 +47,7 @@
   <div id="result"></div>
   </div>
 </body>
+	//api link
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -52,12 +55,15 @@
   event.preventDefault()
 	  $("#result").empty()
   var search = $("#search").val()
+  //my api required
   var url = "https://api.unsplash.com/search/photos?query="+search+"&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50"
+  //show photo
   $.ajax({
   method:'GET',
   url:url,
   success:function(data){
   console.log(data)
+	  //show data for each photo
     data.results.forEach(photo => {
       $("#result").append(`
       <img src="${photo.urls.regular}"/>
