@@ -22,7 +22,7 @@
 		.header {
 			background: #003366;
 		}
-		button[name=register_btn] {
+		button[name=delete_btn] {
 			background: #003366;
 		}
 	</style>
