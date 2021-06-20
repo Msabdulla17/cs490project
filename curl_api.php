@@ -66,6 +66,7 @@
 	  <!-- show data for each photo -->
     data.results.forEach(photo => {
       $("#result").append(`
+      <h2 class="name">+name+</h2>
       <img src="${photo.urls.regular}"/>
       `)
     });
