@@ -33,7 +33,7 @@
 	<!-- Api Search -->
 	<div class="container">
   	<br><br>
-	<h1 style="text-align: center;">Unsplash Photo Search</h1>
+	<h1 style="text-align: center;">Unsplash Artwork Search</h1>
   	<form id="myForm" autocomplete="off">
   		<div class="form-group">
   			<input type="text" class="form-control" id="search" placeholder="Search Photos" required>
