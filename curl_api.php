@@ -56,7 +56,7 @@
 	  $("#result").empty()
   var search = $("#search").val()
  <!-- my api required -->
-  var url = "https://api.unsplash.com/search/photos?query="+search+"&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50"
+  var url = "https://api.unsplash.com/search/photos?query="+search+"&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50";
    <!-- show photo -->
   $.ajax({
   method:'GET',
