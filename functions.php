@@ -522,6 +522,25 @@ if (isset($_GET['logout'])) {
 	exit();
 }
 
+//list of users
+function get_all_users()
+{
+	global $db;
+
+	$query = "SELECT * FROM user_list
+		ORDER BY id DESC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
