@@ -28,6 +28,11 @@
 	</style>
 </head>
 <body>
-	
+	<div class="header">
+		<h2>Delete User</h2>
+	</div>
+	<form method="post" action="delete_user.php">
+		<?php echo display_error(); ?>
+	</form>
 </body>
 </html>
