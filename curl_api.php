@@ -63,9 +63,7 @@
   url:url,
   success:function(data){
   console.log(data)
-	  <!-- show data for each photo -->
     data.results.forEach(photo => {
-	    <!-- display each photo with their user and their unsplash link -->
       $("#result").append(`
       <h2 class="name">${photo.user.name}</h2>
       <h3 class="link">
