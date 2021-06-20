@@ -36,11 +36,11 @@
 	<h1 style="text-align: center;">Unsplash Artwork Search</h1>
   	<form id="myForm" autocomplete="off">
   		<div class="form-group">
-  			<input type="text" class="form-control" id="search" placeholder="Search Photos" required>
+  			<input type="text" class="form-control" id="search" placeholder="Search Images" required>
   		</div>
   		<div class="form-group">
  	 		<button class="btn btn-danger btn-block">
-  				Search Photos
+  				Search Images
   			</button>
   		</div>
   	</form>
