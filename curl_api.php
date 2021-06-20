@@ -1,5 +1,17 @@
 <?php
 	include('functions.php');
+	if (isset($_GET['id'])) 
+	{
+		$profile_data = getUserById($_GET['id']);
+		$all_posts = get_users_posts();
+		$all_friends = get_friends();
+	}
+	else
+	{
+		$profile_data = $user_data;
+		$all_posts = get_users_posts();
+		$all_friends = get_friends();
+	}
 	if(!empty($_GET['search']))
 	{
 		$url = 'https://api.unsplash.com/search/photos?query='+$_GET['search']+'&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50';
