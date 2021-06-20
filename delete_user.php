@@ -32,7 +32,8 @@
 		<h2>Delete User</h2>
 	</div>
 	<form method="post" action="delete_user.php">
-		<?php echo display_error(); ?>
+		<?php echo display_error(); 
+		echo get_all_users(); ?>
 	</form>
 </body>
 </html>
