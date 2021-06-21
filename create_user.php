@@ -48,14 +48,21 @@
 	<form method="post" action="create_user.php">
 
 		<?php echo display_error(); ?>
-
 		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
+		<label>First Name</label>
+		<input type="text" name="first_name" value="" placeholder="First Name">
+		</div>
+		<div class="input-group">
+			<label>Last Name</label>
+			<input type="text" name="last_name" value="" placeholder="Last Name">
 		</div>
 		<div class="input-group">
 			<label>Email</label>
 			<input type="email" name="email" value="<?php echo $email; ?>">
+		</div>
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
 			<label>User type</label>
