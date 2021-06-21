@@ -35,12 +35,12 @@
 		<br>
 		<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
 		<br>
-		<form id="myForm" autocomplete="off" style="width: 60%;">
-			<div class="form-group" style="margin-right:auto; margin-left:auto;">
+		<form id="myForm" autocomplete="off" style="width: auto;">
+			<div class="form-group">
 				<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
 			</div>
 			<br>
-			<div class="form-group" style="margin-right:auto; margin-left:auto;">
+			<div class="form-group">
 				<button class="btn btn-danger btn-block" style="background-color:#b1424d;">
 					Search Images
 				</button>
@@ -67,7 +67,7 @@
 					$("#result").append(`
 					<h2 class="name" style="text-align:center;">${photo.user.name}</h2>
 					<h3 class="link" style="text-align:center;">
-					<a href="${photo.user.links.html}">"Unsplash Profile: " . ${photo.user.username}</a>
+					<a href="${photo.user.links.html}">Unsplash Profile: ${photo.user.username}</a>
 					</h3>
 					<img style="display:block; margin-right:auto; margin-left:auto; width: 60%;" src="${photo.urls.regular}"/>
 					`)
