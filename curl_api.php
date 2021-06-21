@@ -33,8 +33,11 @@
 	<!-- Api Search -->
 	<div class="container">
 		<br>
-		<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
-		<br>
+		<div style="text-align: center; color:#b1424d;">
+			<h2> Have art block?</h2>
+			<h4> Try the Unsplash API Photo Search</h4>
+			<br>
+		</div>
 		<div style="text-align: center; display:block;">
 			<form id="myForm" autocomplete="off" style="width: 60%; display:inline-block; margin-right:auto; margin-left:auto">
 				<div class="form-group">
@@ -68,6 +71,7 @@
 				data.results.forEach(photo => {
 					$("#result").append(`
 					<hr>
+					<br>
 					<h2 class="name" style="text-align:center;">${photo.user.name}</h2>
 					<h3 class="link" style="text-align:center;">
 					<a href="${photo.user.links.html}">Unsplash Profile: ${photo.user.username}</a>
