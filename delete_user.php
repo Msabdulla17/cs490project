@@ -12,6 +12,7 @@
 		header('location: index.php');
 		exit();
 	}
+	
 ?>
 <!DOCTYPE html>
 <html>
