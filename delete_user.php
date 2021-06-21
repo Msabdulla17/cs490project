@@ -34,7 +34,7 @@
 	<form method="post" action="delete_user.php">
 		<?php echo display_error(); ?>
 	</form>
-	$ all_users = get_all_users();
+	$all_users = get_all_users();
 	foreach($all_users as $user)
 	{
 		
