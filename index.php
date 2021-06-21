@@ -1,6 +1,7 @@
 <?php 
 	include('functions.php');
-if (!isLoggedIn()) 
+
+	if (!isLoggedIn()) 
 	{
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
@@ -25,7 +26,6 @@ if (!isLoggedIn())
 		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -88,7 +88,6 @@ if (!isLoggedIn())
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
-			<div id="menu_buttons"><a href="/curl_api.php" style="color:#b1424d;">API</a></div>
 			<?php if ($profile_data['id'] == $user_id): ?>
 				<a href='messages.php?user_id=<?php echo $profile_data['id']?>'>
 					<div id='menu_buttons'>Messages</div>
@@ -128,7 +127,7 @@ if (!isLoggedIn())
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
 					<form style= "width: 80%;" action="index.php" method ="post">
 						<textarea name="post" placeholder="Make a post here."></textarea>
-						<input type="file" name="file_to_upload" id="file_to_upload">
+						<input type="file" name="file" id="file">
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>

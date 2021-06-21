@@ -24,6 +24,8 @@ $user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
 $data = "";
 
+
+
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) 
 {
@@ -34,6 +36,11 @@ if (isset($_POST['register_btn']))
 if (isset($_POST['login_btn'])) 
 {
 	login();
+}
+
+function delete_user($id)
+{
+	
 }
 
 function i_own($message_row)
@@ -393,6 +400,24 @@ function get_all_posts()
 	}
 }
 
+function get_all_users()
+{
+	global $db;
+
+	$query = "SELECT * FROM user_list
+		ORDER BY id DESC";
+	$result = mysqli_query($db, $query);
+
+	if($result)
+	{
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function get_users_posts()
 {
 	global $db, $profile_data;
@@ -520,25 +545,6 @@ if (isset($_GET['logout'])) {
 	unset($_SESSION['user']);
 	header("location: login.php");
 	exit();
-}
-
-//list of users
-function get_all_users()
-{
-	global $db;
-
-	$query = "SELECT * FROM user_list
-		ORDER BY id DESC";
-	$result = mysqli_query($db, $query);
-
-	if($result)
-	{
-		return $result;
-	}
-	else
-	{
-		return false;
-	}
 }
 
 // REGISTER USER

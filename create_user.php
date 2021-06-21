@@ -61,6 +61,10 @@
 			<input type="password" name="password_2">
 		</div>
 		<div class="input-group">
+			<label>Security Answer:</label>
+			<input type="text" name="security_answer" placeholder="Answer">
+		</div>
+		<div class="input-group">
 			<button type="submit" class="btn" name="register_btn"> + Create user</button>
 		</div>
 	</form>

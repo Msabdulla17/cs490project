@@ -12,7 +12,14 @@
 		header('location: index.php');
 		exit();
 	}
-	
+
+	$all_users = get_all_users();
+
+	if (isset($_POST['delete_btn'])) 
+	{
+		var_dump($_POST['selected_user']);
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,11 +41,18 @@
 	</div>
 	<form method="post" action="delete_user.php">
 		<?php echo display_error(); ?>
+		<select name="selected_user">
+			<option disabled selected>-- Select User --</option>
+			<?php
+				while($users_list = mysqli_fetch_array($all_users))
+				{
+					foreach($users_list as $user)
+					{	
+						echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
+					}
+				}
+			?>
+		</select>
 	</form>
-	$all_users = get_all_users();
-	foreach($all_users as $user)
-	{
-		
-	}
 </body>
 </html>
