@@ -40,7 +40,11 @@ if (isset($_POST['login_btn']))
 
 function delete_user($id)
 {
-	
+	global $db;
+
+	$query = "DELETE FROM user_list
+			WHERE id = '$id'";
+	mysqli_query($db, $query);
 }
 
 function i_own($message_row)

@@ -17,6 +17,7 @@
 
 	if (isset($_POST['delete_btn'])) 
 	{
+		header("location: ".$_SERVER['HTTP_REFERER']);
 		delete_user($_POST['selected_user']);
 	}
 
