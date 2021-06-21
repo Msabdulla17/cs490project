@@ -41,15 +41,20 @@
 	</div>
 	<form method="post" action="delete_user.php">
 		<?php echo display_error(); ?>
-		<select name="selected_user">
-			<option disabled selected>-- Select User --</option>
-			<?php
-				foreach($all_users as $user)
-				{	
-					echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
-				}
-			?>
-		</select>
+		<div class="input-group">	
+			<select name="selected_user">
+				<option disabled selected>-- Select User --</option>
+				<?php
+					foreach($all_users as $user)
+					{	
+						echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
+					}
+				?>
+			</select>
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="delete_btn"> - Delete user</button>
+		</div>
 	</form>
 </body>
 </html>
