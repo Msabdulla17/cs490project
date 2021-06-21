@@ -86,10 +86,14 @@
 			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
-			<div id="menu_buttons"><a href="" style="color:#b1424d;">Friends</a></div>
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
+			<?php if (($profile_data['id'] == $user_id) && isAdmin()): ?>
+				<a href='home.php'>
+					<div id='menu_buttons'>Admin</div>
+				</a>
+			<?php endif; ?>
 			<?php if ($profile_data['id'] == $user_id): ?>
-				<a href='messages.php?user_id=<?php echo $profile_data['id']?>'>
+				<a href='messages.php?user_id=<?php echo $user_id?>'>
 					<div id='menu_buttons'>Messages</div>
 				</a>
 				<a href='index.php?menu=settings&user_id=<?php echo $user_id?>'>
