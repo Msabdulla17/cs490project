@@ -17,7 +17,7 @@
 
 	if (isset($_POST['delete_btn'])) 
 	{
-		var_dump($_POST['selected_user']);
+		delete_user($_POST['selected_user']);
 	}
 
 ?>
@@ -47,7 +47,7 @@
 				<?php
 					foreach($all_users as $user)
 					{	
-						echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
+						echo "<option value='". $user['id'] ."'>" .$user['first_name'] . ' ' .$user['last_name'] ."</option>";
 					}
 				?>
 			</select>
