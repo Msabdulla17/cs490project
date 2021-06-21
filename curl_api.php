@@ -35,12 +35,12 @@
 		<br>
 		<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
 		<br>
-		<form id="myForm" autocomplete="off" style="margin-left:auto; margin-right:auto;">
-			<div class="form-group">
+		<form id="myForm" autocomplete="off" style="width: 60%;">
+			<div class="form-group" style="margin:auto;">
 				<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
 			</div>
 			<br>
-			<div class="form-group">
+			<div class="form-group" style="margin:auto;">
 				<button class="btn btn-danger btn-block" style="background-color:#b1424d;">
 					Search Images
 				</button>
