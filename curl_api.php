@@ -67,11 +67,13 @@
   				console.log(data)
 				data.results.forEach(photo => {
 					$("#result").append(`
+					<hr>
 					<h2 class="name" style="text-align:center;">${photo.user.name}</h2>
 					<h3 class="link" style="text-align:center;">
 					<a href="${photo.user.links.html}">Unsplash Profile: ${photo.user.username}</a>
 					</h3>
 					<img style="display:block; margin-right:auto; margin-left:auto; width: 60%;" src="${photo.urls.regular}"/>
+					<br>
 					`)
 				});
   			}
