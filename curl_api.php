@@ -32,14 +32,16 @@
 	</form>
 	<!-- Api Search -->
 	<div class="container">
-  	<br><br>
-	<h1 style="text-align: center;">Unsplash Artwork Search</h1>
-  	<form id="myForm" autocomplete="off">
+  	<br>
+	<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
+	<br>
+  	<form id="myForm" autocomplete="off" style="margin:auto;">
   		<div class="form-group">
-  			<input type="text" class="form-control" id="search" placeholder="Search Images" required>
+  			<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
   		</div>
+		<br>
   		<div class="form-group">
- 	 		<button class="btn btn-danger btn-block">
+ 	 		<button class="btn btn-danger btn-block" style="color:#b1424d;">
   				Search Images
   			</button>
   		</div>
@@ -60,15 +62,15 @@
   			url:url,
   			success:function(data){
   				console.log(data)
-    				data.results.forEach(photo => {
-      					$("#result").append(`
-      					<h2 class="name">${photo.user.name}</h2>
-      					<h3 class="link">
-						<a href="${photo.user.links.html}">${photo.user.username}</a>
+				data.results.forEach(photo => {
+					$("#result").append(`
+					<h2 class="name" style="text-align:center;">${photo.user.name}</h2>
+					<h3 class="link" style="text-align:center;">
+					<a href="${photo.user.links.html}">${photo.user.username}</a>
 					</h3>
-      					<img src="${photo.urls.regular}"/>
-      					`)
-    				});
+					<img style="margin:auto;" src="${photo.urls.regular}"/>
+					`)
+				});
   			}
   		})
   	})
