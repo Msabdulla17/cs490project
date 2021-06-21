@@ -41,7 +41,7 @@
   		</div>
 		<br>
   		<div class="form-group">
- 	 		<button class="btn btn-danger btn-block" style="color:#b1424d;">
+ 	 		<button class="btn btn-danger btn-block" style="background-color:#b1424d;">
   				Search Images
   			</button>
   		</div>
@@ -68,7 +68,7 @@
 					<h3 class="link" style="text-align:center;">
 					<a href="${photo.user.links.html}">${photo.user.username}</a>
 					</h3>
-					<img style="margin:auto;" src="${photo.urls.regular}"/>
+					<img style="display:block; margin-right:auto; margin-left:auto; width: 60%;" src="${photo.urls.regular}"/>
 					`)
 				});
   			}
