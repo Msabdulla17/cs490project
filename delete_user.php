@@ -44,12 +44,9 @@
 		<select name="selected_user">
 			<option disabled selected>-- Select User --</option>
 			<?php
-				while($users_list = mysqli_fetch_array($all_users))
-				{
-					foreach($users_list as $user)
-					{	
-						echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
-					}
+				foreach($all_users as $user)
+				{	
+					echo "<option value='". $user['id'] ."'>" .$user['first_name'] .$user['last_name'] ."</option>";
 				}
 			?>
 		</select>
