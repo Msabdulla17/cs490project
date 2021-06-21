@@ -32,21 +32,22 @@
 	</form>
 	<!-- Api Search -->
 	<div class="container">
-  	<br>
-	<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
-	<br>
-  	<form id="myForm" autocomplete="off" style="margin:auto;">
-  		<div class="form-group">
-  			<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
-  		</div>
 		<br>
-  		<div class="form-group">
- 	 		<button class="btn btn-danger btn-block" style="background-color:#b1424d;">
-  				Search Images
-  			</button>
-  		</div>
-  	</form>
-  	<div id="result"></div>
+		<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
+		<br>
+		<form id="myForm" autocomplete="off" style="margin-left:auto; margin-right:auto;">
+			<div class="form-group">
+				<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
+			</div>
+			<br>
+			<div class="form-group">
+				<button class="btn btn-danger btn-block" style="background-color:#b1424d;">
+					Search Images
+				</button>
+			</div>
+		</form>
+		<br>
+		<div id="result"></div>
   	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
