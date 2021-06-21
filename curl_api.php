@@ -35,7 +35,7 @@
 		<br>
 		<h1 style="text-align: center; color:#b1424d;">Unsplash Artwork Search</h1>
 		<br>
-		<form id="myForm" autocomplete="off" style="width: auto;">
+		<form id="myForm" autocomplete="off" style="width: 60%; display:inline-block;">
 			<div class="form-group">
 				<input type="text" class="form-control" id="search" placeholder="Search for inspiration" required>
 			</div>
