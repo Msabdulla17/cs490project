@@ -89,21 +89,29 @@
 			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
 			<div id="menu_buttons"><a href="/curl_api.php" style="color:#b1424d;">API</a></div>
 			<?php if (($profile_data['id'] == $user_id) && isAdmin()): ?>
-				<a href='home.php'>
-					<div id='menu_buttons'>Admin</div>
-				</a>
+				<div id='menu_buttons'>
+					<a href='home.php'>
+						Admin
+					</a>
+				</div>
 			<?php endif; ?>
 			<?php if ($profile_data['id'] == $user_id): ?>
-				<a href='messages.php?user_id=<?php echo $user_id?>'>
-					<div id='menu_buttons'>Messages</div>
-				</a>
-				<a href='index.php?menu=settings&user_id=<?php echo $user_id?>'>
-					<div id='menu_buttons'>Settings</div>
-				</a>
+				<div id='menu_buttons'>
+					<a href='messages.php?user_id=<?php echo $user_id?>'>
+						Messages
+					</a>
+				</div>
+				<div id='menu_buttons'>
+					<a href='index.php?menu=settings&user_id=<?php echo $user_id?>'>
+						Settings
+					</a>
+				</div>
 			<?php else: ?>
-				<a href='messages.php?type=new&user_id=<?php echo $profile_data['id']?>'>
-					<div id='menu_buttons'>Message</div>
-				</a>
+				<div id='menu_buttons'>
+					<a href='messages.php?type=new&user_id=<?php echo $profile_data['id']?>'>
+						Message
+					</a>
+				</div>
 			<?php endif; ?>
 		</div>
 		<br>
