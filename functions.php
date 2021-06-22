@@ -57,6 +57,14 @@ function i_own($message_row)
 	}
 }
 
+function change_profile_image($filename)
+{
+	global $db, $user_id;
+	$query = "UPDATE user_list SET profile_image = '$filename'
+        WHERE id = '$user_id' LIMIT 1";
+    mysqli_query($db, $query);
+}
+
 function read_message($receiver)
 {
 	global $db, $user_id;

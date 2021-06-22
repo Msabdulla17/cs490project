@@ -17,10 +17,7 @@
             
             if (file_exists($filename))
             {
-                $query = "UPDATE user_list SET profile_image = '$filename'
-                        WHERE id = '$user_id' LIMIT 1";
-                mysqli_query($db, $query);
-
+                change_profile_image($filename);
                 header('location: index.php');
             }
         }
