@@ -17,7 +17,7 @@
             
             if (file_exists($filename))
             {
-                print_r($filename);
+                print_r($_FILES['file']['tmp_name']);
                 $query = "UPDATE user_list SET profile_image = '$filename'
                         WHERE user_id = '$user_id' LIMIT 1";
                 save($query);
