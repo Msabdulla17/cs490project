@@ -8,7 +8,7 @@
 		exit();
 	}
 
-	if (isset($_POST['change_btn'])) 
+	if ($_SERVER['REQUEST_TYPE'] == 'post') 
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
         {

@@ -59,10 +59,10 @@ function i_own($message_row)
 
 function change_profile_image($filename)
 {
-	global $db, $user_id;
+	global $user_id;
 	$query = "UPDATE user_list SET profile_image = '$filename'
         WHERE id = '$user_id' LIMIT 1";
-    mysqli_query($db, $query);
+    save($query);
 }
 
 function read_message($receiver)
