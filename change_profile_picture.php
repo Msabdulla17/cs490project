@@ -15,10 +15,11 @@
             $filename = "uploads/" . $_FILES['file']['name'];
             move_uploaded_file($_FILES['file']['tmp_name'], $filename);
             
+            var_dump($filename);
             if (file_exists($filename))
             {
-                var_dump($filename);
                 change_profile_image($filename);
+                header('location: index.php');
             }
         }
         else
