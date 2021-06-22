@@ -17,6 +17,7 @@
             
             if (file_exists($filename))
             {
+                var_dump($filename);
                 change_profile_image($filename);
                 header('location: index.php');
             }
