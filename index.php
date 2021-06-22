@@ -67,7 +67,21 @@
 		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d;">
 			<img src="images/cover_photo.png" style="width:100%;">
-			<img id="profile_picture" src="images/user_profile.png">
+			<span style="font-size: 12px;">
+				<?php
+					$image = "";
+					if (file_exists($profile_data['profile_image']))
+					{
+						$image = $profile_data['profile_image'];
+					}
+					else
+					{
+						$image = "user_profile.png";
+					}
+				?>
+				<img id="profile_picture" src="<?php echo $image?>">
+				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php">Change Photo</a>
+			</span>
 			<br>
 				<div style="font-size: 20px;">
 					<?php 

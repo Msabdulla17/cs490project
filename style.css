@@ -213,6 +213,16 @@ form, .content{
 	border-radius: 2px;
 	width: 50px;
 }
+#change_button{
+	float:right;
+	background-color: #b1424d;
+	border:none;
+	color: white;
+	padding: 4px;
+	font-size: 16px;
+	border-radius: 2px;
+	width: 100px;
+}
 .error {
 	width: 92%; 
 	margin: 0px auto; 
