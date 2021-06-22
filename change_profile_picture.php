@@ -8,16 +8,16 @@
 		exit();
 	}
 
-	if ($_SERVER['REQUEST_TYPE'] == 'post') 
+	if (isset($_POST['change_button'])) 
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
         {
             $filename = "uploads/" . $_FILES['file']['name'];
             move_uploaded_file($_FILES['file']['tmp_name'], $filename);
             
-            var_dump($filename);
             if (file_exists($filename))
             {
+                var_dump($filename);
                 change_profile_image($filename);
                 header('location: index.php');
             }
