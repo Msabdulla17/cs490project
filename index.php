@@ -76,10 +76,11 @@
 					}
 					else
 					{
-						$image = "user_profile.png";
+						$image = "images/user_profile.png";
 					}
 				?>
 				<img id="profile_picture" src="<?php echo $image?>">
+				<br>
 				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php">Change Photo</a>
 			</span>
 			<br>
