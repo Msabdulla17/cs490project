@@ -18,7 +18,7 @@
             if (file_exists($filename))
             {
                 $query = "UPDATE user_list SET profile_image = '$filename'
-                        WHERE user_id = '$user_id' LIMIT 1";
+                        WHERE id = '$user_id' LIMIT 1";
                 save($query);
 
                 header('location: index.php');
