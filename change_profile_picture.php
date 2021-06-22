@@ -12,15 +12,16 @@
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
         {
-            $filename = "uploads/" . $_FILES['file']['name'];
+            $filename = "/uploads/" . $_FILES['file']['name'];
             move_uploaded_file($_FILES['file']['tmp_name'], $filename);
             
             if (file_exists($filename))
             {
-                print_r($_FILES['file']['tmp_name']);
                 $query = "UPDATE user_list SET profile_image = '$filename'
                         WHERE user_id = '$user_id' LIMIT 1";
                 save($query);
+
+                header('location: index.php');
             }
         }
         else
