@@ -19,7 +19,6 @@
             {
                 print_r($filename);
                 change_profile_image($filename);
-                header('location: index.php');
             }
         }
         else
