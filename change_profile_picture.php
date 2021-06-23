@@ -19,7 +19,6 @@
                 {
                     $filename = "uploads/" . $_FILES['file']['name'];
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
-                    resize_image($filename,$filename, 800, 800);
                     $change = "profile";
 
                     if (isset($_GET['change']))
