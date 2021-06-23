@@ -76,6 +76,12 @@ function read_message($receiver)
 	return $data;
 }
 
+
+function crop_image()
+{
+	
+}
+
 function resize_image($original_file,$cropped_file,$max_width,$max_height)
 {
 	if (file_exists($original_file))
@@ -99,7 +105,7 @@ function resize_image($original_file,$cropped_file,$max_width,$max_height)
 	}
 	$new_image = imagecreatetruecolor($new_width, $new_height);
 	imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
-	imagejpeg($cropped_file,90);
+	imagejpeg($new_image, $cropped_file, 90);
 }
 
 function generate_filename($length)
