@@ -66,7 +66,18 @@
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d;">
-			<img src="images/cover_photo.png" style="width:100%;">
+			<?php
+				$background_image = "";
+				if (file_exists($profile_data['cover_image']))
+				{
+					$background_image = $profile_data['cover_image'];
+				}
+				else
+				{
+					$background_image = "images/cover_photo.png";
+				}
+			?>
+			<img style="width:100%;" src="<?php echo $background_image?>">
 			<span style="font-size: 12px;">
 				<?php
 					$image = "";
