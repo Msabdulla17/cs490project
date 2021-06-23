@@ -192,8 +192,6 @@ function send_message($data, $file, $receiver)
 			{
 				$my_image = $folder . generate_filename(15) . ".jpg";
 				move_uploaded_file($file['file']['tmp_name'], $my_image);
-
-				resize_image($my_image, $my_image, 1500, 1500);
 			}
 			else
 			{

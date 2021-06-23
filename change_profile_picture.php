@@ -8,6 +8,15 @@
 		exit();
 	}
 
+	if (isset($_GET['id'])) 
+	{
+		$profile_data = getUserById($_GET['id']);
+	}
+	else
+	{
+		$profile_data = $user_data;
+	}
+
 	if (isset($_POST['change_btn'])) 
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
@@ -19,14 +28,12 @@
                 {
                     $filename = "uploads/" . $_FILES['file']['name'];
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
-                    resize_profile_image($filename, $filename, 800, 800);
-                    print_r($filename);
                     if (file_exists($filename))
                     {
                         $query = "UPDATE user_list SET profile_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
                         save($query);
-                        //header('location: index.php');
+                        header('location: index.php');
                     }
                 }
                 else
@@ -53,15 +60,6 @@
             echo "</div>";
         }
 
-	}
-
-	if (isset($_GET['id'])) 
-	{
-		$profile_data = getUserById($_GET['id']);
-	}
-	else
-	{
-		$profile_data = $user_data;
 	}
 ?>
 <!DOCTYPE HTML>
