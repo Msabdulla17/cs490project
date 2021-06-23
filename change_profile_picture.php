@@ -12,15 +12,37 @@
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
         {
-            $filename = "uploads/" . $_FILES['file']['name'];
-            move_uploaded_file($_FILES['file']['tmp_name'], $filename);
-            
-            if (file_exists($filename))
+            if($_FILES['file']['type'] == "image/jpeg")
             {
-                $query = "UPDATE user_list SET profile_image = '$filename'
-                        WHERE id = '$user_id' LIMIT 1";
-                save($query);
-                header('location: index.php');
+                $allowed_size = (1024 * 1024) * 3;
+                if ($_FILES['file']['size'] < $allowed_size)
+                {
+                    $filename = "uploads/" . $_FILES['file']['name'];
+                    move_uploaded_file($_FILES['file']['tmp_name'], $filename);
+                    resize_image($filename, $filename, 1000, 1000);
+
+                    if (file_exists($filename))
+                    {
+                        $query = "UPDATE user_list SET profile_image = '$filename'
+                                WHERE id = '$user_id' LIMIT 1";
+                        save($query);
+                        header('location: index.php');
+                    }
+                }
+                else
+                {
+                    echo "<div style='text-align:center; font-size:12px; color:white; background-color:grey;'>";
+                    echo "<br>The following error(s) occured:<br><br>";
+                    echo "File cannot be larger than 3 MB.";
+                    echo "</div>";
+                }
+            }
+            else
+            {
+                echo "<div style='text-align:center; font-size:12px; color:white; background-color:grey;'>";
+                echo "<br>The following error(s) occured:<br><br>";
+                echo "Image must be of type .jpeg or .jpg.";
+                echo "</div>";
             }
         }
         else
