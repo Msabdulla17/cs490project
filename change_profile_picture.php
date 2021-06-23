@@ -17,10 +17,10 @@
             
             if (file_exists($filename))
             {
-                print_r($filename);
                 $query = "UPDATE user_list SET profile_image = '$filename'
                         WHERE id = '$user_id' LIMIT 1";
                 save($query);
+                print_r($filename);
             }
         }
         else
