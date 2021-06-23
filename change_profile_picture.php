@@ -20,7 +20,7 @@
                 $query = "UPDATE user_list SET profile_image = '$filename'
                         WHERE id = '$user_id' LIMIT 1";
                 save($query);
-                print_r($filename);
+                header('location: index.php');
             }
         }
         else
