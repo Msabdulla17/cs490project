@@ -19,7 +19,7 @@
                 {
                     $filename = "uploads/" . $_FILES['file']['name'];
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
-                    resize_image($filename, $filename, 1000, 1000);
+                    resize_profile_image($filename, $filename, 800, 800);
 
                     if (file_exists($filename))
                     {
