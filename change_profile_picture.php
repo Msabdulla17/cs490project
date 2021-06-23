@@ -18,7 +18,9 @@
             if (file_exists($filename))
             {
                 print_r($filename);
-                change_profile_image($filename);
+                $query = "UPDATE user_list SET profile_image = '$filename'
+                        WHERE id = '$user_id' LIMIT 1";
+                save($query);
             }
         }
         else
