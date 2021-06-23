@@ -131,7 +131,6 @@ function send_message($data, $file, $receiver)
 			if(!file_exists($folder))
 			{
 				mkdir($folder, 0777, true);
-				file_put_contents($folder . "timeline.php" , "");
 			}
 			$allowed[] = "image/jpeg";
 
