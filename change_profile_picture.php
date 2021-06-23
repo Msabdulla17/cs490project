@@ -20,13 +20,13 @@
                     $filename = "uploads/" . $_FILES['file']['name'];
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
                     resize_profile_image($filename, $filename, 800, 800);
-
+                    print_r($filename);
                     if (file_exists($filename))
                     {
                         $query = "UPDATE user_list SET profile_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
                         save($query);
-                        header('location: index.php');
+                        //header('location: index.php');
                     }
                 }
                 else
