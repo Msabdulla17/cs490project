@@ -76,12 +76,6 @@ function read_message($receiver)
 	return $data;
 }
 
-
-function crop_image()
-{
-	
-}
-
 function resize_image($original_file,$cropped_file,$max_width,$max_height)
 {
 	if (file_exists($original_file))
@@ -108,7 +102,6 @@ function resize_image($original_file,$cropped_file,$max_width,$max_height)
 	imagedestroy($original_image);
 	imagejpeg($new_image, $cropped_file, 90);
 	imagedestroy($new_image);
-
 }
 
 function resize_profile_image($original_file,$cropped_file,$max_width,$max_height)

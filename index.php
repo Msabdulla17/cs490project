@@ -81,7 +81,9 @@
 				?>
 				<img id="profile_picture" src="<?php echo $image?>">
 				<br>
-				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php">Change Photo</a>
+				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php?change=profile">Change Profile Picture</a>
+				|
+				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php?change=background">Change Background Art</a>	
 			</span>
 			<br>
 				<div style="font-size: 20px;">

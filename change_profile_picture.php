@@ -8,15 +8,6 @@
 		exit();
 	}
 
-	if (isset($_GET['id'])) 
-	{
-		$profile_data = getUserById($_GET['id']);
-	}
-	else
-	{
-		$profile_data = $user_data;
-	}
-
 	if (isset($_POST['change_btn'])) 
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
@@ -28,10 +19,26 @@
                 {
                     $filename = "uploads/" . $_FILES['file']['name'];
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
+                    resize_image($filename,$filename, 800, 800);
+                    $change = "profile";
+
+                    if (isset($_GET['change']))
+                    {
+                        $change = $_GET['change'];
+                    }
+
                     if (file_exists($filename))
                     {
-                        $query = "UPDATE user_list SET profile_image = '$filename'
+                        if ($change == "background")
+                        {
+                            $query = "UPDATE user_list SET cover_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
+                        }
+                        else
+                        {
+                            $query = "UPDATE user_list SET profile_image = '$filename'
+                                WHERE id = '$user_id' LIMIT 1";
+                        }
                         save($query);
                         header('location: index.php');
                     }
