@@ -552,7 +552,7 @@ function create_post()
 		}
 
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (post_id, users_id, post, parent, image, contains_image)
+		$query = "INSERT INTO posts (post_id, users_id, post, parent, image_link, contains_image)
 					VALUES ($post_id, $user_id, '$post', '$parent', '$my_image', '$has_image')";
 		mysqli_query($db, $query);
 		exit();
