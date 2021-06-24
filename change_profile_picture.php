@@ -8,12 +8,11 @@
 		exit();
 	}
     $profile_data = getUserById($user_id);
-    $thumb_image = "images/user_profile.png";
-	if (file_exists($profile_data['profile_image']))
+    $bar_image = "images/user_profile.png";
+	if (file_exists($user_data['profile_image']))
 	{
-		$thumb_image = $profile_data['profile_image'];
+		$bar_image = $user_data['profile_image'];
 	}
-
 	if (isset($_POST['change_btn'])) 
 	{
         if (isset ($_FILES['file']['name']) && $_FILES['file']['name'] != "")
@@ -115,7 +114,7 @@
 				&nbsp &nbsp 
 				<input type="text" name="find" id="search_box" placeholder="Search">
 				<a href ="index.php?id=<?php echo $user_id?>">
-					<img src="<?php echo $thumb_image ?>" style="max-height: 50px; float: right;">
+					<img src="<?php echo $bar_image ?>" style="max-height: 50px; float: right;">
 				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">

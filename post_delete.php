@@ -5,10 +5,15 @@
 		header('location: login.php');
 		exit();
 	}
+    $bar_image = "images/user_profile.png";
+	if (file_exists($user_data['profile_image']))
+	{
+		$bar_image = $user_data['profile_image'];
+	}
 ?>
 <div id="post">
 	<div>
-		<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+		<img src="<?php echo $bar_image ?>" style="width: 75px; margin-right: 4px;">
 	</div>
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">

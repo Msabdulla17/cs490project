@@ -20,8 +20,8 @@ $username = "";
 $email    = "";
 $security_answer = "";
 $errors   = array(); 
-$user_data = ($_SESSION['user']);
 $user_id = ($_SESSION['user']['id']);
+$user_data = getUserById($user_id);
 $data = "";
 
 
@@ -514,7 +514,7 @@ function get_users_posts()
 
 function create_post()	
 {
-	global $db, $errors, $user_id;
+	global $errors, $user_id;
 	$data = $_POST['post'];
 	$files = $_FILES['file']['name'];
 	$post_id = create_random_id();
@@ -554,7 +554,7 @@ function create_post()
 		$post = addslashes($data);
 		$query = "INSERT INTO posts (post_id, users_id, post, parent, image_link, contains_image)
 					VALUES ($post_id, $user_id, '$post', '$parent', '$my_image', '$has_image')";
-		mysqli_query($db, $query);
+		save($query);
 		exit();
 	}
 	if (!empty($_SERVER['HTTP_REFERER']))
