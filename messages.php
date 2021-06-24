@@ -13,6 +13,7 @@
         $profile_data = getUserById($_GET['user_id']);
         $profile_id = $_GET['user_id'];
     }
+    $user_data = getUserById($user_id);
     $thumb_image = "images/user_profile.png";
 	if (file_exists($profile_data['profile_image']))
 	{

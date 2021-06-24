@@ -20,7 +20,7 @@
 		header("location: ".$_SERVER['HTTP_REFERER']);
 		delete_user($_POST['selected_user']);
 	}
-
+	$user_data = getUserById($user_id);
 	$bar_image = "images/user_profile.png";
 	if (file_exists($user_data['profile_image']))
 	{

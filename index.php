@@ -26,6 +26,7 @@
 		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
+	$user_data = getUserById($user_id);
 	$thumb_image = "images/user_profile.png";
 	if (file_exists($profile_data['profile_image']))
 	{

@@ -7,7 +7,7 @@
 		header('location: login.php');
 		exit();
 	}
-    $profile_data = getUserById($user_id);
+    $user_data = getUserById($user_id);
     $bar_image = "images/user_profile.png";
 	if (file_exists($user_data['profile_image']))
 	{

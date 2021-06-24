@@ -13,7 +13,7 @@ if (!isAdmin())
 	header('location: index.php');
 	exit();
 }
-
+$user_data = getUserById($user_id);
 $profile_data = getUserById($user_id);
 $bar_image = "images/user_profile.png";
 if (file_exists($user_data['profile_image']))

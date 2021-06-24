@@ -4,7 +4,7 @@
 	{
 		$url = 'https://api.unsplash.com/search/photos?query='+$_GET['search']+'&client_id=D0zuSiTKvrj8GHZG91rRLSNLu20jmitBUDeS2D1EQCg&per_page=50';
 	}
-	$profile_data = getUserById($user_id);
+	$user_data = getUserById($user_id);
 	$bar_image = "images/user_profile.png";
 	if (file_exists($user_data['profile_image']))
 	{

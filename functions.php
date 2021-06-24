@@ -21,7 +21,6 @@ $email    = "";
 $security_answer = "";
 $errors   = array(); 
 $user_id = ($_SESSION['user']['id']);
-$user_data = getUserById($user_id);
 $data = "";
 
 
@@ -615,7 +614,7 @@ function login(){
 
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: home.php');
+				header('location: index.php');
 				exit();		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;

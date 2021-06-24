@@ -27,7 +27,7 @@
 	{
 		$profile_data = $user_data;
 	}
-
+	$user_data = getUserById($user_id);
 	$thumb_image = "images/user_profile.png";
 	if (file_exists($profile_data['profile_image']))
 	{

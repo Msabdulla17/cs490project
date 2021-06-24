@@ -16,7 +16,7 @@
     {
         array_push($errors, "No data was found.");
     }
-
+	$user_data = getUserById($user_id);
 	$profile_data = getUserById($user_id);
 	$thumb_image = "images/user_profile.png";
 	if (file_exists($profile_data['profile_image']))

@@ -22,10 +22,11 @@
  		delete_post($post_id);
  		die();
  	}
+	$user_data = getUserById($user_id);
 	$thumb_image = "images/user_profile.png";
-	if (file_exists($profile_data['profile_image']))
+	if (file_exists($user_data['profile_image']))
 	{
-		$thumb_image = $profile_data['profile_image'];
+		$thumb_image = $user_data['profile_image'];
 	}
 	$bar_image = "images/user_profile.png";
 	if (file_exists($user_data['profile_image']))
