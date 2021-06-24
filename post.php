@@ -8,7 +8,14 @@
 ?>
 <div id="post">
 	<div>
-		<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+        <?php
+            $thumb_image = "images/user_profile.png";
+            if (file_exists($ROW_USER['profile_image']))
+            {
+                $thumb_image = $ROW_USER['profile_image'];
+            }
+        ?>
+		<img src="<?php echo $thumb_image ?>" style="width: 75px; margin-right: 4px;">
 	</div>
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">

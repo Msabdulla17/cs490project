@@ -17,7 +17,13 @@
                 $allowed_size = (1024 * 1024) * 3;
                 if ($_FILES['file']['size'] < $allowed_size)
                 {
-                    $filename = "uploads/" . $_FILES['file']['name'];
+                    $folder = "uploads/" . $user_id;
+
+                    if (!file_exists($folder))
+                    {
+                        mkdir($folder, 0777, true);
+                    }
+                    $filename = $folder . generate_filename(15) . ".jpg";
                     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
                     $change = "profile";
 
@@ -30,11 +36,19 @@
                     {
                         if ($change == "background")
                         {
+                            if (file_exists($profile_data['cover_image']))
+                            {
+                                unlink($profile_data['cover_image']);
+                            }
                             $query = "UPDATE user_list SET cover_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
                         }
                         else
                         {
+                            if (file_exists($profile_data['cover_image']))
+                            {
+                                unlink($profile_data['cover_image']);
+                            }
                             $query = "UPDATE user_list SET profile_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
                         }
@@ -116,6 +130,19 @@
                         <input type="file" name="file" id="file">
 						<input id="change_button" type="submit" class="btn" name="change_btn" value="Submit">
 						<br>
+
+                        <?php
+                            $change = "profile";
+                            if (isset($_GET['change']) && $_GET['change'] == "cover")
+                            {
+                                $change = "cover";
+                                echo "<img src='$user_data[cover_image]' style='max-width:500px;'>";
+                            }
+                            else
+                            {
+                                echo "<img src='$user_data[profile_image]' style='max-width:500px;'>";
+                            }
+                        ?>
                     </div>
 				</form>
 			</div>

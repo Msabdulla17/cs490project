@@ -53,7 +53,16 @@
 				<a href="timeline.php" style="color: white";>Artstagram</a>
 				&nbsp &nbsp 
 				<input type="text" name="find" id="search_box" placeholder="Search">
-				<a href ="index.php"><img src="images/user_profile.png" style="width: 40px; float: right;"></a>
+				<a href ="index.php">
+					<?php
+						$thumb_image = "images/user_profile.png";
+						if (file_exists($profile_data['profile_image']))
+						{
+							$thumb_image = $profile_data['profile_image'];
+						}
+					?>
+					<img src="<?php echo $thumb_image ?>" style="width: 50px; float: right;">
+				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
 					Log Out
@@ -67,27 +76,19 @@
 		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d;">
 			<?php
-				$background_image = "";
+				$background_image = "images/cover_photo.png";
 				if (file_exists($profile_data['cover_image']))
 				{
 					$background_image = $profile_data['cover_image'];
-				}
-				else
-				{
-					$background_image = "images/cover_photo.png";
 				}
 			?>
 			<img style="width:100%;" src="<?php echo $background_image?>">
 			<span style="font-size: 12px;">
 				<?php
-					$image = "";
+					$image = "images/user_profile.png";
 					if (file_exists($profile_data['profile_image']))
 					{
 						$image = $profile_data['profile_image'];
-					}
-					else
-					{
-						$image = "images/user_profile.png";
 					}
 				?>
 				<img id="profile_picture" src="<?php echo $image?>">

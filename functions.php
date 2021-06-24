@@ -57,11 +57,6 @@ function i_own($message_row)
 	}
 }
 
-function change_profile_image($filename)
-{
-	global $user_id;
-}
-
 function read_message($receiver)
 {
 	global $db, $user_id;
@@ -74,6 +69,20 @@ function read_message($receiver)
 	$data = mysqli_query($db, $query);
 
 	return $data;
+}
+
+function get_thumbnail($file_name)
+{
+	$thumbnail = $file_name . "_thumb.jpg";
+	resize_image($file_name, $thumbnail, 500, 500);
+	if (file_exists($thumbnail))
+	{
+		return $thumbnail;
+	}
+	else
+	{
+		return $file_name;
+	}
 }
 
 function resize_image($original_file,$cropped_file,$max_width,$max_height)
