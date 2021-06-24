@@ -22,7 +22,7 @@
 	}
 	else
 	{
-		$profile_data = $user_data;
+		$profile_data = getUserById($user_id);
 		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
@@ -63,7 +63,7 @@
 				<a href="timeline.php" style="color: white";>Artstagram</a>
 				&nbsp &nbsp 
 				<input type="text" name="find" id="search_box" placeholder="Search">
-				<a href ="index.php">
+				<a href ="index.php?id=<?php echo $user_id?>">
 					<img src="<?php echo $thumb_image ?>" style="max-height: 50px; float: right;">
 				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>

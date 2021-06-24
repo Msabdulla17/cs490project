@@ -21,6 +21,13 @@
 		delete_user($_POST['selected_user']);
 	}
 
+	$profile_data = getUserById($user_id);
+	$thumb_image = "images/user_profile.png";
+	if (file_exists($profile_data['profile_image']))
+	{
+		$thumb_image = $profile_data['profile_image'];
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,19 +44,12 @@
 	<!-- top bar -->
 	<form style="width:100%; background-color: #b1424d;" method = "get" action="search.php">	
 		<div id="top_bar">
-			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
+			<div style="width: 800px; height: 40px; margin:auto; font-size: 30px;">
 				<a href="timeline.php" style="color: white";>Artstagram</a>
 				&nbsp &nbsp 
 				<input type="text" name="find" id="search_box" placeholder="Search">
-				<a href ="index.php">
-					<?php
-						$thumb_image = "images/user_profile.png";
-						if (file_exists($profile_data['profile_image']))
-						{
-							$thumb_image = $profile_data['profile_image'];
-						}
-					?>
-					<img src="<?php echo $thumb_image ?>" style="width: 50px; float: right;">
+				<a href ="index.php?id=<?php echo $user_id?>">
+					<img src="<?php echo $thumb_image ?>" style="max-height: 50px; float: right;">
 				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
