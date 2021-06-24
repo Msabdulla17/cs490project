@@ -143,11 +143,19 @@
                             {
                                 echo "Messages<br><br>";
                                 $all_threads = read_threads();
-                                foreach ($all_threads as $single_thread)
+
+                                if (is_array($all_threads))
                                 {
-                                    $my_id  = ($single_thread['sender'] == $user_id) ? $single_thread['reciever'] : $single_thread['sender'];
-                                    $message_owner = getUserById($my_id);
-                                    include("thread.php");
+                                    foreach ($all_threads as $single_thread)
+                                    {
+                                        $my_id  = ($single_thread['sender'] == $user_id) ? $single_thread['reciever'] : $single_thread['sender'];
+                                        $message_owner = getUserById($my_id);
+                                        include("thread.php");
+                                    }
+                                }
+                                else
+                                {
+                                    echo "You have no messages.";
                                 }
                                 echo "<br style='clear:both;'>";
                             }  

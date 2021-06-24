@@ -19,10 +19,7 @@
             echo "</a>"
             ?>
         </div>
-        <?php echo $single_thread['message']; ?>
-        <?php  if (file_exists($single_thread['file'])) : ?>
-            <img src = "<?php echo $single_thread['file'] ?>" style="width:200px;">
-        <?php endif ?>
+        <?php echo "Click to view your thred."; ?>
         <br><br>
 		<span style="color: #b1424d;">
             <?php echo ($single_thread['date']); ?>
