@@ -133,9 +133,9 @@
 
                         <?php
                             $change = "profile";
-                            if (isset($_GET['change']) && $_GET['change'] == "cover")
+                            if (isset($_GET['change']) && $_GET['change'] == "background")
                             {
-                                $change = "cover";
+                                $change = "background";
                                 echo "<img src='$user_data[cover_image]' style='max-width:500px;'>";
                             }
                             else
