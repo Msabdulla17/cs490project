@@ -61,7 +61,7 @@
 							$thumb_image = $profile_data['profile_image'];
 						}
 					?>
-					<img src="<?php echo $thumb_image ?>" style="width: 50px; float: right;">
+					<img src="<?php echo $thumb_image ?>" style="max-height: 50px; float: right;">
 				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<a href="index.php?logout='1'" style="font-size: 11px; float: right; margin: 10px; color: white;">
