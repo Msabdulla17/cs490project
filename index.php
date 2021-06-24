@@ -110,8 +110,6 @@
 				</div>
 			<br>
 			<div id="menu_buttons"><a href="/timeline.php" style="color:#b1424d;">Feed</a></div>
-			<div id="menu_buttons"><a href="" style="color:#b1424d;">About</a></div>
-			<div id="menu_buttons"><a href="" style="color:#b1424d;">Photos</a></div>
 			<div id="menu_buttons"><a href="/curl_api.php" style="color:#b1424d;">API</a></div>
 			<?php if (($profile_data['id'] == $user_id) && isAdmin()): ?>
 				<div id='menu_buttons'>
