@@ -2,9 +2,9 @@
 	<div>
         <?php
             $thumb_image = "images/user_profile.png";
-            if (file_exists($message_owner['profile_image']))
+            if (file_exists($comment_data['profile_image']))
             {
-                $thumb_image = $message_owner['profile_image'];
+                $thumb_image = $comment_data['profile_image'];
             }
         ?>
 		<img src="<?php echo $thumb_image ?>" style="width: 75px; margin-right: 4px;">
