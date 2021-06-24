@@ -9,7 +9,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		header('location: timeline.php');
-		$result = create_post($_POST['post'],$_FILES);
+		$result = create_post();
 	}
 
 	if (isset($_GET['id'])) 

@@ -511,10 +511,10 @@ function get_users_posts()
 	}
 }
 
-function create_post($data, $file)	
+function create_post()	
 {
 	global $errors, $user_id;
-	$files = $file['file']['name'];
+	$data = $_POST['post'];
 	$post_id = create_random_id();
 
 	if(isset($_POST['parent']))
@@ -526,32 +526,17 @@ function create_post($data, $file)
 		$parent = 0;
 	}
 
-	if (empty($data) || empty($files))
+	if (empty($data))
 	{
 		array_push($errors, "Post cannot be empty.");
 	}
 
 	if (count($errors) == 0)
 	{
-		$my_image = "";
-		$has_image = 0;
-
-		if (!empty($files))
-		{
-			$folder = "uploads/" . $user_id;
-			if (!file_exists($folder))
-			{
-				mkdir($folder, 0777, true);
-			}
-			$my_image = $folder . generate_filename(15) . ".jpg";
-			move_uploaded_file($_FILES['file']['tmp_name'], $my_image);
-
-			$has_image = 1;
-		}
 
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (post_id, users_id, post, parent, image_link, contains_image)
-					VALUES ($post_id, $user_id, '$post', '$parent', '$my_image', '$has_image')";
+		$query = "INSERT INTO posts (post_id, users_id, post, parent)
+					VALUES ($post_id, $user_id, '$post', '$parent')";
 		save($query);
 		exit();
 	}

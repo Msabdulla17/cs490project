@@ -11,7 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		header("location: ".$_SERVER['HTTP_REFERER']);
-		$result = create_post($_POST['post'],$_FILES);
+		$result = create_post();
 	}
 
 	if (isset($_GET['id'])) 
@@ -157,9 +157,8 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<form style= "width: 80%;" action="index.php" method ="post" enctype="multipart/form-data">
+					<form style= "width: 80%;" method ="post">
 						<textarea name="post" placeholder="Make a post here."></textarea>
-						<input type="file" name="file" id="file">
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">
 						<br>
 					</form>
