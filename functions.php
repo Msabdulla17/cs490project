@@ -511,11 +511,10 @@ function get_users_posts()
 	}
 }
 
-function create_post()	
+function create_post($data, $file)	
 {
 	global $errors, $user_id;
-	$data = $_POST['post'];
-	$files = $_FILES['file']['name'];
+	$files = $file['file']['name'];
 	$post_id = create_random_id();
 
 	if(isset($_POST['parent']))

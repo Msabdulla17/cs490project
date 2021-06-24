@@ -11,7 +11,7 @@
 	if (isset($_POST['post_btn'])) 
 	{
 		header("location: ".$_SERVER['HTTP_REFERER']);
-		$result = create_post();
+		$result = create_post($_POST['post'],$_FILES);
 	}
 
 	if (isset($_GET['id'])) 
@@ -123,11 +123,6 @@
 				<div id='menu_buttons'>
 					<a href='messages.php?user_id=<?php echo $user_id?>'>
 						Messages
-					</a>
-				</div>
-				<div id='menu_buttons'>
-					<a href='index.php?menu=settings&user_id=<?php echo $user_id?>'>
-						Settings
 					</a>
 				</div>
 			<?php else: ?>
