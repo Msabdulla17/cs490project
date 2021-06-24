@@ -151,7 +151,7 @@
                                 {
                                     foreach ($all_threads as $single_thread)
                                     {
-                                        $my_id  = ($single_thread['sender'] == $user_id) ? $single_thread['reciever'] : $single_thread['sender'];
+                                        $my_id  = ($single_thread['sender'] == $user_id) ? $single_thread['receiver'] : $single_thread['sender'];
                                         $message_owner = getUserById($my_id);
                                         include("thread.php");
                                     }
