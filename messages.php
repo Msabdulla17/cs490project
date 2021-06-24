@@ -143,8 +143,7 @@
                             {
                                 echo "Messages<br><br>";
                                 $all_threads = read_threads();
-                                print_r($all_threads);
-                                if (is_array($all_threads))
+                                if (is_object($all_threads))
                                 {
                                     foreach ($all_threads as $single_thread)
                                     {

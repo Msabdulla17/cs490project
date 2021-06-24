@@ -26,6 +26,16 @@
 		$all_posts = get_users_posts();
 		$all_friends = get_friends();
 	}
+	$thumb_image = "images/user_profile.png";
+	if (file_exists($profile_data['profile_image']))
+	{
+		$thumb_image = $profile_data['profile_image'];
+	}
+	$background_image = "images/cover_photo.png";
+	if (file_exists($profile_data['cover_image']))
+	{
+		$background_image = $profile_data['cover_image'];
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -49,18 +59,11 @@
 	<!-- top bar -->
 	<form style="width:100%; background-color: #b1424d;" method = "get" action="search.php">	
 		<div id="top_bar">
-			<div style="width: 800px; height: 50px; margin:auto; font-size: 30px;">
+			<div style="width: 800px; height: 40px; margin:auto; font-size: 30px;">
 				<a href="timeline.php" style="color: white";>Artstagram</a>
 				&nbsp &nbsp 
 				<input type="text" name="find" id="search_box" placeholder="Search">
 				<a href ="index.php">
-					<?php
-						$thumb_image = "images/user_profile.png";
-						if (file_exists($profile_data['profile_image']))
-						{
-							$thumb_image = $profile_data['profile_image'];
-						}
-					?>
 					<img src="<?php echo $thumb_image ?>" style="max-height: 50px; float: right;">
 				</a>
 				<?php  if (isset($_SESSION['user'])) : ?>
@@ -75,27 +78,15 @@
 	<div style="width: 800px; margin: auto; min-height: 400px;">
 		<!-- Cover photo and profile picture -->
 		<div style="background-color: white; text-align: center; color: #b1424d;">
-			<?php
-				$background_image = "images/cover_photo.png";
-				if (file_exists($profile_data['cover_image']))
-				{
-					$background_image = $profile_data['cover_image'];
-				}
-			?>
 			<img style="width:100%;" src="<?php echo $background_image?>">
 			<span style="font-size: 12px;">
-				<?php
-					$image = "images/user_profile.png";
-					if (file_exists($profile_data['profile_image']))
-					{
-						$image = $profile_data['profile_image'];
-					}
-				?>
-				<img id="profile_picture" src="<?php echo $image?>">
+				<img id="profile_picture" src="<?php echo $thumb_image?>">
 				<br>
+				<?php if (($profile_data['id'] == $user_id)):?>
 				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php?change=profile">Change Profile Picture</a>
 				|
 				<a style="color:#b1424d; text-decoration:none;" href="change_profile_picture.php?change=background">Change Background Art</a>	
+				<?php endif; ?>
 			</span>
 			<br>
 				<div style="font-size: 20px;">
@@ -149,7 +140,7 @@
 			<!--friends--> 
 			<div style= "background-color: white; color:#b1424d; min-height: 400px; flex: 1;">
 				<div id="friends_bar">
-					Friends
+					Community Members
 					<br>
 					<?php
 						if($all_friends)
