@@ -1,14 +1,21 @@
 <div id="post">
 	<div>
-		<img src="images/user_profile.png" style="width: 75px; margin-right: 4px;">
+        <?php
+            $thumb_image = "images/user_profile.png";
+            if (file_exists($message_owner['profile_image']))
+            {
+                $thumb_image = $message_owner['profile_image'];
+            }
+        ?>
+		<img src="<?php echo $thumb_image ?>" style="width: 75px; margin-right: 4px;">
 	</div>
 	<div>
 	    <div style="font-weight: bold; color: #b1424d;">
             <?php
             echo "<a href='index.php?id=$COMMENT[users_id]'>"; 
-            echo $profile_data["first_name"];
+            echo $comment_data["first_name"];
             echo " ";
-            echo $profile_data["last_name"]; 
+            echo $comment_data["last_name"]; 
             echo "</a>"
             ?>
         </div>

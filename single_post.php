@@ -116,7 +116,8 @@
                    {
                        foreach ($comments as $COMMENT)
                        {   
-                            include('comment.php');
+							$comment_data = getUserById($COMMENT['users_id']);
+                        	include('comment.php');
                        }
                    }
                 ?>
