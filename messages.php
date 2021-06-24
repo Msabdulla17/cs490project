@@ -142,8 +142,14 @@
                             else
                             {
                                 echo "Messages<br><br>";
-                                $ROW_USER = getUserById($user_id);
-                                include("message.php");
+                                $all_threads = read_threads();
+                                foreach ($all_threads as $single_thread)
+                                {
+                                    $my_id  = ($single_thread['sender'] == $user_id) ? $single_thread['reciever'] : $single_thread['sender'];
+                                    $message_owner = getUserById($my_id);
+                                    include("thread.php");
+                                }
+                                echo "<br style='clear:both;'>";
                             }  
                         }
                     ?>

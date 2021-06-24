@@ -71,6 +71,18 @@ function read_message($receiver)
 	return $data;
 }
 
+function read_threads()
+{
+	global $db, $user_id;
+	$sender = addslashes($user_id);
+
+	$query = "SELECT * FROM messages 
+		WHERE (sender = '$sender' || receiver = '$sender') GROUP BY message_id ORDER BY id DESC LIMIT 20";
+	$data = mysqli_query($db, $query);
+
+	return $data;
+}
+
 function get_thumbnail($file_name)
 {
 	$thumbnail = $file_name . "_thumb.jpg";
@@ -504,6 +516,7 @@ function create_post()
 {
 	global $db, $errors, $user_id;
 	$data = $_POST['post'];
+	$files = $_FILES;
 	$post_id = create_random_id();
 
 	if(isset($_POST['parent']))
@@ -515,16 +528,32 @@ function create_post()
 		$parent = 0;
 	}
 
-	if (empty($data))
+	if (empty($data) || empty($files['file']['name']))
 	{
 		array_push($errors, "Post cannot be empty.");
 	}
 
 	if (count($errors) == 0)
 	{
+		$my_image = "";
+		$has_image = 0;
+
+		if (!empty($files['file']['name']))
+		{
+			$folder = "uploads/" . $user_id;
+			if (!file_exists($folder))
+			{
+				mkdir($folder, 0777, true);
+			}
+			$my_image = $folder . generate_filename(15) . ".jpg";
+			move_uploaded_file($_FILES['file']['tmp_name'], $my_image);
+
+			$has_image = 1;
+		}
+
 		$post = addslashes($data);
-		$query = "INSERT INTO posts (post_id, users_id, post, parent)
-					VALUES ($post_id, $user_id, '$post', '$parent')";
+		$query = "INSERT INTO posts (post_id, users_id, post, parent, image, has_image)
+					VALUES ($post_id, $user_id, '$post', '$parent', '$my_image', '$has_image')";
 		mysqli_query($db, $query);
 		exit();
 	}

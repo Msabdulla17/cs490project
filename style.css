@@ -38,6 +38,14 @@ body {
 	border-radius: 15px;
 }
 
+#message_thread{
+	padding: 4px;
+	font-size: 14px;
+	display: flex;
+	margin: 10px;
+	border-radius: 15px;
+}
+
 #message_right{
 	padding: 4px;
 	font-size: 14px;

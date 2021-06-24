@@ -167,7 +167,7 @@
 			<div style= "min-height: 400px; padding: 20px; padding-right: 0px; flex:2.5;">
 				<!--make a post--> 
 				<div style= "width: 100%; min-height: 90px; border:solid thin #aaa; background-color: white;">
-					<form style= "width: 80%;" action="index.php" method ="post">
+					<form style= "width: 80%;" action="index.php" method ="post" enctype="multipart/form-data">
 						<textarea name="post" placeholder="Make a post here."></textarea>
 						<input type="file" name="file" id="file">
 						<input id="post_button" type="submit" class="btn" name="post_btn" value="Post">

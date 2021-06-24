@@ -29,6 +29,9 @@
         </div>
         <?php echo $ROW['post']; ?>
         <br><br>
+        <?php  if (file_exists($ROW['image'])) : ?>
+            <img src = "<?php echo $ROW['image'] ?>" style="width:200px;">
+        <?php endif ?>
         <?php
             $num_likes = "";
             $num_likes = ($ROW['likes'] > 0) ? " (". $ROW['likes'] . ")": "";
