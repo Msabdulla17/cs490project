@@ -45,9 +45,9 @@
                         }
                         else
                         {
-                            if (file_exists($profile_data['cover_image']))
+                            if (file_exists($profile_data['profile_image']))
                             {
-                                unlink($profile_data['cover_image']);
+                                unlink($profile_data['profile_image']);
                             }
                             $query = "UPDATE user_list SET profile_image = '$filename'
                                 WHERE id = '$user_id' LIMIT 1";
